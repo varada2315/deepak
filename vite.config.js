@@ -2,6 +2,15 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  server: {
+    port: 5467,
+    host: '0.0.0.0',
+    allowedHosts: [
+      'dee.cyberpunk.co.in',
+      '72.61.171.147',
+      '93.127.166.10'
+    ]
+  },
   build: {
     rollupOptions: {
       input: {
