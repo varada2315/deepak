@@ -1152,6 +1152,457 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     observer.observe(document.documentElement, { childList: true, subtree: true });
 })();
 </script>
+<style id="map-services-custom-styles">
+/* Hide Framer default hydrated Services section if React renders it */
+.framer-hfsvza:not(.map-services-section) {
+    display: none !important;
+}
+
+.map-services-section {
+    position: relative;
+    width: 100%;
+    background-color: #0A0B10;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.map-services-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.map-services-header {
+    margin-bottom: 72px;
+    max-width: 720px;
+}
+
+.map-services-label {
+    display: inline-block;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.map-services-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+}
+
+.map-services-intro {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.map-services-section.in-view .map-services-label,
+.map-services-section.in-view .map-services-heading,
+.map-services-section.in-view .map-services-intro {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 44px 36px;
+    margin-bottom: 72px;
+}
+
+@media (max-width: 1024px) {
+    .map-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .map-services-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.map-service-card {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-services-section.in-view .map-service-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-services-section.in-view .map-service-card:nth-child(1) { transition-delay: 0.1s; }
+.map-services-section.in-view .map-service-card:nth-child(2) { transition-delay: 0.2s; }
+.map-services-section.in-view .map-service-card:nth-child(3) { transition-delay: 0.3s; }
+.map-services-section.in-view .map-service-card:nth-child(4) { transition-delay: 0.4s; }
+.map-services-section.in-view .map-service-card:nth-child(5) { transition-delay: 0.5s; }
+
+.map-service-link-wrapper {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.map-service-img-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-color: #14151C;
+}
+
+.map-service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-service-link-wrapper:hover .map-service-img {
+    transform: scale(1.06);
+}
+
+.map-service-num {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #FFFFFF;
+    background: rgba(10, 11, 16, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-service-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0 0 12px 0;
+    transition: color 0.3s ease;
+}
+
+.map-service-link-wrapper:hover .map-service-title {
+    color: #F77422;
+}
+
+.map-service-desc {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0 0 20px 0;
+}
+
+.map-service-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 4px;
+}
+
+.map-service-cta-text {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #F77422;
+    transition: transform 0.3s ease;
+}
+
+.map-service-cta-arrow {
+    width: 16px;
+    height: 16px;
+    color: #F77422;
+    transition: transform 0.3s ease;
+}
+
+.map-service-cta-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #F77422;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-service-link-wrapper:hover .map-service-cta-text,
+.map-service-link-wrapper:hover .map-service-cta-arrow {
+    transform: translateY(-2px);
+}
+
+.map-service-link-wrapper:hover .map-service-cta-arrow {
+    transform: translate(3px, -2px);
+}
+
+.map-service-link-wrapper:hover .map-service-cta-line {
+    width: 100%;
+}
+
+.map-services-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+}
+
+.map-services-section.in-view .map-services-bottom {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-services-btn {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid #F77422;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-services-btn:hover {
+    background-color: #F77422;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(247, 116, 34, 0.25);
+}
+
+.map-services-btn .map-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.map-services-btn:hover .map-btn-arrow {
+    transform: translateX(4px);
+}
+</style>
+<script id="services-map-hydration-fix">
+(function() {
+    function enforceMapServices() {
+        // Hide Framer default hydrated Services elements
+        const framerServices = document.querySelectorAll('section[data-framer-name="Services"]:not(.map-services-section), .framer-hfsvza:not(.map-services-section)');
+        framerServices.forEach(el => {
+            el.style.setProperty('display', 'none', 'important');
+        });
+
+        let mapServices = document.querySelector('.map-services-section');
+
+        if (!mapServices) {
+            mapServices = document.createElement('section');
+            mapServices.id = 'services';
+            mapServices.className = 'map-services-section';
+            mapServices.innerHTML = `
+  <div class="map-services-container">
+    <div class="map-services-header">
+      <span class="map-services-label">OUR SERVICES</span>
+      <h2 class="map-services-heading">From Concept to Completion.</h2>
+      <p class="map-services-intro">
+        We provide integrated design and execution services that transform ideas into timeless spaces. Every service is delivered with clarity, precision, and attention to detail.
+      </p>
+    </div>
+
+    <div class="map-services-grid">
+      <div class="map-service-card" data-index="01">
+        <a href="interior-design.html" class="map-service-link-wrapper">
+          <div class="map-service-img-container">
+            <img src="/images/service_01_architecture.png" alt="Architecture" class="map-service-img" />
+            <span class="map-service-num">01</span>
+          </div>
+          <div class="map-service-content">
+            <h3 class="map-service-title">Architecture</h3>
+            <p class="map-service-desc">
+              Residential, commercial, institutional, and hospitality spaces designed with functionality, aesthetics, and long-term performance in mind.
+            </p>
+            <div class="map-service-cta">
+              <span class="map-service-cta-text">Learn More</span>
+              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div class="map-service-cta-line"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="map-service-card" data-index="02">
+        <a href="interior-design.html" class="map-service-link-wrapper">
+          <div class="map-service-img-container">
+            <img src="/images/service_02_interior.png" alt="Interior Design" class="map-service-img" />
+            <span class="map-service-num">02</span>
+          </div>
+          <div class="map-service-content">
+            <h3 class="map-service-title">Interior Design</h3>
+            <p class="map-service-desc">
+              Thoughtfully crafted interiors that balance comfort, usability, brand identity, and timeless design.
+            </p>
+            <div class="map-service-cta">
+              <span class="map-service-cta-text">Learn More</span>
+              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div class="map-service-cta-line"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="map-service-card" data-index="03">
+        <a href="renovation-remodeling.html" class="map-service-link-wrapper">
+          <div class="map-service-img-container">
+            <img src="/images/service_03_construction.png" alt="Construction" class="map-service-img" />
+            <span class="map-service-num">03</span>
+          </div>
+          <div class="map-service-content">
+            <h3 class="map-service-title">Construction</h3>
+            <p class="map-service-desc">
+              End-to-end execution with a focus on quality, transparency, timelines, and craftsmanship.
+            </p>
+            <div class="map-service-cta">
+              <span class="map-service-cta-text">Learn More</span>
+              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div class="map-service-cta-line"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="map-service-card" data-index="04">
+        <a href="commercial-spaces.html" class="map-service-link-wrapper">
+          <div class="map-service-img-container">
+            <img src="/images/service_04_management.png" alt="Project Management" class="map-service-img" />
+            <span class="map-service-num">04</span>
+          </div>
+          <div class="map-service-content">
+            <h3 class="map-service-title">Project Management</h3>
+            <p class="map-service-desc">
+              Seamless coordination from planning through delivery, ensuring every stage runs efficiently.
+            </p>
+            <div class="map-service-cta">
+              <span class="map-service-cta-text">Learn More</span>
+              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div class="map-service-cta-line"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="map-service-card" data-index="05">
+        <a href="contact.html" class="map-service-link-wrapper">
+          <div class="map-service-img-container">
+            <img src="/images/service_05_green_building.png" alt="Green Building Consultancy" class="map-service-img" />
+            <span class="map-service-num">05</span>
+          </div>
+          <div class="map-service-content">
+            <h3 class="map-service-title">Green Building Consultancy</h3>
+            <p class="map-service-desc">
+              Energy-efficient and sustainable design solutions including certifications, environmental analysis, and performance-driven planning.
+            </p>
+            <div class="map-service-cta">
+              <span class="map-service-cta-text">Learn More</span>
+              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div class="map-service-cta-line"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="map-services-bottom">
+      <a href="interior-design.html" class="map-btn map-btn-secondary map-services-btn">
+        View All Services
+        <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>`;
+        }
+
+        // Place mapServices right before philosophy section or after stats section
+        const philosophySection = document.querySelector('#philosophy, .framer-1ojvuox');
+        const statsSection = document.querySelector('#stats, .framer-2v8hu5');
+
+        if (philosophySection && philosophySection.parentNode) {
+            if (mapServices.nextElementSibling !== philosophySection) {
+                philosophySection.parentNode.insertBefore(mapServices, philosophySection);
+            }
+        } else if (statsSection && statsSection.parentNode) {
+            if (mapServices.previousElementSibling !== statsSection) {
+                statsSection.parentNode.insertBefore(mapServices, statsSection.nextSibling);
+            }
+        }
+
+        // Setup Intersection Observer for smooth entrance animations
+        if (mapServices && !mapServices.dataset.observed) {
+            mapServices.dataset.observed = 'true';
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.15 });
+            observer.observe(mapServices);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', enforceMapServices);
+    } else {
+        enforceMapServices();
+    }
+    window.addEventListener('load', enforceMapServices);
+
+    const observer = new MutationObserver(enforceMapServices);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
 </head>
 
 <body>
