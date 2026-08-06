@@ -538,7 +538,14 @@
     observer.observe(document.documentElement, { childList: true, subtree: true });
 })();
 </script>
+
 <style id="map-hero-custom-styles">
+/* Hide Framer default hydrated hero */
+.framer-1gw06a6,
+section[data-framer-name="Hero"]:not(.map-architects-hero) {
+    display: none !important;
+}
+
 .map-architects-hero {
     position: relative;
     width: 100%;
@@ -753,6 +760,74 @@
     }
 }
 </style>
+<script id="hero-map-hydration-fix">
+(function() {
+    function enforceMapHero() {
+        // Hide Framer default hydrated hero elements
+        const framerHeroes = document.querySelectorAll('section[data-framer-name="Hero"]:not(.map-architects-hero), .framer-1gw06a6');
+        framerHeroes.forEach(el => {
+            el.style.setProperty('display', 'none', 'important');
+        });
+
+        let mapHero = document.querySelector('.map-architects-hero');
+
+        if (!mapHero) {
+            mapHero = document.createElement('section');
+            mapHero.id = 'hero';
+            mapHero.className = 'map-architects-hero';
+            mapHero.innerHTML = `
+  <div class="map-hero-bg-wrapper">
+    <img src="/images/hero_architecture_bg.png" alt="Terraline Interior Architecture" class="map-hero-bg" />
+    <div class="map-hero-overlay"></div>
+  </div>
+  <div class="map-hero-container">
+    <div class="map-hero-content">
+      <span class="map-hero-label">INTERIOR DESIGN STUDIO</span>
+      <h1 class="map-hero-heading">
+        Designing Timeless<br>Spaces with Purpose.
+      </h1>
+      <p class="map-hero-subtext">
+        We create refined residential, commercial, and hospitality interiors through thoughtful design, technical expertise, and meticulous execution.
+      </p>
+      <div class="map-hero-ctas">
+        <a href="contact.html" class="map-btn map-btn-primary">Start Your Project</a>
+        <a href="projects.html" class="map-btn map-btn-secondary">View Projects</a>
+      </div>
+    </div>
+  </div>
+  <div class="map-hero-scroll">
+    <span class="map-scroll-text">SCROLL</span>
+    <div class="map-scroll-line">
+      <span class="map-scroll-bar"></span>
+    </div>
+  </div>`;
+        }
+
+        // Make sure mapHero is inside the page layout right before logos section or after header
+        const logosSection = document.querySelector('#logos, .framer-1jsd06');
+        if (logosSection && logosSection.parentNode) {
+            if (mapHero.nextElementSibling !== logosSection) {
+                logosSection.parentNode.insertBefore(mapHero, logosSection);
+            }
+        } else {
+            const root = document.querySelector('[data-framer-root]') || document.querySelector('#main');
+            if (root && mapHero.parentNode !== root) {
+                root.insertBefore(mapHero, root.firstChild);
+            }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', enforceMapHero);
+    } else {
+        enforceMapHero();
+    }
+    window.addEventListener('load', enforceMapHero);
+
+    const observer = new MutationObserver(enforceMapHero);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
 </head>
 
 <body>
