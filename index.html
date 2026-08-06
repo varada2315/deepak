@@ -539,6 +539,8 @@
 })();
 </script>
 
+
+
 <style id="map-hero-custom-styles">
 /* Hide Framer default hydrated hero */
 .framer-1gw06a6,
@@ -583,7 +585,7 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(10, 11, 18, 0.45) 0%, rgba(10, 11, 18, 0.35) 50%, rgba(10, 11, 18, 0.65) 100%);
+    background: linear-gradient(180deg, rgba(10, 11, 18, 0.35) 0%, rgba(10, 11, 18, 0.25) 50%, rgba(10, 11, 18, 0.55) 100%);
     z-index: 2;
 }
 
@@ -597,8 +599,18 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     box-sizing: border-box;
 }
 
-.map-hero-content {
-    max-width: 860px;
+/* Chamfered Geometric Dark Card */
+.map-hero-card {
+    background: rgba(16, 16, 20, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    clip-path: polygon(0 0, calc(100% - 54px) 0, 100% 54px, 100% 100%, 54px 100%, 0 calc(100% - 54px));
+    padding: 52px 56px;
+    max-width: 720px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    box-sizing: border-box;
+    animation: heroCardSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .map-hero-label {
@@ -609,38 +621,41 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: #F77422;
-    margin-bottom: 24px;
-    animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    margin-bottom: 20px;
 }
 
 .map-hero-heading {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: clamp(40px, 5.5vw, 76px);
+    font-size: clamp(38px, 4.8vw, 68px);
     font-weight: 400;
     line-height: 1.08;
     letter-spacing: -0.04em;
     color: #FFFFFF;
-    margin: 0 0 28px 0;
-    animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+    margin: 0 0 24px 0;
 }
 
 .map-hero-subtext {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: clamp(16px, 1.8vw, 19px);
+    font-size: clamp(15px, 1.5vw, 18px);
     font-weight: 300;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
     max-width: 580px;
-    margin: 0 0 44px 0;
-    animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    margin: 0 0 36px 0;
+}
+
+.map-hero-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
 }
 
 .map-hero-ctas {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
-    animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
 }
 
 .map-btn {
@@ -648,7 +663,7 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.02em;
-    padding: 16px 36px;
+    padding: 15px 32px;
     border-radius: 4px;
     text-decoration: none;
     display: inline-flex;
@@ -682,6 +697,50 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     color: #FFFFFF;
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(247, 116, 34, 0.25);
+}
+
+.map-btn-arrow {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.map-btn-primary:hover .map-btn-arrow {
+    transform: translate(2px, -2px);
+}
+
+.map-hero-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.map-social-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.map-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #101014;
+    margin-left: -10px;
+}
+
+.map-avatar:first-child {
+    margin-left: 0;
+}
+
+.map-social-text {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.35;
+    max-width: 120px;
 }
 
 .map-hero-scroll {
@@ -727,8 +786,8 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     100% { opacity: 1; transform: scale(1); }
 }
 
-@keyframes heroSlideUp {
-    0% { opacity: 0; transform: translateY(32px); }
+@keyframes heroCardSlideUp {
+    0% { opacity: 0; transform: translateY(36px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
@@ -745,18 +804,27 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
 
 @media (max-width: 768px) {
     .map-hero-container {
-        padding: 120px 24px 80px;
+        padding: 120px 20px 80px;
+    }
+    .map-hero-card {
+        padding: 36px 24px;
+        clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 36px 100%, 0 calc(100% - 36px));
+    }
+    .map-hero-actions-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
     }
     .map-hero-ctas {
         flex-direction: column;
-        align-items: stretch;
+        width: 100%;
     }
     .map-btn {
         width: 100%;
     }
     .map-hero-scroll {
-        left: 24px;
-        bottom: 28px;
+        left: 20px;
+        bottom: 24px;
     }
 }
 </style>
@@ -781,7 +849,7 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     <div class="map-hero-overlay"></div>
   </div>
   <div class="map-hero-container">
-    <div class="map-hero-content">
+    <div class="map-hero-card">
       <span class="map-hero-label">INTERIOR DESIGN STUDIO</span>
       <h1 class="map-hero-heading">
         Designing Timeless<br>Spaces with Purpose.
@@ -789,9 +857,22 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
       <p class="map-hero-subtext">
         We create refined residential, commercial, and hospitality interiors through thoughtful design, technical expertise, and meticulous execution.
       </p>
-      <div class="map-hero-ctas">
-        <a href="contact.html" class="map-btn map-btn-primary">Start Your Project</a>
-        <a href="projects.html" class="map-btn map-btn-secondary">View Projects</a>
+      <div class="map-hero-actions-row">
+        <div class="map-hero-ctas">
+          <a href="contact.html" class="map-btn map-btn-primary">
+            Start Your Project
+            <svg class="map-btn-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="projects.html" class="map-btn map-btn-secondary">View Projects</a>
+        </div>
+        <div class="map-hero-social-proof">
+          <div class="map-social-avatars">
+            <img src="https://framerusercontent.com/images/QtM9qFpLpWySlqZcK1AR42arfs.webp?scale-down-to=512&width=1200&height=1200" alt="Client" class="map-avatar" />
+            <img src="https://framerusercontent.com/images/G8P9frjfVjs7CIDqrpnfhAB5Afo.webp?scale-down-to=1024&width=900&height=1200" alt="Client" class="map-avatar" />
+            <img src="https://framerusercontent.com/images/7dFroABn0ObSPRS25evSwCdNedI.webp?scale-down-to=512&width=1328&height=993" alt="Client" class="map-avatar" />
+          </div>
+          <span class="map-social-text">Trusted by 2K+ happy clients</span>
+        </div>
       </div>
     </div>
   </div>
