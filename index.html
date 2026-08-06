@@ -472,72 +472,7 @@
     display: none !important;
 }
 </style>
-<script id="header-nav-contact-fix">
-(function() {
-    function ensureHeaderNav() {
-        const navs = document.querySelectorAll('nav.framer-nk64vb');
-        navs.forEach(nav => {
-            // 1. Change "About us" -> "About"
-            const paragraphs = nav.querySelectorAll('p');
-            paragraphs.forEach(p => {
-                if (p.textContent.trim() === 'About us') {
-                    p.textContent = 'About';
-                }
-            });
 
-            // 2. Check if Contact link exists inside this nav
-            const links = Array.from(nav.querySelectorAll('a'));
-            const hasContact = links.some(a => {
-                const href = a.getAttribute('href') || '';
-                return href.includes('contact.html') || a.textContent.trim() === 'Contact';
-            });
-
-            if (!hasContact) {
-                // Find a template item to clone (Works or Services or About)
-                const firstContainer = nav.querySelector('div[class*="-container"]');
-                if (firstContainer) {
-                    const contactContainer = firstContainer.cloneNode(true);
-                    contactContainer.className = 'framer-contact-nav-item-container';
-
-                    const link = contactContainer.querySelector('a');
-                    if (link) {
-                        link.setAttribute('href', 'contact.html');
-                        link.setAttribute('data-framer-name', 'Nav');
-                        if (window.location.pathname.endsWith('contact.html')) {
-                            link.setAttribute('data-framer-page-link-current', 'true');
-                        } else {
-                            link.removeAttribute('data-framer-page-link-current');
-                        }
-                    }
-
-                    const pElements = contactContainer.querySelectorAll('p');
-                    pElements.forEach(p => {
-                        p.textContent = 'Contact';
-                    });
-
-                    // Insert before hidden blog element or at end of nav
-                    const blogElem = nav.querySelector('.framer-1hngmjp-container');
-                    if (blogElem) {
-                        nav.insertBefore(contactContainer, blogElem);
-                    } else {
-                        nav.appendChild(contactContainer);
-                    }
-                }
-            }
-        });
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', ensureHeaderNav);
-    } else {
-        ensureHeaderNav();
-    }
-    window.addEventListener('load', ensureHeaderNav);
-
-    const observer = new MutationObserver(ensureHeaderNav);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-})();
-</script>
 
 
 
@@ -828,87 +763,7 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     }
 }
 </style>
-<script id="hero-map-hydration-fix">
-(function() {
-    function enforceMapHero() {
-        // Hide Framer default hydrated hero elements
-        const framerHeroes = document.querySelectorAll('section[data-framer-name="Hero"]:not(.map-architects-hero), .framer-1gw06a6');
-        framerHeroes.forEach(el => {
-            el.style.setProperty('display', 'none', 'important');
-        });
 
-        let mapHero = document.querySelector('.map-architects-hero');
-
-        if (!mapHero) {
-            mapHero = document.createElement('section');
-            mapHero.id = 'hero';
-            mapHero.className = 'map-architects-hero';
-            mapHero.innerHTML = `
-  <div class="map-hero-bg-wrapper">
-    <img src="/images/hero_architecture_bg.png" alt="Terraline Interior Architecture" class="map-hero-bg" />
-    <div class="map-hero-overlay"></div>
-  </div>
-  <div class="map-hero-container">
-    <div class="map-hero-card">
-      <span class="map-hero-label">INTERIOR DESIGN STUDIO</span>
-      <h1 class="map-hero-heading">
-        Designing Timeless<br>Spaces with Purpose.
-      </h1>
-      <p class="map-hero-subtext">
-        We create refined residential, commercial, and hospitality interiors through thoughtful design, technical expertise, and meticulous execution.
-      </p>
-      <div class="map-hero-actions-row">
-        <div class="map-hero-ctas">
-          <a href="contact.html" class="map-btn map-btn-primary">
-            Start Your Project
-            <svg class="map-btn-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="projects.html" class="map-btn map-btn-secondary">View Projects</a>
-        </div>
-        <div class="map-hero-social-proof">
-          <div class="map-social-avatars">
-            <img src="https://framerusercontent.com/images/QtM9qFpLpWySlqZcK1AR42arfs.webp?scale-down-to=512&width=1200&height=1200" alt="Client" class="map-avatar" />
-            <img src="https://framerusercontent.com/images/G8P9frjfVjs7CIDqrpnfhAB5Afo.webp?scale-down-to=1024&width=900&height=1200" alt="Client" class="map-avatar" />
-            <img src="https://framerusercontent.com/images/7dFroABn0ObSPRS25evSwCdNedI.webp?scale-down-to=512&width=1328&height=993" alt="Client" class="map-avatar" />
-          </div>
-          <span class="map-social-text">Trusted by 2K+ happy clients</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="map-hero-scroll">
-    <span class="map-scroll-text">SCROLL</span>
-    <div class="map-scroll-line">
-      <span class="map-scroll-bar"></span>
-    </div>
-  </div>`;
-        }
-
-        // Make sure mapHero is inside the page layout right before logos section or after header
-        const logosSection = document.querySelector('#logos, .framer-1jsd06');
-        if (logosSection && logosSection.parentNode) {
-            if (mapHero.nextElementSibling !== logosSection) {
-                logosSection.parentNode.insertBefore(mapHero, logosSection);
-            }
-        } else {
-            const root = document.querySelector('[data-framer-root]') || document.querySelector('#main');
-            if (root && mapHero.parentNode !== root) {
-                root.insertBefore(mapHero, root.firstChild);
-            }
-        }
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', enforceMapHero);
-    } else {
-        enforceMapHero();
-    }
-    window.addEventListener('load', enforceMapHero);
-
-    const observer = new MutationObserver(enforceMapHero);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-})();
-</script>
 <style id="map-about-preview-custom-styles">
 /* Hide Framer default hydrated About section if React renders it */
 .framer-1i7h83k:not(.map-about-preview-section) {
@@ -1074,84 +929,7 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     }
 }
 </style>
-<script id="about-map-hydration-fix">
-(function() {
-    function enforceMapAbout() {
-        // Hide Framer default hydrated About us elements
-        const framerAbouts = document.querySelectorAll('section[data-framer-name="About us"]:not(.map-about-preview-section), .framer-1i7h83k:not(.map-about-preview-section)');
-        framerAbouts.forEach(el => {
-            el.style.setProperty('display', 'none', 'important');
-        });
 
-        let mapAbout = document.querySelector('.map-about-preview-section');
-
-        if (!mapAbout) {
-            mapAbout = document.createElement('section');
-            mapAbout.id = 'about';
-            mapAbout.className = 'map-about-preview-section';
-            mapAbout.innerHTML = `
-  <div class="map-about-container">
-    <div class="map-about-left">
-      <span class="map-about-label">ABOUT TERRALINE</span>
-      <h2 class="map-about-heading">
-        Designing Spaces That Leave a Lasting Impression.
-      </h2>
-      <p class="map-about-body">
-        We are an integrated architecture, interiors, construction, and project management studio committed to creating spaces that are practical, timeless, and built to perform. Every project is shaped through thoughtful planning, technical expertise, and close collaboration, ensuring every detail contributes to a space that feels effortless and enduring.
-      </p>
-      <div class="map-about-btn-wrapper">
-        <a href="about.html" class="map-btn map-btn-primary map-about-btn">
-          About Us
-          <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="map-about-right">
-      <div class="map-about-image-wrapper">
-        <img src="/images/about_preview_img.png" alt="Terraline Architectural Design Studio" class="map-about-img" />
-      </div>
-    </div>
-  </div>`;
-        }
-
-        // Place mapAbout right after logos section or stats section
-        const logosSection = document.querySelector('#logos, .framer-1jsd06');
-        const statsSection = document.querySelector('#stats, .framer-2v8hu5');
-        if (statsSection && statsSection.parentNode) {
-            if (mapAbout.nextElementSibling !== statsSection) {
-                statsSection.parentNode.insertBefore(mapAbout, statsSection);
-            }
-        } else if (logosSection && logosSection.parentNode) {
-            if (mapAbout.previousElementSibling !== logosSection) {
-                logosSection.parentNode.insertBefore(mapAbout, logosSection.nextSibling);
-            }
-        }
-
-        // Setup Intersection Observer for smooth animations
-        if (mapAbout && !mapAbout.dataset.observed) {
-            mapAbout.dataset.observed = 'true';
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                    }
-                });
-            }, { threshold: 0.2 });
-            observer.observe(mapAbout);
-        }
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', enforceMapAbout);
-    } else {
-        enforceMapAbout();
-    }
-    window.addEventListener('load', enforceMapAbout);
-
-    const observer = new MutationObserver(enforceMapAbout);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-})();
-</script>
 <style id="map-services-custom-styles">
 /* Hide Framer default hydrated Services section if React renders it */
 .framer-hfsvza:not(.map-services-section) {
@@ -1428,181 +1206,7 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     transform: translateX(4px);
 }
 </style>
-<script id="services-map-hydration-fix">
-(function() {
-    function enforceMapServices() {
-        // Hide Framer default hydrated Services elements
-        const framerServices = document.querySelectorAll('section[data-framer-name="Services"]:not(.map-services-section), .framer-hfsvza:not(.map-services-section)');
-        framerServices.forEach(el => {
-            el.style.setProperty('display', 'none', 'important');
-        });
 
-        let mapServices = document.querySelector('.map-services-section');
-
-        if (!mapServices) {
-            mapServices = document.createElement('section');
-            mapServices.id = 'services';
-            mapServices.className = 'map-services-section';
-            mapServices.innerHTML = `
-  <div class="map-services-container">
-    <div class="map-services-header">
-      <span class="map-services-label">OUR SERVICES</span>
-      <h2 class="map-services-heading">From Concept to Completion.</h2>
-      <p class="map-services-intro">
-        We provide integrated design and execution services that transform ideas into timeless spaces. Every service is delivered with clarity, precision, and attention to detail.
-      </p>
-    </div>
-
-    <div class="map-services-grid">
-      <div class="map-service-card" data-index="01">
-        <a href="interior-design.html" class="map-service-link-wrapper">
-          <div class="map-service-img-container">
-            <img src="/images/service_01_architecture.png" alt="Architecture" class="map-service-img" />
-            <span class="map-service-num">01</span>
-          </div>
-          <div class="map-service-content">
-            <h3 class="map-service-title">Architecture</h3>
-            <p class="map-service-desc">
-              Residential, commercial, institutional, and hospitality spaces designed with functionality, aesthetics, and long-term performance in mind.
-            </p>
-            <div class="map-service-cta">
-              <span class="map-service-cta-text">Learn More</span>
-              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              <div class="map-service-cta-line"></div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-service-card" data-index="02">
-        <a href="interior-design.html" class="map-service-link-wrapper">
-          <div class="map-service-img-container">
-            <img src="/images/service_02_interior.png" alt="Interior Design" class="map-service-img" />
-            <span class="map-service-num">02</span>
-          </div>
-          <div class="map-service-content">
-            <h3 class="map-service-title">Interior Design</h3>
-            <p class="map-service-desc">
-              Thoughtfully crafted interiors that balance comfort, usability, brand identity, and timeless design.
-            </p>
-            <div class="map-service-cta">
-              <span class="map-service-cta-text">Learn More</span>
-              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              <div class="map-service-cta-line"></div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-service-card" data-index="03">
-        <a href="renovation-remodeling.html" class="map-service-link-wrapper">
-          <div class="map-service-img-container">
-            <img src="/images/service_03_construction.png" alt="Construction" class="map-service-img" />
-            <span class="map-service-num">03</span>
-          </div>
-          <div class="map-service-content">
-            <h3 class="map-service-title">Construction</h3>
-            <p class="map-service-desc">
-              End-to-end execution with a focus on quality, transparency, timelines, and craftsmanship.
-            </p>
-            <div class="map-service-cta">
-              <span class="map-service-cta-text">Learn More</span>
-              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              <div class="map-service-cta-line"></div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-service-card" data-index="04">
-        <a href="commercial-spaces.html" class="map-service-link-wrapper">
-          <div class="map-service-img-container">
-            <img src="/images/service_04_management.png" alt="Project Management" class="map-service-img" />
-            <span class="map-service-num">04</span>
-          </div>
-          <div class="map-service-content">
-            <h3 class="map-service-title">Project Management</h3>
-            <p class="map-service-desc">
-              Seamless coordination from planning through delivery, ensuring every stage runs efficiently.
-            </p>
-            <div class="map-service-cta">
-              <span class="map-service-cta-text">Learn More</span>
-              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              <div class="map-service-cta-line"></div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-service-card" data-index="05">
-        <a href="contact.html" class="map-service-link-wrapper">
-          <div class="map-service-img-container">
-            <img src="/images/service_05_green_building.png" alt="Green Building Consultancy" class="map-service-img" />
-            <span class="map-service-num">05</span>
-          </div>
-          <div class="map-service-content">
-            <h3 class="map-service-title">Green Building Consultancy</h3>
-            <p class="map-service-desc">
-              Energy-efficient and sustainable design solutions including certifications, environmental analysis, and performance-driven planning.
-            </p>
-            <div class="map-service-cta">
-              <span class="map-service-cta-text">Learn More</span>
-              <svg class="map-service-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              <div class="map-service-cta-line"></div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="map-services-bottom">
-      <a href="interior-design.html" class="map-btn map-btn-secondary map-services-btn">
-        View All Services
-        <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>`;
-        }
-
-        // Place mapServices right before philosophy section or after stats section
-        const philosophySection = document.querySelector('#philosophy, .framer-1ojvuox');
-        const statsSection = document.querySelector('#stats, .framer-2v8hu5');
-
-        if (philosophySection && philosophySection.parentNode) {
-            if (mapServices.nextElementSibling !== philosophySection) {
-                philosophySection.parentNode.insertBefore(mapServices, philosophySection);
-            }
-        } else if (statsSection && statsSection.parentNode) {
-            if (mapServices.previousElementSibling !== statsSection) {
-                statsSection.parentNode.insertBefore(mapServices, statsSection.nextSibling);
-            }
-        }
-
-        // Setup Intersection Observer for smooth entrance animations
-        if (mapServices && !mapServices.dataset.observed) {
-            mapServices.dataset.observed = 'true';
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                    }
-                });
-            }, { threshold: 0.15 });
-            observer.observe(mapServices);
-        }
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', enforceMapServices);
-    } else {
-        enforceMapServices();
-    }
-    window.addEventListener('load', enforceMapServices);
-
-    const observer = new MutationObserver(enforceMapServices);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-})();
-</script>
 <style id="map-projects-custom-styles">
 /* Hide Framer default hydrated Works section if React renders it */
 .framer-13qxahi:not(.map-projects-section) {
@@ -1899,181 +1503,7 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     transform: translateX(4px);
 }
 </style>
-<script id="projects-map-hydration-fix">
-(function() {
-    function enforceMapProjects() {
-        // Hide Framer default hydrated Works/Projects elements
-        const framerWorks = document.querySelectorAll('section[data-framer-name="Works"]:not(.map-projects-section), .framer-13qxahi:not(.map-projects-section)');
-        framerWorks.forEach(el => {
-            el.style.setProperty('display', 'none', 'important');
-        });
 
-        let mapProjects = document.querySelector('.map-projects-section');
-
-        if (!mapProjects) {
-            mapProjects = document.createElement('section');
-            mapProjects.id = 'works';
-            mapProjects.className = 'map-projects-section';
-            mapProjects.innerHTML = `
-  <div class="map-projects-container">
-    <div class="map-projects-header">
-      <span class="map-projects-label">SELECTED PROJECTS</span>
-      <h2 class="map-projects-heading">Designed with Purpose.<br>Built to Last.</h2>
-      <p class="map-projects-intro">
-        A curated selection of residential, commercial, and workplace projects that reflect our commitment to thoughtful design, technical precision, and quality execution.
-      </p>
-    </div>
-
-    <div class="map-projects-grid">
-      <div class="map-project-card map-project-card-large" data-index="01">
-        <a href="project_loft.html" class="map-project-link">
-          <div class="map-project-img-wrapper">
-            <img src="/images/project_01_serene_loft.png" alt="Serene Minimalist Loft" class="map-project-img" />
-            <div class="map-project-overlay">
-              <div class="map-project-hover-cta">
-                <span>View Project</span>
-                <svg class="map-project-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-            </div>
-          </div>
-          <div class="map-project-meta">
-            <div class="map-project-info">
-              <h3 class="map-project-title">Serene Minimalist Loft</h3>
-              <p class="map-project-category">Residential Interior</p>
-            </div>
-            <div class="map-project-details">
-              <span class="map-project-loc">Bengaluru</span>
-              <span class="map-project-dot">•</span>
-              <span class="map-project-area">4200 SFT</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-project-card map-project-card-medium" data-index="02">
-        <a href="project_atelier.html" class="map-project-link">
-          <div class="map-project-img-wrapper">
-            <img src="/images/project_02_atelier_living.png" alt="Atelier Living Residence" class="map-project-img" />
-            <div class="map-project-overlay">
-              <div class="map-project-hover-cta">
-                <span>View Project</span>
-                <svg class="map-project-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-            </div>
-          </div>
-          <div class="map-project-meta">
-            <div class="map-project-info">
-              <h3 class="map-project-title">Atelier Living Residence</h3>
-              <p class="map-project-category">Residential Architecture</p>
-            </div>
-            <div class="map-project-details">
-              <span class="map-project-loc">Chennai</span>
-              <span class="map-project-dot">•</span>
-              <span class="map-project-area">4800 SFT</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-project-card map-project-card-medium" data-index="03">
-        <a href="commercial-spaces.html" class="map-project-link">
-          <div class="map-project-img-wrapper">
-            <img src="/images/project_03_commercial_workplace.png" alt="Urban Commercial Workplace" class="map-project-img" />
-            <div class="map-project-overlay">
-              <div class="map-project-hover-cta">
-                <span>View Project</span>
-                <svg class="map-project-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-            </div>
-          </div>
-          <div class="map-project-meta">
-            <div class="map-project-info">
-              <h3 class="map-project-title">Urban Commercial Workplace</h3>
-              <p class="map-project-category">Commercial Workplace</p>
-            </div>
-            <div class="map-project-details">
-              <span class="map-project-loc">Bengaluru</span>
-              <span class="map-project-dot">•</span>
-              <span class="map-project-area">8000 SFT</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="map-project-card map-project-card-large" data-index="04">
-        <a href="project_luma.html" class="map-project-link">
-          <div class="map-project-img-wrapper">
-            <img src="/images/project_04_luma_renovation.png" alt="Luma Penthouse Interior" class="map-project-img" />
-            <div class="map-project-overlay">
-              <div class="map-project-hover-cta">
-                <span>View Project</span>
-                <svg class="map-project-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </div>
-            </div>
-          </div>
-          <div class="map-project-meta">
-            <div class="map-project-info">
-              <h3 class="map-project-title">Luma Penthouse Interior</h3>
-              <p class="map-project-category">Luxury Residential Interior</p>
-            </div>
-            <div class="map-project-details">
-              <span class="map-project-loc">Mysuru</span>
-              <span class="map-project-dot">•</span>
-              <span class="map-project-area">2400 SFT</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="map-projects-bottom">
-      <a href="projects.html" class="map-btn map-btn-secondary map-projects-btn">
-        Explore All Projects
-        <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>`;
-        }
-
-        // Place mapProjects right before testimonial or process section or after services section
-        const servicesSection = document.querySelector('#services, .framer-hfsvza');
-        const testimonialSection = document.querySelector('#testimonial, .framer-1o16247');
-
-        if (testimonialSection && testimonialSection.parentNode) {
-            if (mapProjects.nextElementSibling !== testimonialSection) {
-                testimonialSection.parentNode.insertBefore(mapProjects, testimonialSection);
-            }
-        } else if (servicesSection && servicesSection.parentNode) {
-            if (mapProjects.previousElementSibling !== servicesSection) {
-                servicesSection.parentNode.insertBefore(mapProjects, servicesSection.nextSibling);
-            }
-        }
-
-        // Setup Intersection Observer for smooth entrance animations
-        if (mapProjects && !mapProjects.dataset.observed) {
-            mapProjects.dataset.observed = 'true';
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                    }
-                });
-            }, { threshold: 0.1 });
-            observer.observe(mapProjects);
-        }
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', enforceMapProjects);
-    } else {
-        enforceMapProjects();
-    }
-    window.addEventListener('load', enforceMapProjects);
-
-    const observer = new MutationObserver(enforceMapProjects);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-})();
-</script>
 <style id="map-why-custom-styles">
 /* Hide Framer default hydrated Philosophy/Why section if React renders it */
 .framer-1ojvuox:not(.map-why-section) {
@@ -2322,147 +1752,131 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     transform: translateX(4px);
 }
 </style>
-<script id="why-map-hydration-fix">
+
+<script id="terraline-map-hydration-fix">
 (function() {
-    function enforceMapWhy() {
-        // Hide Framer default hydrated Philosophy/Why elements
-        const framerWhys = document.querySelectorAll('section[data-framer-name="Philosophy"]:not(.map-why-section), .framer-1ojvuox:not(.map-why-section)');
-        framerWhys.forEach(el => {
-            el.style.setProperty('display', 'none', 'important');
-        });
+    let isEnforcing = false;
+    let scheduled = false;
 
-        let mapWhy = document.querySelector('.map-why-section');
+    function enforceAllSections() {
+        if (isEnforcing) return;
+        isEnforcing = true;
 
-        if (!mapWhy) {
-            mapWhy = document.createElement('section');
-            mapWhy.id = 'why';
-            mapWhy.className = 'map-why-section';
-            mapWhy.innerHTML = `
-  <div class="map-why-container">
-    <div class="map-why-header">
-      <span class="map-why-label">WHY TERRALINE</span>
-      <h2 class="map-why-heading">
-        One Process.<br>One Responsibility.<br>One Exceptional Outcome.
-      </h2>
-      <p class="map-why-intro">
-        Our integrated approach brings architecture, interiors, construction, and project management together under one team. By aligning every stage of the project, we create a smoother experience, better coordination, and spaces that are built to last.
-      </p>
-    </div>
-
-    <div class="map-why-content-grid">
-      <div class="map-why-left">
-        <div class="map-why-image-wrapper">
-          <img src="/images/why_terraline_collaboration.png" alt="Terraline Architectural Supervision & Collaboration" class="map-why-img" />
-        </div>
-      </div>
-
-      <div class="map-why-right">
-        <div class="map-why-values-list">
-          <div class="map-why-value-item">
-            <div class="map-why-item-divider"></div>
-            <div class="map-why-item-row">
-              <span class="map-why-item-num">01</span>
-              <div class="map-why-item-body">
-                <h3 class="map-why-item-title">Cost Clarity</h3>
-                <p class="map-why-item-desc">Clear planning and transparent budgeting help minimise unexpected costs throughout the project.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="map-why-value-item">
-            <div class="map-why-item-divider"></div>
-            <div class="map-why-item-row">
-              <span class="map-why-item-num">02</span>
-              <div class="map-why-item-body">
-                <h3 class="map-why-item-title">Better Coordination</h3>
-                <p class="map-why-item-desc">A single integrated team ensures smooth communication between design, engineering, and execution.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="map-why-value-item">
-            <div class="map-why-item-divider"></div>
-            <div class="map-why-item-row">
-              <span class="map-why-item-num">03</span>
-              <div class="map-why-item-body">
-                <h3 class="map-why-item-title">Quality Control</h3>
-                <p class="map-why-item-desc">Every stage is carefully monitored to maintain high construction and finishing standards.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="map-why-value-item">
-            <div class="map-why-item-divider"></div>
-            <div class="map-why-item-row">
-              <span class="map-why-item-num">04</span>
-              <div class="map-why-item-body">
-                <h3 class="map-why-item-title">Faster Delivery</h3>
-                <p class="map-why-item-desc">Well-planned workflows reduce delays while keeping quality uncompromised.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="map-why-value-item">
-            <div class="map-why-item-divider"></div>
-            <div class="map-why-item-row">
-              <span class="map-why-item-num">05</span>
-              <div class="map-why-item-body">
-                <h3 class="map-why-item-title">Single Point of Accountability</h3>
-                <p class="map-why-item-desc">From concept to handover, one responsible team manages the complete project journey.</p>
-              </div>
-            </div>
-          </div>
-          <div class="map-why-item-divider-bottom"></div>
-        </div>
-
-        <div class="map-why-btn-wrapper">
-          <a href="about.html" class="map-btn map-btn-secondary map-why-btn">
-            Learn About Our Process
-            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>`;
-        }
-
-        // Place mapWhy right before works section or after services section
-        const servicesSection = document.querySelector('#services, .framer-hfsvza');
-        const worksSection = document.querySelector('#works, .framer-13qxahi');
-
-        if (worksSection && worksSection.parentNode) {
-            if (mapWhy.nextElementSibling !== worksSection) {
-                worksSection.parentNode.insertBefore(mapWhy, worksSection);
-            }
-        } else if (servicesSection && servicesSection.parentNode) {
-            if (mapWhy.previousElementSibling !== servicesSection) {
-                servicesSection.parentNode.insertBefore(mapWhy, servicesSection.nextSibling);
-            }
-        }
-
-        // Setup Intersection Observer for smooth entrance animations
-        if (mapWhy && !mapWhy.dataset.observed) {
-            mapWhy.dataset.observed = 'true';
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
+        try {
+            // 1. Header Nav Fix (Contact link & About us label)
+            const navs = document.querySelectorAll('nav.framer-nk64vb');
+            navs.forEach(nav => {
+                const paragraphs = nav.querySelectorAll('p');
+                paragraphs.forEach(p => {
+                    if (p.textContent.trim() === 'About us') {
+                        p.textContent = 'About';
                     }
                 });
-            }, { threshold: 0.12 });
-            observer.observe(mapWhy);
+
+                const links = Array.from(nav.querySelectorAll('a'));
+                const hasContact = links.some(a => {
+                    const href = a.getAttribute('href') || '';
+                    return href.includes('contact.html') || a.textContent.trim() === 'Contact';
+                });
+
+                if (!hasContact) {
+                    const firstContainer = nav.querySelector('div[class*="-container"]');
+                    if (firstContainer) {
+                        const contactContainer = firstContainer.cloneNode(true);
+                        contactContainer.className = 'framer-contact-nav-item-container';
+
+                        const link = contactContainer.querySelector('a');
+                        if (link) {
+                            link.setAttribute('href', 'contact.html');
+                            link.setAttribute('data-framer-name', 'Nav');
+                            if (window.location.pathname.endsWith('contact.html')) {
+                                link.setAttribute('data-framer-page-link-current', 'true');
+                            } else {
+                                link.removeAttribute('data-framer-page-link-current');
+                            }
+                        }
+
+                        const pElements = contactContainer.querySelectorAll('p');
+                        pElements.forEach(p => { p.textContent = 'Contact'; });
+
+                        const blogElem = nav.querySelector('.framer-1hngmjp-container');
+                        if (blogElem) {
+                            nav.insertBefore(contactContainer, blogElem);
+                        } else {
+                            nav.appendChild(contactContainer);
+                        }
+                    }
+                }
+            });
+
+            // 2. Hide Framer default hydrated sections if React mounts them
+            const hideSelectors = [
+                'section[data-framer-name="Hero"]:not(.map-architects-hero)',
+                '.framer-1gw06a6:not(.map-architects-hero)',
+                'section[data-framer-name="About us"]:not(.map-about-preview-section)',
+                '.framer-1i7h83k:not(.map-about-preview-section)',
+                'section[data-framer-name="Services"]:not(.map-services-section)',
+                '.framer-hfsvza:not(.map-services-section)',
+                'section[data-framer-name="Works"]:not(.map-projects-section)',
+                '.framer-13qxahi:not(.map-projects-section)',
+                'section[data-framer-name="Philosophy"]:not(.map-why-section)',
+                '.framer-1ojvuox:not(.map-why-section)'
+            ];
+
+            const framerElements = document.querySelectorAll(hideSelectors.join(', '));
+            framerElements.forEach(el => {
+                if (el.style.display !== 'none') {
+                    el.style.setProperty('display', 'none', 'important');
+                }
+            });
+
+            // 3. Setup Intersection Observers for smooth scroll animations
+            ['.map-about-preview-section', '.map-services-section', '.map-projects-section', '.map-why-section'].forEach(selector => {
+                const sec = document.querySelector(selector);
+                if (sec && !sec.dataset.observed) {
+                    sec.dataset.observed = 'true';
+                    const io = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('in-view');
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    io.observe(sec);
+                }
+            });
+        } catch(e) {
+            console.error('Hydration script error:', e);
+        } finally {
+            isEnforcing = false;
+        }
+    }
+
+    function scheduleEnforce() {
+        if (!scheduled) {
+            scheduled = true;
+            requestAnimationFrame(() => {
+                scheduled = false;
+                enforceAllSections();
+            });
         }
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', enforceMapWhy);
+        document.addEventListener('DOMContentLoaded', enforceAllSections);
     } else {
-        enforceMapWhy();
+        enforceAllSections();
     }
-    window.addEventListener('load', enforceMapWhy);
+    window.addEventListener('load', enforceAllSections);
 
-    const observer = new MutationObserver(enforceMapWhy);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
+    const observer = new MutationObserver(() => {
+        scheduleEnforce();
+    });
+
+    observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true
+    });
 })();
 </script>
 </head>
