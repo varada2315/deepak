@@ -909,6 +909,249 @@ section[data-framer-name="Hero"]:not(.map-architects-hero) {
     observer.observe(document.documentElement, { childList: true, subtree: true });
 })();
 </script>
+<style id="map-about-preview-custom-styles">
+/* Hide Framer default hydrated About section if React renders it */
+.framer-1i7h83k:not(.map-about-preview-section) {
+    display: none !important;
+}
+
+.map-about-preview-section {
+    position: relative;
+    width: 100%;
+    background-color: #0E0F15;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.map-about-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.map-about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-about-label {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.map-about-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 400;
+    line-height: 1.14;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 28px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+}
+
+.map-about-body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 40px 0;
+    max-width: 580px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.map-about-btn-wrapper {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.45s, transform 0.8s ease 0.45s;
+}
+
+.map-about-preview-section.in-view .map-about-label,
+.map-about-preview-section.in-view .map-about-heading,
+.map-about-preview-section.in-view .map-about-body,
+.map-about-preview-section.in-view .map-about-btn-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-about-btn {
+    background-color: #F77422;
+    color: #FFFFFF;
+    border: 1px solid #F77422;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-about-btn:hover {
+    background-color: #e06316;
+    border-color: #e06316;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(247, 116, 34, 0.35);
+}
+
+.map-about-btn .map-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.map-about-btn:hover .map-btn-arrow {
+    transform: translateX(4px);
+}
+
+.map-about-right {
+    position: relative;
+    width: 100%;
+}
+
+.map-about-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3.2;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.map-about-preview-section.in-view .map-about-image-wrapper {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.map-about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-about-image-wrapper:hover .map-about-img {
+    transform: scale(1.04);
+}
+
+@media (max-width: 992px) {
+    .map-about-preview-section {
+        padding: 100px 24px;
+    }
+    .map-about-container {
+        grid-template-columns: 1fr;
+        gap: 52px;
+    }
+    .map-about-image-wrapper {
+        aspect-ratio: 16 / 10;
+    }
+}
+</style>
+<script id="about-map-hydration-fix">
+(function() {
+    function enforceMapAbout() {
+        // Hide Framer default hydrated About us elements
+        const framerAbouts = document.querySelectorAll('section[data-framer-name="About us"]:not(.map-about-preview-section), .framer-1i7h83k:not(.map-about-preview-section)');
+        framerAbouts.forEach(el => {
+            el.style.setProperty('display', 'none', 'important');
+        });
+
+        let mapAbout = document.querySelector('.map-about-preview-section');
+
+        if (!mapAbout) {
+            mapAbout = document.createElement('section');
+            mapAbout.id = 'about';
+            mapAbout.className = 'map-about-preview-section';
+            mapAbout.innerHTML = `
+  <div class="map-about-container">
+    <div class="map-about-left">
+      <span class="map-about-label">ABOUT TERRALINE</span>
+      <h2 class="map-about-heading">
+        Designing Spaces That Leave a Lasting Impression.
+      </h2>
+      <p class="map-about-body">
+        We are an integrated architecture, interiors, construction, and project management studio committed to creating spaces that are practical, timeless, and built to perform. Every project is shaped through thoughtful planning, technical expertise, and close collaboration, ensuring every detail contributes to a space that feels effortless and enduring.
+      </p>
+      <div class="map-about-btn-wrapper">
+        <a href="about.html" class="map-btn map-btn-primary map-about-btn">
+          About Us
+          <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="map-about-right">
+      <div class="map-about-image-wrapper">
+        <img src="/images/about_preview_img.png" alt="Terraline Architectural Design Studio" class="map-about-img" />
+      </div>
+    </div>
+  </div>`;
+        }
+
+        // Place mapAbout right after logos section or stats section
+        const logosSection = document.querySelector('#logos, .framer-1jsd06');
+        const statsSection = document.querySelector('#stats, .framer-2v8hu5');
+        if (statsSection && statsSection.parentNode) {
+            if (mapAbout.nextElementSibling !== statsSection) {
+                statsSection.parentNode.insertBefore(mapAbout, statsSection);
+            }
+        } else if (logosSection && logosSection.parentNode) {
+            if (mapAbout.previousElementSibling !== logosSection) {
+                logosSection.parentNode.insertBefore(mapAbout, logosSection.nextSibling);
+            }
+        }
+
+        // Setup Intersection Observer for smooth animations
+        if (mapAbout && !mapAbout.dataset.observed) {
+            mapAbout.dataset.observed = 'true';
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(mapAbout);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', enforceMapAbout);
+    } else {
+        enforceMapAbout();
+    }
+    window.addEventListener('load', enforceMapAbout);
+
+    const observer = new MutationObserver(enforceMapAbout);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
 </head>
 
 <body>
