@@ -454,6 +454,7 @@
     --token-7ce9bada-1663-4a83-b58d-29e0a67bc261: rgba(255, 255, 255, 0.75) !important;
 }
 </style>
+
 <style id="architectural-header-design">
 .framer-1xlxl9y {
     display: flex !important;
@@ -471,6 +472,72 @@
     display: none !important;
 }
 </style>
+<script id="header-nav-contact-fix">
+(function() {
+    function ensureHeaderNav() {
+        const navs = document.querySelectorAll('nav.framer-nk64vb');
+        navs.forEach(nav => {
+            // 1. Change "About us" -> "About"
+            const paragraphs = nav.querySelectorAll('p');
+            paragraphs.forEach(p => {
+                if (p.textContent.trim() === 'About us') {
+                    p.textContent = 'About';
+                }
+            });
+
+            // 2. Check if Contact link exists inside this nav
+            const links = Array.from(nav.querySelectorAll('a'));
+            const hasContact = links.some(a => {
+                const href = a.getAttribute('href') || '';
+                return href.includes('contact.html') || a.textContent.trim() === 'Contact';
+            });
+
+            if (!hasContact) {
+                // Find a template item to clone (Works or Services or About)
+                const firstContainer = nav.querySelector('div[class*="-container"]');
+                if (firstContainer) {
+                    const contactContainer = firstContainer.cloneNode(true);
+                    contactContainer.className = 'framer-contact-nav-item-container';
+
+                    const link = contactContainer.querySelector('a');
+                    if (link) {
+                        link.setAttribute('href', 'contact.html');
+                        link.setAttribute('data-framer-name', 'Nav');
+                        if (window.location.pathname.endsWith('contact.html')) {
+                            link.setAttribute('data-framer-page-link-current', 'true');
+                        } else {
+                            link.removeAttribute('data-framer-page-link-current');
+                        }
+                    }
+
+                    const pElements = contactContainer.querySelectorAll('p');
+                    pElements.forEach(p => {
+                        p.textContent = 'Contact';
+                    });
+
+                    // Insert before hidden blog element or at end of nav
+                    const blogElem = nav.querySelector('.framer-1hngmjp-container');
+                    if (blogElem) {
+                        nav.insertBefore(contactContainer, blogElem);
+                    } else {
+                        nav.appendChild(contactContainer);
+                    }
+                }
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ensureHeaderNav);
+    } else {
+        ensureHeaderNav();
+    }
+    window.addEventListener('load', ensureHeaderNav);
+
+    const observer = new MutationObserver(ensureHeaderNav);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
 </head>
 
 <body>
