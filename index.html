@@ -2106,6 +2106,270 @@ footer h1,
     document.addEventListener('DOMContentLoaded', handleProcessScroll);
 })();
 </script>
+<style id="map-final-cta-custom-styles">
+.map-final-cta-section {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #0A0B12;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.map-final-cta-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.map-final-cta-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.map-final-cta-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-final-cta-label {
+    display: inline-block;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin-bottom: 20px;
+}
+
+.map-final-cta-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(40px, 5.2vw, 68px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    color: #0A0B12;
+    margin: 0 0 24px 0;
+}
+
+.map-final-cta-body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(16px, 1.6vw, 18px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(10, 11, 18, 0.76);
+    margin: 0 0 40px 0;
+    max-width: 600px;
+}
+
+.map-final-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.map-btn-cta-primary {
+    background-color: #F77422;
+    color: #FFFFFF;
+    border: 1px solid #F77422;
+    padding: 18px 38px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(247, 116, 34, 0.22);
+}
+
+.map-btn-cta-primary:hover {
+    background-color: #e06313;
+    border-color: #e06313;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(247, 116, 34, 0.32);
+}
+
+.map-btn-cta-secondary {
+    background-color: transparent;
+    color: #F77422;
+    border: 1px solid #F77422;
+    padding: 18px 38px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-btn-cta-secondary:hover {
+    background-color: #F77422;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(247, 116, 34, 0.2);
+}
+
+.map-btn-cta-primary .map-btn-arrow,
+.map-btn-cta-secondary .map-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.map-btn-cta-primary:hover .map-btn-arrow,
+.map-btn-cta-secondary:hover .map-btn-arrow {
+    transform: translateX(4px);
+}
+
+.map-final-cta-contact-meta {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(10, 11, 18, 0.1);
+}
+
+.map-final-cta-contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.map-final-cta-contact-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(10, 11, 18, 0.45);
+}
+
+.map-final-cta-contact-value {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #0A0B12;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.map-final-cta-contact-value:hover {
+    color: #F77422;
+}
+
+.map-final-cta-contact-divider {
+    width: 1px;
+    height: 36px;
+    background-color: rgba(10, 11, 18, 0.1);
+}
+
+.map-final-cta-right {
+    width: 100%;
+}
+
+.map-final-cta-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 4.5;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #F4F3EC;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+.map-final-cta-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-final-cta-image-wrapper:hover .map-final-cta-img {
+    transform: scale(1.04);
+}
+
+/* Animations */
+.map-final-cta-label,
+.map-final-cta-heading,
+.map-final-cta-body,
+.map-final-cta-buttons,
+.map-final-cta-contact-meta {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.map-final-cta-image-wrapper {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-final-cta-section.in-view .map-final-cta-label { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.map-final-cta-section.in-view .map-final-cta-heading { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.map-final-cta-section.in-view .map-final-cta-body { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.map-final-cta-section.in-view .map-final-cta-buttons { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.map-final-cta-section.in-view .map-final-cta-contact-meta { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+.map-final-cta-section.in-view .map-final-cta-image-wrapper { opacity: 1; transform: scale(1); transition-delay: 0.25s; }
+
+@media (max-width: 992px) {
+    .map-final-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 52px;
+        text-align: center;
+    }
+
+    .map-final-cta-left {
+        align-items: center;
+    }
+
+    .map-final-cta-body {
+        max-width: 100%;
+    }
+
+    .map-final-cta-buttons {
+        justify-content: center;
+    }
+
+    .map-final-cta-contact-meta {
+        justify-content: center;
+    }
+}
+</style>
+<script id="map-final-cta-anim">
+(function() {
+    function initCtaAnim() {
+        const ctaSec = document.getElementById('final-cta');
+        if (ctaSec && !ctaSec.dataset.observed) {
+            ctaSec.dataset.observed = 'true';
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+            io.observe(ctaSec);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCtaAnim);
+    } else {
+        initCtaAnim();
+    }
+    window.addEventListener('load', initCtaAnim);
+})();
+</script>
 </head>
 
 <body>
@@ -2631,6 +2895,53 @@ footer h1,
     </div>
   </div>
 </section>
+
+<section id="final-cta" class="map-final-cta-section">
+  <div class="map-final-cta-container">
+    <div class="map-final-cta-grid">
+      <div class="map-final-cta-left">
+        <span class="map-final-cta-label">LET'S BUILD TOGETHER</span>
+        <h2 class="map-final-cta-heading">
+          Let's Build<br>Your Legacy.
+        </h2>
+        <p class="map-final-cta-body">
+          Whether you're planning a new home, designing a workplace, or transforming an existing space, we're here to create environments that are thoughtful, functional, and built to last.
+        </p>
+
+        <div class="map-final-cta-buttons">
+          <a href="contact.html" class="map-btn map-btn-cta-primary">
+            Start Your Project
+            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="contact.html" class="map-btn map-btn-cta-secondary">
+            Book a Consultation
+            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="map-final-cta-contact-meta">
+          <div class="map-final-cta-contact-item">
+            <span class="map-final-cta-contact-label">Phone</span>
+            <a href="tel:+917760205735" class="map-final-cta-contact-value">+91 77602 05735</a>
+          </div>
+          <div class="map-final-cta-contact-divider"></div>
+          <div class="map-final-cta-contact-item">
+            <span class="map-final-cta-contact-label">Email</span>
+            <a href="mailto:terraline.hq@gmail.com" class="map-final-cta-contact-value">terraline.hq@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-final-cta-right">
+        <div class="map-final-cta-image-wrapper">
+          <img src="/images/final_cta_architecture.png" alt="Terraline Architectural Project" class="map-final-cta-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <footer class="terraline-global-footer" style="background-color:#101014; width:100%; padding: 80px 6% 40px; box-sizing: border-box; color: #ffffff; position: relative; z-index: 10;">
   <div style="max-width: 1320px; margin: 0 auto;">
