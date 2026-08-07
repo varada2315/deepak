@@ -1614,6 +1614,263 @@
     window.addEventListener('load', initLeadership);
 })();
 </script>
+<style id="map-philosophy-custom-styles">
+.map-philosophy-section {
+    position: relative;
+    width: 100%;
+    background-color: #0A0B10;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.map-philosophy-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.map-philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.map-philosophy-left {
+    position: sticky;
+    top: 140px;
+    width: 100%;
+}
+
+.map-philosophy-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5.2;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #161722;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-philosophy-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-philosophy-image-wrapper:hover .map-philosophy-img {
+    transform: scale(1.05);
+}
+
+.map-philosophy-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-philosophy-label {
+    display: inline-block;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+
+.map-philosophy-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 24px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.map-philosophy-intro {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 48px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.35s, transform 0.8s ease 0.35s;
+}
+
+.map-philosophy-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
+}
+
+.map-philosophy-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-philosophy-divider {
+    width: 0%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.14);
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-philosophy-section.in-view .map-philosophy-divider {
+    width: 100%;
+}
+
+.map-philosophy-item-content {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.map-philosophy-section.in-view .map-philosophy-item:nth-child(1) .map-philosophy-item-content { transition-delay: 0.15s; }
+.map-philosophy-section.in-view .map-philosophy-item:nth-child(2) .map-philosophy-item-content { transition-delay: 0.3s; }
+.map-philosophy-section.in-view .map-philosophy-item:nth-child(3) .map-philosophy-item-content { transition-delay: 0.45s; }
+.map-philosophy-section.in-view .map-philosophy-item:nth-child(4) .map-philosophy-item-content { transition-delay: 0.6s; }
+.map-philosophy-section.in-view .map-philosophy-item:nth-child(5) .map-philosophy-item-content { transition-delay: 0.75s; }
+
+.map-philosophy-num {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #F77422;
+    letter-spacing: 0.05em;
+    padding-top: 4px;
+}
+
+.map-philosophy-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.map-philosophy-item-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(18px, 1.8vw, 22px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.map-philosophy-item-desc {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+}
+
+.map-philosophy-action {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.9s, transform 0.8s ease 0.9s;
+}
+
+.map-philosophy-btn {
+    background: transparent;
+    color: #F77422;
+    border: 1px solid #F77422;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-philosophy-btn:hover {
+    background-color: #F77422;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(247, 116, 34, 0.25);
+}
+
+.map-philosophy-btn .map-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.map-philosophy-btn:hover .map-btn-arrow {
+    transform: translateX(5px);
+}
+
+.map-philosophy-section.in-view .map-philosophy-image-wrapper {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.map-philosophy-section.in-view .map-philosophy-label,
+.map-philosophy-section.in-view .map-philosophy-heading,
+.map-philosophy-section.in-view .map-philosophy-intro,
+.map-philosophy-section.in-view .map-philosophy-item-content,
+.map-philosophy-section.in-view .map-philosophy-action {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+    .map-philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .map-philosophy-left {
+        position: relative;
+        top: 0;
+    }
+}
+</style>
+<script id="map-philosophy-anim">
+(function() {
+    function initPhilosophy() {
+        const sec = document.getElementById('philosophy');
+        if (sec && !sec.dataset.observed) {
+            sec.dataset.observed = 'true';
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+            io.observe(sec);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPhilosophy);
+    } else {
+        initPhilosophy();
+    }
+    window.addEventListener('load', initPhilosophy);
+})();
+</script>
 </head>
 
 <body>
@@ -1860,6 +2117,95 @@
     </div>
   </div>
 </section>
+
+<section id="philosophy" class="map-philosophy-section">
+  <div class="map-philosophy-container">
+    <div class="map-philosophy-grid">
+      <div class="map-philosophy-left">
+        <div class="map-philosophy-image-wrapper">
+          <img src="/images/about_philosophy_workshop.png" alt="Terraline Design Workshop & Material Selection" class="map-philosophy-img" />
+        </div>
+      </div>
+
+      <div class="map-philosophy-right">
+        <span class="map-philosophy-label">DESIGN PHILOSOPHY</span>
+        <h2 class="map-philosophy-heading">
+          Every Space Begins<br>With Purpose.
+        </h2>
+        <p class="map-philosophy-intro">
+          We believe meaningful design goes beyond appearance. Every project is guided by thoughtful planning, technical expertise, collaboration, sustainability, and careful execution to create spaces that continue to perform beautifully for years to come.
+        </p>
+
+        <div class="map-philosophy-list">
+          <div class="map-philosophy-item">
+            <div class="map-philosophy-divider"></div>
+            <div class="map-philosophy-item-content">
+              <span class="map-philosophy-num">01</span>
+              <div class="map-philosophy-item-text">
+                <h3 class="map-philosophy-item-title">Thoughtful Planning</h3>
+                <p class="map-philosophy-item-desc">Every successful project begins with understanding people, spaces, budgets, and long-term goals before design begins.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-philosophy-item">
+            <div class="map-philosophy-divider"></div>
+            <div class="map-philosophy-item-content">
+              <span class="map-philosophy-num">02</span>
+              <div class="map-philosophy-item-text">
+                <h3 class="map-philosophy-item-title">Collaborative Design</h3>
+                <p class="map-philosophy-item-desc">We work closely with clients, consultants, and execution teams to create a seamless project experience.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-philosophy-item">
+            <div class="map-philosophy-divider"></div>
+            <div class="map-philosophy-item-content">
+              <span class="map-philosophy-num">03</span>
+              <div class="map-philosophy-item-text">
+                <h3 class="map-philosophy-item-title">Quality Without Compromise</h3>
+                <p class="map-philosophy-item-desc">Attention to detail, precision, and craftsmanship remain central throughout design and construction.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-philosophy-item">
+            <div class="map-philosophy-divider"></div>
+            <div class="map-philosophy-item-content">
+              <span class="map-philosophy-num">04</span>
+              <div class="map-philosophy-item-text">
+                <h3 class="map-philosophy-item-title">Sustainable Thinking</h3>
+                <p class="map-philosophy-item-desc">We embrace energy-efficient, environmentally responsible, and future-ready design solutions whenever possible.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-philosophy-item">
+            <div class="map-philosophy-divider"></div>
+            <div class="map-philosophy-item-content">
+              <span class="map-philosophy-num">05</span>
+              <div class="map-philosophy-item-text">
+                <h3 class="map-philosophy-item-title">Built to Endure</h3>
+                <p class="map-philosophy-item-desc">Our goal is to create timeless spaces that remain functional, efficient, and meaningful for years to come.</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-philosophy-divider"></div>
+        </div>
+
+        <div class="map-philosophy-action">
+          <a href="index.html#process" class="map-btn map-btn-outline map-philosophy-btn">
+            Discover Our Process
+            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
 
