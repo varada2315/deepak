@@ -2085,6 +2085,474 @@
     window.addEventListener('load', initCareers);
 })();
 </script>
+<style id="map-brochure-custom-styles">
+.map-brochure-section {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #0A0B10;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.map-brochure-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.map-brochure-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.map-brochure-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-brochure-label {
+    display: inline-block;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+
+.map-brochure-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #0A0B10;
+    margin: 0 0 24px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.map-brochure-body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(10, 11, 16, 0.78);
+    margin: 0 0 40px 0;
+    max-width: 620px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.35s, transform 0.8s ease 0.35s;
+}
+
+.map-brochure-action {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+}
+
+.map-brochure-btn {
+    background-color: #F77422;
+    color: #FFFFFF;
+    border: 1px solid #F77422;
+    padding: 18px 38px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(247, 116, 34, 0.25);
+}
+
+.map-brochure-btn:hover {
+    background-color: #e06313;
+    border-color: #e06313;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(247, 116, 34, 0.35);
+}
+
+.map-brochure-btn .map-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.map-brochure-btn:hover .map-btn-arrow {
+    transform: translateX(5px);
+}
+
+.map-brochure-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map-brochure-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-brochure-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    transition: transform 0.5s ease;
+}
+
+.map-brochure-image-wrapper:hover .map-brochure-img {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.map-brochure-section.in-view .map-brochure-image-wrapper {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.map-brochure-section.in-view .map-brochure-label,
+.map-brochure-section.in-view .map-brochure-heading,
+.map-brochure-section.in-view .map-brochure-body,
+.map-brochure-section.in-view .map-brochure-action {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 11, 16, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.map-modal-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.map-modal-card {
+    position: relative;
+    background-color: #FFFFFF;
+    color: #0A0B10;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    padding: 40px 36px;
+    box-sizing: border-box;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.92) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-modal-overlay.is-active .map-modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.map-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-weight: 300;
+    color: #0A0B10;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.map-modal-close:hover {
+    color: #F77422;
+}
+
+.map-modal-label {
+    display: block;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #F77422;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.map-modal-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #0A0B10;
+    margin: 0 0 10px 0;
+}
+
+.map-modal-subtext {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(10, 11, 16, 0.7);
+    margin: 0 0 28px 0;
+}
+
+.map-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.map-input-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #0A0B10;
+    text-transform: uppercase;
+}
+
+.map-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    border: 1px solid rgba(10, 11, 16, 0.2);
+    border-radius: 4px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    color: #0A0B10;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.map-input:focus {
+    border-color: #F77422;
+}
+
+.map-phone-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(10, 11, 16, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.map-phone-input-wrapper:focus-within {
+    border-color: #F77422;
+}
+
+.map-phone-prefix {
+    background-color: rgba(10, 11, 16, 0.05);
+    padding: 0 14px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(10, 11, 16, 0.8);
+    border-right: 1px solid rgba(10, 11, 16, 0.15);
+}
+
+.map-input-phone {
+    border: none !important;
+}
+
+.map-input-otp {
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    text-align: center;
+}
+
+.map-modal-alert {
+    background-color: rgba(247, 116, 34, 0.08);
+    border: 1px solid rgba(247, 116, 34, 0.3);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    color: #0A0B10;
+    line-height: 1.4;
+}
+
+.map-modal-submit-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+    background-color: #F77422;
+    color: #FFFFFF;
+    border: 1px solid #F77422;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.map-modal-submit-btn .map-btn-arrow {
+}
+
+.map-modal-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.map-success-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #F77422;
+    color: #FFFFFF;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.map-success-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #0A0B10;
+    margin: 0 0 10px 0;
+}
+
+.map-success-text {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    color: rgba(10, 11, 16, 0.7);
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .map-brochure-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+</style>
+<script id="map-brochure-anim-and-modal">
+(function() {
+    function initBrochure() {
+        const sec = document.getElementById('brochure');
+        if (sec && !sec.dataset.observed) {
+            sec.dataset.observed = 'true';
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+            io.observe(sec);
+        }
+
+        const openBtn = document.getElementById('open-brochure-modal-btn');
+        const closeBtn = document.getElementById('close-brochure-modal-btn');
+        const overlay = document.getElementById('brochure-modal-overlay');
+        const step1Form = document.getElementById('brochure-step1-form');
+        const step2Form = document.getElementById('brochure-step2-form');
+        const successMsg = document.getElementById('brochure-success-msg');
+        const displayPhone = document.getElementById('display-otp-phone');
+
+        if (openBtn && overlay) {
+            openBtn.addEventListener('click', () => {
+                overlay.classList.add('is-active');
+            });
+        }
+
+        if (closeBtn && overlay) {
+            closeBtn.addEventListener('click', () => {
+                overlay.classList.remove('is-active');
+            });
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) overlay.classList.remove('is-active');
+            });
+        }
+
+        if (step1Form) {
+            step1Form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const phoneInput = document.getElementById('brochure-phone').value;
+                if (displayPhone) displayPhone.textContent = '+91 ' + phoneInput;
+                step1Form.style.display = 'none';
+                step2Form.style.display = 'flex';
+            });
+        }
+
+        if (step2Form) {
+            step2Form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                step2Form.style.display = 'none';
+                successMsg.style.display = 'flex';
+
+                // Trigger direct file download
+                const link = document.createElement('a');
+                link.href = '/images/brochure_mockup.png';
+                link.download = 'Terraline_Company_Profile.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                setTimeout(() => {
+                    overlay.classList.remove('is-active');
+                    step1Form.style.display = 'flex';
+                    step2Form.style.display = 'none';
+                    successMsg.style.display = 'none';
+                    step1Form.reset();
+                    step2Form.reset();
+                }, 4000);
+            });
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBrochure);
+    } else {
+        initBrochure();
+    }
+    window.addEventListener('load', initBrochure);
+})();
+</script>
 </head>
 
 <body>
@@ -2456,6 +2924,86 @@
     </div>
   </div>
 </section>
+
+<section id="brochure" class="map-brochure-section">
+  <div class="map-brochure-container">
+    <div class="map-brochure-grid">
+      <div class="map-brochure-left">
+        <span class="map-brochure-label">COMPANY PROFILE</span>
+        <h2 class="map-brochure-heading">
+          Explore Our<br>Company Profile.
+        </h2>
+        <p class="map-brochure-body">
+          Discover our design philosophy, services, project portfolio, process, and expertise through our complete company profile. Download the brochure to learn more about Terraline's integrated approach to architecture, interiors, construction, and project management.
+        </p>
+        <div class="map-brochure-action">
+          <button id="open-brochure-modal-btn" class="map-btn map-btn-primary map-brochure-btn">
+            Download Company Profile
+            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="map-brochure-right">
+        <div class="map-brochure-image-wrapper">
+          <img src="/images/brochure_mockup.png" alt="Terraline Company Profile 3D Brochure" class="map-brochure-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="brochure-modal-overlay" class="map-modal-overlay">
+  <div class="map-modal-card">
+    <button id="close-brochure-modal-btn" class="map-modal-close" aria-label="Close modal">&times;</button>
+    <span class="map-modal-label">COMPANY BROCHURE</span>
+    <h3 class="map-modal-heading">Download Our Company Profile</h3>
+    <p class="map-modal-subtext">Please verify your mobile number using OTP to access the brochure.</p>
+
+    <form id="brochure-step1-form" class="map-modal-form">
+      <div class="map-input-group">
+        <label for="brochure-name" class="map-input-label">Full Name *</label>
+        <input type="text" id="brochure-name" class="map-input" placeholder="e.g. Rajesh Kumar" required />
+      </div>
+
+      <div class="map-input-group">
+        <label for="brochure-company" class="map-input-label">Company Name (Optional)</label>
+        <input type="text" id="brochure-company" class="map-input" placeholder="e.g. Studio Design Ltd" />
+      </div>
+
+      <div class="map-input-group">
+        <label for="brochure-phone" class="map-input-label">Mobile Number *</label>
+        <div class="map-phone-input-wrapper">
+          <span class="map-phone-prefix">+91</span>
+          <input type="tel" id="brochure-phone" class="map-input map-input-phone" placeholder="98765 43210" pattern="[0-9]{10}" required />
+        </div>
+      </div>
+
+      <button type="submit" class="map-btn map-btn-primary map-modal-submit-btn" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; width: 100% !important; height: 50px !important; background-color: #F77422 !important; color: #ffffff !important; border: 1px solid #F77422 !important; border-radius: 4px !important; font-size: 15px !important; font-weight: 500 !important; cursor: pointer !important;"><span>Send OTP</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px !important; height: 18px !important; min-width: 18px !important; min-height: 18px !important; max-width: 18px !important; max-height: 18px !important; flex: 0 0 18px !important;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </form>
+
+    <form id="brochure-step2-form" class="map-modal-form" style="display: none;">
+      <div class="map-modal-alert">
+        OTP sent to <span id="display-otp-phone">+91 98765 43210</span>. (Demo OTP: <strong>1234</strong>)
+      </div>
+
+      <div class="map-input-group">
+        <label for="brochure-otp" class="map-input-label">Enter 4-Digit OTP *</label>
+        <input type="text" id="brochure-otp" class="map-input map-input-otp" placeholder="1234" maxlength="4" required />
+      </div>
+
+      <button type="submit" class="map-btn map-btn-primary map-modal-submit-btn" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; width: 100% !important; height: 50px !important; background-color: #F77422 !important; color: #ffffff !important; border: 1px solid #F77422 !important; border-radius: 4px !important; font-size: 15px !important; font-weight: 500 !important; cursor: pointer !important;"><span>Verify OTP & Download</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px !important; height: 18px !important; min-width: 18px !important; min-height: 18px !important; max-width: 18px !important; max-height: 18px !important; flex: 0 0 18px !important;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </form>
+
+    <div id="brochure-success-msg" class="map-modal-success" style="display: none;">
+      <div class="map-success-icon">✓</div>
+      <h4 class="map-success-title">Verification Successful!</h4>
+      <p class="map-success-text">Your brochure download will start automatically. We've also queued a copy via WhatsApp to your number.</p>
+    </div>
+  </div>
+</div>
+
+
 
 
 
