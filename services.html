@@ -1363,6 +1363,279 @@
     }
 }
 </style>
+<style id="map-const-custom-styles">
+.map-construction-section {
+    position: relative;
+    width: 100%;
+    background-color: #0A0B10;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-const-header-block {
+    max-width: 900px;
+    margin-bottom: 70px;
+}
+
+.map-const-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #F77422;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.map-const-main-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+}
+
+.map-const-subheading {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 400;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 28px 0;
+}
+
+.map-const-intro-text {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    max-width: 760px;
+}
+
+.map-const-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 90px;
+}
+
+.map-const-main-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 680px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #12131C;
+}
+
+.map-const-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-const-main-img-wrap:hover .map-const-main-img {
+    transform: scale(1.03);
+}
+
+.map-const-categories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 50px;
+}
+
+.map-const-category-item {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.3s ease;
+}
+
+.map-const-category-item:hover {
+    border-bottom-color: rgba(247, 116, 34, 0.4);
+}
+
+.map-const-cat-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    transition: color 0.3s ease;
+}
+
+.map-const-category-item:hover .map-const-cat-name {
+    color: #F77422;
+}
+
+.map-const-cat-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.map-const-scope-box {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.map-const-scope-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin: 0 0 20px 0;
+}
+
+.map-const-scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+
+.map-const-scope-item {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-const-project-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background-color: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+
+.map-const-project-card:hover {
+    border-color: rgba(247, 116, 34, 0.3);
+}
+
+.map-const-proj-img-wrap {
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-const-proj-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-const-project-card:hover .map-const-proj-img {
+    transform: scale(1.03);
+}
+
+.map-const-proj-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.map-const-proj-cat {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #F77422;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.map-const-proj-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.map-const-proj-meta-grid {
+    display: flex;
+    gap: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 0;
+}
+
+.map-const-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.map-const-proj-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.map-const-proj-btn .map-arrow-icon {
+    transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.map-const-proj-btn:hover {
+    color: #F77422;
+}
+
+.map-const-proj-btn:hover .map-arrow-icon {
+    transform: translateX(5px);
+    stroke: #F77422;
+}
+
+@media (max-width: 992px) {
+    .map-const-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .map-const-main-img-wrap {
+        height: 400px;
+    }
+    .map-const-project-card {
+        grid-template-columns: 1fr;
+    }
+    .map-const-proj-img-wrap {
+        height: 240px;
+    }
+    .map-const-scope-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -1649,6 +1922,99 @@
   </div>
 </section>
 
+<section id="construction" class="map-construction-section">
+  <div class="map-container">
+    <div class="map-const-header-block">
+      <span class="map-const-label">03</span>
+      <h2 class="map-const-main-title">Construction</h2>
+      <h3 class="map-const-subheading">Precision in Every Detail.<br>Quality in Every Build.</h3>
+      <p class="map-const-intro-text">
+        Great design deserves exceptional execution. Our construction team works closely with architects, designers, consultants, and clients to ensure every project is delivered with precision, transparency, craftsmanship, and attention to detail.
+      </p>
+    </div>
+
+    <div class="map-const-grid">
+      <div class="map-const-left-col">
+        <div class="map-const-main-img-wrap">
+          <img src="/images/service_03_construction.png" alt="Terraline Precision Construction" class="map-const-main-img" />
+        </div>
+      </div>
+
+      <div class="map-const-right-col">
+        <div class="map-const-categories-list">
+          <div class="map-const-category-item">
+            <h4 class="map-const-cat-name">Quality Execution</h4>
+            <p class="map-const-cat-desc">Every stage of construction is carried out with strict quality standards and continuous supervision.</p>
+          </div>
+
+          <div class="map-const-category-item">
+            <h4 class="map-const-cat-name">Transparent Delivery</h4>
+            <p class="map-const-cat-desc">Clear communication, realistic timelines, and cost transparency remain central throughout execution.</p>
+          </div>
+
+          <div class="map-const-category-item">
+            <h4 class="map-const-cat-name">Site Management</h4>
+            <p class="map-const-cat-desc">Regular site coordination ensures every design detail is accurately translated into reality.</p>
+          </div>
+
+          <div class="map-const-category-item">
+            <h4 class="map-const-cat-name">Detail-Driven Craftsmanship</h4>
+            <p class="map-const-cat-desc">From structural work to finishing touches, every element is carefully executed to achieve lasting quality.</p>
+          </div>
+        </div>
+
+        <div class="map-const-scope-box">
+          <h4 class="map-const-scope-title">Construction Services</h4>
+          <div class="map-const-scope-grid">
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Residential Construction</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Commercial Construction</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Interior Execution</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Site Supervision</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Vendor Coordination</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Quality Inspections</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Material Procurement Support</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Finishing & Handover</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Progress Monitoring</div>
+            <div class="map-const-scope-item"><span class="map-bullet">•</span> Construction Coordination</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-const-project-card">
+      <div class="map-const-proj-img-wrap">
+        <img src="/images/project_04_luma_renovation.png" alt="Luma Living Residence" class="map-const-proj-img" />
+      </div>
+      <div class="map-const-proj-info">
+        <div class="map-const-proj-header">
+          <span class="map-const-proj-cat">Luxury Residence</span>
+          <h3 class="map-const-proj-title">Luma Living Residence</h3>
+        </div>
+        <div class="map-const-proj-meta-grid">
+          <div class="map-const-meta-item">
+            <span class="map-meta-lbl">LOCATION</span>
+            <span class="map-meta-val">Bengaluru</span>
+          </div>
+          <div class="map-const-meta-item">
+            <span class="map-meta-lbl">SCALE</span>
+            <span class="map-meta-val">4200 SFT</span>
+          </div>
+          <div class="map-const-meta-item">
+            <span class="map-meta-lbl">SCOPE</span>
+            <span class="map-meta-val">Design & Build</span>
+          </div>
+        </div>
+        <a href="project_luma.html" class="map-const-proj-btn">
+          <span>View Project</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="map-arrow-icon"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
 
@@ -1665,28 +2031,7 @@
   
 
   <!-- 5. Service 03: Construction -->
-  <section id="construction" class="map-service-block">
-    <div class="map-container">
-      <div class="map-service-grid">
-        <div class="map-service-img-wrapper">
-          <img src="/images/service_03_construction.png" alt="Base Building & Turnkey Construction" class="map-service-img" />
-        </div>
-        <div>
-          <span class="map-label">03 / CONSTRUCTION</span>
-          <h2 class="map-service-title">Base Building & Turnkey Construction</h2>
-          <p class="map-body-text">
-            Precision-driven construction management ensuring structural integrity, quality materials, and timely project delivery. We execute complex residential and commercial builds with strict safety and craftsmanship standards.
-          </p>
-          <ul class="map-service-scope">
-            <li><span class="map-scope-bullet"></span> Turnkey Residential & Commercial Construction</li>
-            <li><span class="map-scope-bullet"></span> Structural Engineering & Site Civil Works</li>
-            <li><span class="map-scope-bullet"></span> Material Sourcing & Quality Supervision</li>
-            <li><span class="map-scope-bullet"></span> Structural Audits & Site Inspections</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- 6. Service 04: Project Management -->
   <section id="management" class="map-service-block alt-bg">
