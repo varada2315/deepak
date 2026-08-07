@@ -1090,6 +1090,279 @@
     }
 }
 </style>
+<style id="map-int-custom-styles">
+.map-interior-section {
+    position: relative;
+    width: 100%;
+    background-color: #0E0F16;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-int-header-block {
+    max-width: 900px;
+    margin-bottom: 70px;
+}
+
+.map-int-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #F77422;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.map-int-main-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+}
+
+.map-int-subheading {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 400;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 28px 0;
+}
+
+.map-int-intro-text {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    max-width: 760px;
+}
+
+.map-int-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 90px;
+}
+
+.map-int-main-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 680px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #161722;
+}
+
+.map-int-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-int-main-img-wrap:hover .map-int-main-img {
+    transform: scale(1.03);
+}
+
+.map-int-categories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 50px;
+}
+
+.map-int-category-item {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.3s ease;
+}
+
+.map-int-category-item:hover {
+    border-bottom-color: rgba(247, 116, 34, 0.4);
+}
+
+.map-int-cat-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    transition: color 0.3s ease;
+}
+
+.map-int-category-item:hover .map-int-cat-name {
+    color: #F77422;
+}
+
+.map-int-cat-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.map-int-scope-box {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.map-int-scope-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin: 0 0 20px 0;
+}
+
+.map-int-scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+
+.map-int-scope-item {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-int-project-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background-color: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+
+.map-int-project-card:hover {
+    border-color: rgba(247, 116, 34, 0.3);
+}
+
+.map-int-proj-img-wrap {
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-int-proj-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-int-project-card:hover .map-int-proj-img {
+    transform: scale(1.03);
+}
+
+.map-int-proj-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.map-int-proj-cat {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #F77422;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.map-int-proj-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.map-int-proj-meta-grid {
+    display: flex;
+    gap: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 0;
+}
+
+.map-int-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.map-int-proj-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.map-int-proj-btn .map-arrow-icon {
+    transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.map-int-proj-btn:hover {
+    color: #F77422;
+}
+
+.map-int-proj-btn:hover .map-arrow-icon {
+    transform: translateX(5px);
+    stroke: #F77422;
+}
+
+@media (max-width: 992px) {
+    .map-int-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .map-int-main-img-wrap {
+        height: 400px;
+    }
+    .map-int-project-card {
+        grid-template-columns: 1fr;
+    }
+    .map-int-proj-img-wrap {
+        height: 240px;
+    }
+    .map-int-scope-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -1288,6 +1561,96 @@
   </div>
 </section>
 
+<section id="interiors" class="map-interior-section">
+  <div class="map-container">
+    <div class="map-int-header-block">
+      <span class="map-int-label">02</span>
+      <h2 class="map-int-main-title">Interior Design</h2>
+      <h3 class="map-int-subheading">Thoughtfully Designed<br>For Everyday Living<br>and Working.</h3>
+      <p class="map-int-intro-text">
+        We design interiors that combine comfort, functionality, aesthetics, and purpose. Every space is carefully planned to enhance the way people live, work, and interact while reflecting individual lifestyles, business identity, and long-term usability.
+      </p>
+    </div>
+
+    <div class="map-int-grid">
+      <div class="map-int-left-col">
+        <div class="map-int-main-img-wrap">
+          <img src="/images/service_02_interior.png" alt="Terraline Interior Design" class="map-int-main-img" />
+        </div>
+      </div>
+
+      <div class="map-int-right-col">
+        <div class="map-int-categories-list">
+          <div class="map-int-category-item">
+            <h4 class="map-int-cat-name">Residential Interiors</h4>
+            <p class="map-int-cat-desc">Warm, functional, and timeless interiors tailored to the lifestyle and aspirations of every family.</p>
+          </div>
+
+          <div class="map-int-category-item">
+            <h4 class="map-int-cat-name">Office Interiors</h4>
+            <p class="map-int-cat-desc">Efficient and inspiring workplaces designed to improve productivity, collaboration, and employee wellbeing.</p>
+          </div>
+
+          <div class="map-int-category-item">
+            <h4 class="map-int-cat-name">Retail Interiors</h4>
+            <p class="map-int-cat-desc">Customer-focused retail environments that strengthen brand identity while enhancing the shopping experience.</p>
+          </div>
+        </div>
+
+        <div class="map-int-scope-box">
+          <h4 class="map-int-scope-title">Scope of Work</h4>
+          <div class="map-int-scope-grid">
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Space Planning</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Interior Concept Design</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Furniture Layout</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Lighting Design</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Ceiling Design</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Material Selection</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Colour Palette Development</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Custom Furniture Design</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Joinery Details</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> 3D Visualisation</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Working Drawings</div>
+            <div class="map-int-scope-item"><span class="map-bullet">•</span> Site Coordination</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-int-project-card">
+      <div class="map-int-proj-img-wrap">
+        <img src="/images/project_01_serene_loft.png" alt="Serene Urban Loft" class="map-int-proj-img" />
+      </div>
+      <div class="map-int-proj-info">
+        <div class="map-int-proj-header">
+          <span class="map-int-proj-cat">Luxury Residential Interior</span>
+          <h3 class="map-int-proj-title">Serene Urban Loft</h3>
+        </div>
+        <div class="map-int-proj-meta-grid">
+          <div class="map-int-meta-item">
+            <span class="map-meta-lbl">LOCATION</span>
+            <span class="map-meta-val">Chennai</span>
+          </div>
+          <div class="map-int-meta-item">
+            <span class="map-meta-lbl">SCALE</span>
+            <span class="map-meta-val">3500 SFT</span>
+          </div>
+          <div class="map-int-meta-item">
+            <span class="map-meta-lbl">SCOPE</span>
+            <span class="map-meta-val">Design & Build</span>
+          </div>
+        </div>
+        <a href="project_loft.html" class="map-int-proj-btn">
+          <span>View Project</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="map-arrow-icon"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
 
@@ -1299,28 +1662,7 @@
   
 
   <!-- 4. Service 02: Interior Design -->
-  <section id="interiors" class="map-service-block alt-bg">
-    <div class="map-container">
-      <div class="map-service-grid reverse">
-        <div>
-          <span class="map-label">02 / INTERIORS</span>
-          <h2 class="map-service-title">Interior Design & Fit-Out</h2>
-          <p class="map-body-text">
-            Crafting bespoke interior environments that blend high-end aesthetics with daily functionality. We curate material palettes, custom joinery, lighting schemes, and ergonomic layouts tailored to your lifestyle and brand identity.
-          </p>
-          <ul class="map-service-scope">
-            <li><span class="map-scope-bullet"></span> Residential & Commercial Interior Planning</li>
-            <li><span class="map-scope-bullet"></span> Bespoke Joinery & Furniture Design</li>
-            <li><span class="map-scope-bullet"></span> Material Selection & Color Curation</li>
-            <li><span class="map-scope-bullet"></span> Lighting & Acoustic Design</li>
-          </ul>
-        </div>
-        <div class="map-service-img-wrapper">
-          <img src="/images/service_02_interior.png" alt="Interior Design & Fit-Out" class="map-service-img" />
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- 5. Service 03: Construction -->
   <section id="construction" class="map-service-block">
