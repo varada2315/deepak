@@ -800,6 +800,296 @@
     window.addEventListener('load', initApproachAnim);
 })();
 </script>
+<style id="map-arch-custom-styles">
+.map-arch-section {
+    position: relative;
+    width: 100%;
+    background-color: #0A0B10;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-arch-header-block {
+    max-width: 900px;
+    margin-bottom: 70px;
+}
+
+.map-arch-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #F77422;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.map-arch-main-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+}
+
+.map-arch-subheading {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 400;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 28px 0;
+}
+
+.map-arch-intro-text {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    max-width: 760px;
+}
+
+.map-arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 90px;
+}
+
+.map-arch-main-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 680px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #12131C;
+}
+
+.map-arch-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-arch-main-img-wrap:hover .map-arch-main-img {
+    transform: scale(1.03);
+}
+
+.map-arch-categories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 50px;
+}
+
+.map-arch-category-item {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.3s ease;
+}
+
+.map-arch-category-item:hover {
+    border-bottom-color: rgba(247, 116, 34, 0.4);
+}
+
+.map-arch-cat-name {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    transition: color 0.3s ease;
+}
+
+.map-arch-category-item:hover .map-arch-cat-name {
+    color: #F77422;
+}
+
+.map-arch-cat-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.map-arch-scope-box {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.map-arch-scope-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin: 0 0 20px 0;
+}
+
+.map-arch-scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+
+.map-arch-scope-item {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-bullet {
+    color: #F77422;
+}
+
+.map-arch-project-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background-color: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+
+.map-arch-project-card:hover {
+    border-color: rgba(247, 116, 34, 0.3);
+}
+
+.map-arch-proj-img-wrap {
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-arch-proj-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-arch-project-card:hover .map-arch-proj-img {
+    transform: scale(1.03);
+}
+
+.map-arch-proj-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.map-arch-proj-cat {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #F77422;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.map-arch-proj-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.map-arch-proj-meta-grid {
+    display: flex;
+    gap: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 0;
+}
+
+.map-arch-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.map-meta-lbl {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.map-meta-val {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.map-arch-proj-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.map-arch-proj-btn .map-arrow-icon {
+    transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.map-arch-proj-btn:hover {
+    color: #F77422;
+}
+
+.map-arch-proj-btn:hover .map-arrow-icon {
+    transform: translateX(5px);
+    stroke: #F77422;
+}
+
+@media (max-width: 992px) {
+    .map-arch-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .map-arch-main-img-wrap {
+        height: 400px;
+    }
+    .map-arch-project-card {
+        grid-template-columns: 1fr;
+    }
+    .map-arch-proj-img-wrap {
+        height: 240px;
+    }
+    .map-arch-scope-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -909,34 +1199,104 @@
   </div>
 </section>
 
+<section id="architecture" class="map-arch-section">
+  <div class="map-container">
+    <div class="map-arch-header-block">
+      <span class="map-arch-label">01</span>
+      <h2 class="map-arch-main-title">Architecture</h2>
+      <h3 class="map-arch-subheading">Designing Spaces That Balance Function,<br>Beauty, and Performance.</h3>
+      <p class="map-arch-intro-text">
+        Our architectural approach combines thoughtful planning, technical expertise, and practical design to create spaces that are efficient, timeless, and built around the way people live, work, and interact. Every project is carefully developed to maximise functionality, natural light, environmental performance, and long-term value.
+      </p>
+    </div>
+
+    <div class="map-arch-grid">
+      <div class="map-arch-left-col">
+        <div class="map-arch-main-img-wrap">
+          <img src="/images/service_01_architecture.png" alt="Terraline Modern Architecture" class="map-arch-main-img" />
+        </div>
+      </div>
+
+      <div class="map-arch-right-col">
+        <div class="map-arch-categories-list">
+          <div class="map-arch-category-item">
+            <h4 class="map-arch-cat-name">Residential Architecture</h4>
+            <p class="map-arch-cat-desc">Thoughtfully planned homes that combine comfort, functionality, and timeless architectural character.</p>
+          </div>
+
+          <div class="map-arch-category-item">
+            <h4 class="map-arch-cat-name">Commercial Architecture</h4>
+            <p class="map-arch-cat-desc">Workspaces and commercial environments designed to support business growth, efficiency, and user experience.</p>
+          </div>
+
+          <div class="map-arch-category-item">
+            <h4 class="map-arch-cat-name">Institutional Architecture</h4>
+            <p class="map-arch-cat-desc">Purpose-driven educational, healthcare, and institutional spaces designed for long-term functionality.</p>
+          </div>
+
+          <div class="map-arch-category-item">
+            <h4 class="map-arch-cat-name">Hospitality Architecture</h4>
+            <p class="map-arch-cat-desc">Hotels, restaurants, cafés, and hospitality environments designed to create memorable guest experiences.</p>
+          </div>
+        </div>
+
+        <div class="map-arch-scope-box">
+          <h4 class="map-arch-scope-title">Scope of Work</h4>
+          <div class="map-arch-scope-grid">
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> Concept Design</div>
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> Space Planning</div>
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> Architectural Planning</div>
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> Floor Plans</div>
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> Elevation Design</div>
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> 3D Visualisation</div>
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> Working Drawings</div>
+            <div class="map-arch-scope-item"><span class="map-bullet">•</span> Building Approval Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-arch-project-card">
+      <div class="map-arch-proj-img-wrap">
+        <img src="/images/project_02_atelier_living.png" alt="Atelier Living Residence" class="map-arch-proj-img" />
+      </div>
+      <div class="map-arch-proj-info">
+        <div class="map-arch-proj-header">
+          <span class="map-arch-proj-cat">Residential Architecture</span>
+          <h3 class="map-arch-proj-title">Atelier Living Residence</h3>
+        </div>
+        <div class="map-arch-proj-meta-grid">
+          <div class="map-arch-meta-item">
+            <span class="map-meta-lbl">LOCATION</span>
+            <span class="map-meta-val">Bengaluru</span>
+          </div>
+          <div class="map-arch-meta-item">
+            <span class="map-meta-lbl">SCALE</span>
+            <span class="map-meta-val">4200 SFT</span>
+          </div>
+          <div class="map-arch-meta-item">
+            <span class="map-meta-lbl">SCOPE</span>
+            <span class="map-meta-val">Design Only</span>
+          </div>
+        </div>
+        <a href="project_atelier.html" class="map-arch-proj-btn">
+          <span>View Project</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="map-arrow-icon"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
   <!-- 2. Integrated Approach Section -->
   
 
   <!-- 3. Service 01: Architecture -->
-  <section id="architecture" class="map-service-block">
-    <div class="map-container">
-      <div class="map-service-grid">
-        <div class="map-service-img-wrapper">
-          <img src="/images/service_01_architecture.png" alt="Architectural Design & Planning" class="map-service-img" />
-        </div>
-        <div>
-          <span class="map-label">01 / ARCHITECTURE</span>
-          <h2 class="map-service-title">Architectural Design & Planning</h2>
-          <p class="map-body-text">
-            Delivering innovative, practical, and contextually responsive architectural solutions. From luxury residential villas to commercial complexes, we craft structures that optimize spatial flow, natural light, structural efficiency, and long-term durability.
-          </p>
-          <ul class="map-service-scope">
-            <li><span class="map-scope-bullet"></span> Concept Design & Master Planning</li>
-            <li><span class="map-scope-bullet"></span> Building Approval & Regulatory Compliance</li>
-            <li><span class="map-scope-bullet"></span> Structural & 3D Architectural Modeling</li>
-            <li><span class="map-scope-bullet"></span> Sustainable & Climate-Responsive Architecture</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- 4. Service 02: Interior Design -->
   <section id="interiors" class="map-service-block alt-bg">
