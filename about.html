@@ -1871,6 +1871,220 @@
     window.addEventListener('load', initPhilosophy);
 })();
 </script>
+<style id="map-careers-custom-styles">
+.map-careers-section {
+    position: relative;
+    width: 100%;
+    background-color: #0E0F16;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.map-careers-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.map-careers-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.map-careers-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-careers-label {
+    display: inline-block;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+
+.map-careers-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 24px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.map-careers-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.35s, transform 0.8s ease 0.35s;
+}
+
+.map-careers-body p {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0;
+}
+
+.map-careers-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+}
+
+.map-careers-btn-primary {
+    background-color: #F77422;
+    color: #FFFFFF;
+    border: 1px solid #F77422;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(247, 116, 34, 0.22);
+}
+
+.map-careers-btn-primary:hover {
+    background-color: #e06313;
+    border-color: #e06313;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(247, 116, 34, 0.32);
+}
+
+.map-careers-btn-secondary {
+    background: transparent;
+    color: #F77422;
+    border: 1px solid #F77422;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-careers-btn-secondary:hover {
+    background-color: #F77422;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(247, 116, 34, 0.22);
+}
+
+.map-careers-btn-primary .map-btn-arrow,
+.map-careers-btn-secondary .map-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.map-careers-btn-primary:hover .map-btn-arrow,
+.map-careers-btn-secondary:hover .map-btn-arrow {
+    transform: translateX(5px);
+}
+
+.map-careers-right {
+    width: 100%;
+}
+
+.map-careers-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 4.8;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #161722;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-careers-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-careers-image-wrapper:hover .map-careers-img {
+    transform: scale(1.05);
+}
+
+.map-careers-section.in-view .map-careers-image-wrapper {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.map-careers-section.in-view .map-careers-label,
+.map-careers-section.in-view .map-careers-heading,
+.map-careers-section.in-view .map-careers-body,
+.map-careers-section.in-view .map-careers-buttons {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+    .map-careers-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+</style>
+<script id="map-careers-anim">
+(function() {
+    function initCareers() {
+        const sec = document.getElementById('careers');
+        if (sec && !sec.dataset.observed) {
+            sec.dataset.observed = 'true';
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+            io.observe(sec);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCareers);
+    } else {
+        initCareers();
+    }
+    window.addEventListener('load', initCareers);
+})();
+</script>
 </head>
 
 <body>
@@ -2204,6 +2418,46 @@
     </div>
   </div>
 </section>
+
+<section id="careers" class="map-careers-section">
+  <div class="map-careers-container">
+    <div class="map-careers-grid">
+      <div class="map-careers-left">
+        <span class="map-careers-label">CAREERS</span>
+        <h2 class="map-careers-heading">
+          Build Spaces.<br>Build Your Future.
+        </h2>
+        <div class="map-careers-body">
+          <p>
+            We're always looking for passionate architects, interior designers, project managers, and creative professionals who share our commitment to thoughtful design and quality execution.
+          </p>
+          <p>
+            If you're driven by curiosity, collaboration, and craftsmanship, we'd love to hear from you.
+          </p>
+        </div>
+
+        <div class="map-careers-buttons">
+          <a href="mailto:careers@terraline.in" class="map-btn map-btn-primary map-careers-btn-primary">
+            View Open Positions
+            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="mailto:careers@terraline.in?subject=Portfolio Submission" class="map-btn map-btn-outline map-careers-btn-secondary">
+            Send Your Portfolio
+            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="map-careers-right">
+        <div class="map-careers-image-wrapper">
+          <img src="/images/about_careers_workshop.png" alt="Terraline Studio Workshop & Team Collaboration" class="map-careers-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
 
