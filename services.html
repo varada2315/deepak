@@ -11,22 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style id="global-nav-header-fix">
-  .framer-2uznpr-container,
-  header.framer-M9nBZ,
-  header.map-services-header {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      z-index: 99999 !important;
-      transform: none !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      background: linear-gradient(180deg, rgba(10, 11, 16, 0.85) 0%, rgba(10, 11, 16, 0) 100%) !important;
-      pointer-events: auto !important;
-  }
-  </style>
+  
 
   <style id="map-services-custom-styles">
   /* Global Resets */
@@ -559,22 +544,74 @@
     transform: translateY(0) !important;
 }
 </style>
+<style id="map-global-floating-navbar">
+.terraline-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 24px 6% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    z-index: 99999 !important;
+    background: linear-gradient(180deg, rgba(10, 11, 16, 0.85) 0%, rgba(10, 11, 16, 0) 100%) !important;
+    pointer-events: auto !important;
+}
+
+.terraline-navbar-logo {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.02em !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.terraline-navbar-pill {
+    display: flex !important;
+    align-items: center !important;
+    gap: 32px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 10px 26px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 40px !important;
+}
+
+.terraline-navbar-pill a {
+    color: rgba(255, 255, 255, 0.75) !important;
+    text-decoration: none !important;
+    font-family: 'Inter', system-ui, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    transition: color 0.3s ease !important;
+}
+
+.terraline-navbar-pill a:hover,
+.terraline-navbar-pill a.active {
+    color: #F77422 !important;
+}
+</style>
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
-  <header class="map-nav-bar">
-    <a href="index.html" class="map-nav-logo">Terraline®</a>
-    <ul class="map-nav-links">
-      <li><a href="projects.html">Works</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </header>
+<header class="terraline-navbar">
+  <a href="index.html" class="terraline-navbar-logo">Terraline®</a>
+  <ul class="terraline-navbar-pill">
+    <li><a href="projects.html">Works</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
 
-  <!-- 1. Hero Section -->
-  <section id="services-hero" class="map-services-hero-section in-view">
+<section id="services-hero" class="map-services-hero-section in-view">
   <div class="map-services-hero-bg-wrapper">
     <img src="/images/service_02_interior.png" alt="Terraline Architecture & Interior Design Studio" class="map-services-hero-bg" />
     <div class="map-services-hero-overlay"></div>
