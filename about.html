@@ -890,6 +890,234 @@
     visibility: visible !important;
 }
 </style>
+<style id="map-who-we-are-custom-styles">
+.map-who-we-are-section {
+    position: relative;
+    width: 100%;
+    background-color: #0E0F16;
+    color: #FFFFFF;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.map-who-container {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.map-who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.map-who-left {
+    width: 100%;
+}
+
+.map-who-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #161722;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-who-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-who-image-wrapper:hover .map-who-img {
+    transform: scale(1.05);
+}
+
+.map-who-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-who-label {
+    display: inline-block;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #F77422;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+
+.map-who-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 28px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.map-who-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.35s, transform 0.8s ease 0.35s;
+}
+
+.map-who-body p {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0;
+}
+
+.map-who-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 44px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+}
+
+.map-who-pillar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.map-who-pillar-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #F77422;
+}
+
+.map-who-pillar-text {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+}
+
+.map-who-action {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.65s, transform 0.8s ease 0.65s;
+}
+
+.map-who-btn {
+    background-color: #F77422;
+    color: #FFFFFF;
+    border: 1px solid #F77422;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(247, 116, 34, 0.22);
+}
+
+.map-who-btn:hover {
+    background-color: #e06313;
+    border-color: #e06313;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(247, 116, 34, 0.32);
+}
+
+.map-who-btn .map-btn-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.map-who-btn:hover .map-btn-arrow {
+    transform: translateX(5px);
+}
+
+.map-who-we-are-section.in-view .map-who-image-wrapper {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.map-who-we-are-section.in-view .map-who-label,
+.map-who-we-are-section.in-view .map-who-heading,
+.map-who-we-are-section.in-view .map-who-body,
+.map-who-we-are-section.in-view .map-who-pillars,
+.map-who-we-are-section.in-view .map-who-action {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+    .map-who-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .map-who-pillars {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+</style>
+<script id="map-who-we-are-anim">
+(function() {
+    function initWhoWeAre() {
+        const sec = document.getElementById('who-we-are');
+        if (sec && !sec.dataset.observed) {
+            sec.dataset.observed = 'true';
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+            io.observe(sec);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initWhoWeAre);
+    } else {
+        initWhoWeAre();
+    }
+    window.addEventListener('load', initWhoWeAre);
+})();
+</script>
 </head>
 
 <body>
@@ -930,6 +1158,59 @@
     </div>
   </div>
 </section>
+
+<section id="who-we-are" class="map-who-we-are-section">
+  <div class="map-who-container">
+    <div class="map-who-grid">
+      <div class="map-who-left">
+        <div class="map-who-image-wrapper">
+          <img src="/images/about_who_we_are_materials.png" alt="Terraline Design Collaboration & Materials" class="map-who-img" />
+        </div>
+      </div>
+
+      <div class="map-who-right">
+        <span class="map-who-label">WHO WE ARE</span>
+        <h2 class="map-who-heading">
+          Your Trusted Design Partner,<br>Creating Spaces That Leave<br>A Lasting Impression.
+        </h2>
+
+        <div class="map-who-body">
+          <p>
+            At Terraline, we believe great spaces are created through thoughtful planning, collaboration, and precise execution. As an integrated architecture, interiors, construction, and project management studio, we deliver environments that are practical, timeless, and built around the people who use them.
+          </p>
+          <p>
+            Our approach combines creative thinking with technical expertise, ensuring every project balances aesthetics, functionality, quality, and long-term performance.
+          </p>
+        </div>
+
+        <div class="map-who-pillars">
+          <div class="map-who-pillar">
+            <span class="map-who-pillar-title">MISSION</span>
+            <p class="map-who-pillar-text">
+              To create spaces that are practical, responsive to individual needs, future-ready, and deeply comfortable for everyday living and working.
+            </p>
+          </div>
+
+          <div class="map-who-pillar">
+            <span class="map-who-pillar-title">VISION</span>
+            <p class="map-who-pillar-text">
+              To be recognised for creating spaces that endure—efficient to build, easy to maintain, and thoughtfully designed to serve people and businesses for years to come.
+            </p>
+          </div>
+        </div>
+
+        <div class="map-who-action">
+          <a href="interior-design.html" class="map-btn map-btn-primary map-who-btn">
+            Our Services
+            <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 </div><div class="ssr-variant hidden-g238xt hidden-18wzrqf"><div class="framer-2uznpr-container" data-framer-appear-id="2uznpr" style="opacity:1;transform:perspective(1200px) translateY(-160px)"><header class="framer-M9nBZ framer-cnlibq framer-v-1sfhdqx" data-framer-name="Tablet Dark" style="background-color:rgba(0, 0, 0, 0);width:100%"><div class="framer-ukco84" data-framer-name="Content"><div class="framer-1xlxl9y" data-framer-name="Nav Header"><div class="framer-1texplf" data-framer-name="Logo"><!--$--><div class="framer-nfrnmk-container"><!--$--><a class="framer-FemRz framer-5p1dfs framer-v-5p1dfs framer-1hi4af" data-framer-name="Light" data-highlight="true" href="index.html" tabindex="0" style="width:100%"><div class="framer-ugaz8c" data-framer-component-type="RichTextContainer" style="--extracted-2gg91v:&quot;opsz&quot; 14, &quot;wght&quot; 460;--extracted-r6o4lv:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;transform:none"><p dir="auto" class="framer-text" style="--font-selector:SW50ZXItVmFyaWFibGVWRj1JbTl3YzNvaUlERTBMQ0FpZDJkb2RDSWdORFl3;--framer-font-family:&quot;Inter Variable&quot;, &quot;Inter Variable Placeholder&quot;, sans-serif;--framer-font-open-type-features:'ss07' on, 'cv11' on, 'cv05' on;--framer-font-size:18px;--framer-font-variation-axes:var(--extracted-2gg91v, &quot;opsz&quot; 14, &quot;wght&quot; 460);--framer-letter-spacing:-0.4px;--framer-line-height:1.36em;--framer-text-alignment:left;--framer-text-color:var(--extracted-r6o4lv, var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255)))"><mark class="framer-text" style="--framer-text-background-padding:0px">TERRALINE®</mark></p></div></a><!--/$--></div><!--/$--></div><div class="framer-1b3jqts" data-framer-name="Menu" style="backdrop-filter:blur(10px);background-color:rgba(255, 255, 255, 0.1);-webkit-backdrop-filter:blur(10px);border-bottom-left-radius:6px;border-bottom-right-radius:6px;border-top-left-radius:6px;border-top-right-radius:6px;box-shadow:0px 1px 3px 0px rgba(0, 0, 0, 0.12)"><div class="framer-lc81n5-container"><div class="framer-vH6eS framer-1n963yy framer-v-1n963yy" data-framer-name="Menu" data-highlight="true" tabindex="0" style="height:100%;width:100%"><div class="framer-1w2ntay" data-framer-name="Line" style="background-color:rgb(255, 255, 255);transform:none"></div><div class="framer-mq5whr" data-framer-name="Line" style="background-color:rgb(255, 255, 255);transform:none"></div></div></div></div></div></div></header></div></div><div class="ssr-variant hidden-15vnvkm hidden-g238xt"><div class="framer-2uznpr-container" data-framer-appear-id="2uznpr" style="opacity:1;transform:perspective(1200px) translateY(-160px)"><header class="framer-M9nBZ framer-cnlibq framer-v-171qr6" data-framer-name="Mobile Dark" style="background-color:rgba(0, 0, 0, 0);width:100%"><div class="framer-ukco84" data-framer-name="Content"><div class="framer-1xlxl9y" data-framer-name="Nav Header"><div class="framer-1texplf" data-framer-name="Logo"><!--$--><div class="framer-nfrnmk-container"><!--$--><a class="framer-FemRz framer-5p1dfs framer-v-5p1dfs framer-1hi4af" data-framer-name="Light" data-highlight="true" href="index.html" tabindex="0" style="width:100%"><div class="framer-ugaz8c" data-framer-component-type="RichTextContainer" style="--extracted-2gg91v:&quot;opsz&quot; 14, &quot;wght&quot; 460;--extracted-r6o4lv:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;transform:none"><p dir="auto" class="framer-text" style="--font-selector:SW50ZXItVmFyaWFibGVWRj1JbTl3YzNvaUlERTBMQ0FpZDJkb2RDSWdORFl3;--framer-font-family:&quot;Inter Variable&quot;, &quot;Inter Variable Placeholder&quot;, sans-serif;--framer-font-open-type-features:'ss07' on, 'cv11' on, 'cv05' on;--framer-font-size:18px;--framer-font-variation-axes:var(--extracted-2gg91v, &quot;opsz&quot; 14, &quot;wght&quot; 460);--framer-letter-spacing:-0.4px;--framer-line-height:1.36em;--framer-text-alignment:left;--framer-text-color:var(--extracted-r6o4lv, var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255)))"><mark class="framer-text" style="--framer-text-background-padding:0px">TERRALINE®</mark></p></div></a><!--/$--></div><!--/$--></div><div class="framer-1b3jqts" data-framer-name="Menu" style="backdrop-filter:blur(10px);background-color:rgba(255, 255, 255, 0.1);-webkit-backdrop-filter:blur(10px);border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top-left-radius:5px;border-top-right-radius:5px;box-shadow:0px 1px 3px 0px rgba(0, 0, 0, 0.12)"><div class="framer-lc81n5-container"><div class="framer-vH6eS framer-1n963yy framer-v-1n963yy" data-framer-name="Menu" data-highlight="true" tabindex="0" style="height:100%;width:100%"><div class="framer-1w2ntay" data-framer-name="Line" style="background-color:rgb(255, 255, 255);transform:none"></div><div class="framer-mq5whr" data-framer-name="Line" style="background-color:rgb(255, 255, 255);transform:none"></div></div></div></div></div></div></header></div>
 
