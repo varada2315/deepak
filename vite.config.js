@@ -14,6 +14,7 @@ export default defineConfig({
         about: resolve(__dirname, 'about.html'),
         contact: resolve(__dirname, 'contact.html'),
         projects: resolve(__dirname, 'projects.html'),
+        services: resolve(__dirname, 'services.html'),
         interior_design: resolve(__dirname, 'interior-design.html'),
         renovation_remodeling: resolve(__dirname, 'renovation-remodeling.html'),
         commercial_spaces: resolve(__dirname, 'commercial-spaces.html'),

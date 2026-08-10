@@ -1961,18 +1961,92 @@
     }
 }
 </style>
+  <!-- Terraline Global Route Navigation Guard -->
+  <script id="terraline-nav-router">
+    (function() {
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        if (!href) return;
+        
+        // Prevent Framer React SPA routing from overriding standard page navigation
+        if (href === 'services.html' || href === '/services.html' || href.includes('services.html')) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.location.pathname !== '/services.html' && !window.location.pathname.endsWith('/services.html')) {
+            window.location.href = 'services.html';
+          }
+        } else if (href === 'about.html' || href === '/about.html' || href.includes('about.html')) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.location.pathname !== '/about.html' && !window.location.pathname.endsWith('/about.html')) {
+            window.location.href = 'about.html';
+          }
+        } else if (href === 'projects.html' || href === '/projects.html' || href.includes('projects.html')) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.location.pathname !== '/projects.html' && !window.location.pathname.endsWith('/projects.html')) {
+            window.location.href = 'projects.html';
+          }
+        } else if (href === 'contact.html' || href === '/contact.html' || href.includes('contact.html')) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.location.pathname !== '/contact.html' && !window.location.pathname.endsWith('/contact.html')) {
+            window.location.href = 'contact.html';
+          }
+        } else if (href === 'index.html' || href === '/index.html' || href === '/' || href === '../') {
+          e.preventDefault();
+          e.stopPropagation();
+          if (window.location.pathname !== '/index.html' && window.location.pathname !== '/') {
+            window.location.href = 'index.html';
+          }
+        }
+      }, true);
+    })();
+  </script>
+  <!-- Terraline Global Navigation Guard (Catches click, pointerdown, pointerup) -->
+  <script id="terraline-nav-router">
+    (function() {
+      function handleNav(e) {
+        var link = e.target.closest ? e.target.closest('a') : null;
+        if (!link) return;
+        var href = link.getAttribute('href');
+        if (!href) return;
+
+        var target = null;
+        if (href.includes('services.html') || href === '/services') {
+          target = 'services.html';
+        } else if (href.includes('about.html') || href === '/about') {
+          target = 'about.html';
+        } else if (href.includes('projects.html') || href === '/projects') {
+          target = 'projects.html';
+        } else if (href.includes('contact.html') || href === '/contact') {
+          target = 'contact.html';
+        } else if (href === 'index.html' || href === '/index.html' || href === '/' || href === '../') {
+          target = 'index.html';
+        }
+
+        if (target) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+          var current = window.location.pathname.split('/').pop() || 'index.html';
+          if (current !== target) {
+            window.location.href = target;
+          }
+        }
+      }
+
+      ['click', 'pointerdown', 'pointerup', 'touchstart'].forEach(function(evt) {
+        window.addEventListener(evt, handleNav, true);
+      });
+    })();
+  </script>
 </head>
 <body>
 
-<header class="terraline-navbar">
-  <a href="index.html" class="terraline-navbar-logo">Terraline®</a>
-  <ul class="terraline-navbar-pill">
-    <li><a href="projects.html">Works</a></li>
-    <li><a href="services.html" class="active">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</header>
+<header class="framer-M9nBZ framer-cnlibq framer-v-1wnmk2g" data-framer-name="Desktop - Dark" style="background-color:rgba(0, 0, 0, 0);width:100%"><div class="framer-ukco84" data-framer-name="Content"><div class="framer-1xlxl9y" data-framer-name="Nav Header"><div class="framer-1texplf" data-framer-name="Logo"><!--$--><div class="framer-nfrnmk-container"><!--$--><a class="framer-FemRz framer-5p1dfs framer-v-5p1dfs framer-1hi4af" data-framer-name="Light" data-highlight="true" href="index.html" tabindex="0" style="width:100%"><div class="framer-ugaz8c" data-framer-component-type="RichTextContainer" style="--extracted-2gg91v:&quot;opsz&quot; 14, &quot;wght&quot; 460;--extracted-r6o4lv:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;transform:none"><p dir="auto" class="framer-text" style="--font-selector:SW50ZXItVmFyaWFibGVWRj1JbTl3YzNvaUlERTBMQ0FpZDJkb2RDSWdORFl3;--framer-font-family:&quot;Inter Variable&quot;, &quot;Inter Variable Placeholder&quot;, sans-serif;--framer-font-open-type-features:'ss07' on, 'cv11' on, 'cv05' on;--framer-font-size:18px;--framer-font-variation-axes:var(--extracted-2gg91v, &quot;opsz&quot; 14, &quot;wght&quot; 460);--framer-letter-spacing:-0.4px;--framer-line-height:1.36em;--framer-text-alignment:left;--framer-text-color:var(--extracted-r6o4lv, var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255)))"><mark class="framer-text" style="--framer-text-background-padding:0px">TERRALINE®</mark></p></div></a><!--/$--></div><!--/$--></div><div class="framer-1b3jqts" data-framer-name="Menu" style="backdrop-filter:blur(10px);background-color:rgba(255, 255, 255, 0.15);-webkit-backdrop-filter:blur(10px);border-bottom-left-radius:6px;border-bottom-right-radius:6px;border-top-left-radius:6px;border-top-right-radius:6px;box-shadow:0px 1px 3px 0px rgba(0, 0, 0, 0.12)"><nav class="framer-nk64vb" data-framer-name="Items"><!--$--><div class="framer-1jsqkg4-container"><!--$--><a class="framer-XVetI framer-AP5Qs framer-kOO7T framer-lDEyh framer-9en8fu framer-v-1ig0259 framer-1co0f92" data-framer-name="Nav" data-highlight="true" href="projects.html" tabindex="0"><div class="framer-11emfi7" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:1;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Works</p></div><div class="framer-1g5yuc6" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:0;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Works</p></div></a><!--/$--></div><!--/$--><!--$--><div class="framer-5jseku-container"><!--$--><a class="framer-XVetI framer-AP5Qs framer-kOO7T framer-lDEyh framer-9en8fu framer-v-1ig0259 framer-1co0f92" data-framer-name="Nav" data-highlight="true" href="services.html" data-framer-page-link-current="true" tabindex="0"><div class="framer-11emfi7" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:1;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Services</p></div><div class="framer-1g5yuc6" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:0;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Services</p></div></a><!--/$--></div><!--/$--><!--$--><div class="framer-3iix7s-container"><!--$--><a class="framer-XVetI framer-AP5Qs framer-kOO7T framer-lDEyh framer-9en8fu framer-v-1ig0259 framer-1co0f92" data-framer-name="Nav" data-highlight="true" href="about.html"  tabindex="0"><div class="framer-11emfi7" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:1;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">About</p></div><div class="framer-1g5yuc6" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:0;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">About</p></div></a><!--/$--></div><!--/$--><!--$--><!--$--><div class="framer-contact-nav-container"><!--$--><a class="framer-XVetI framer-AP5Qs framer-kOO7T framer-lDEyh framer-9en8fu framer-v-1ig0259 framer-1co0f92" data-framer-name="Nav" data-highlight="true" href="contact.html" tabindex="0"><div class="framer-11emfi7" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:1;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Contact</p></div><div class="framer-1g5yuc6" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:0;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Contact</p></div></a><!--/$--></div><!--/$--><div class="framer-1hngmjp-container"><!--$--><a class="framer-XVetI framer-AP5Qs framer-kOO7T framer-lDEyh framer-9en8fu framer-v-1ig0259 framer-1co0f92" data-framer-name="Nav" data-highlight="true" href="blog.html" style="display:none !important;" tabindex="0"><div class="framer-11emfi7" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:1;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Blog</p></div><div class="framer-1g5yuc6" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-ZJ_7OxRMP-GpbcDoswy);--framer-paragraph-spacing:0px;--variable-reference-ZJ_7OxRMP-GpbcDoswy:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));opacity:0;transform:none"><p class="framer-text framer-styles-preset-1yuyeh" data-styles-preset="JvDFThwo3" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ZJ_7OxRMP-GpbcDoswy))">Blog</p></div></a><!--/$--></div><!--/$--></nav></div><!--$--><div class="framer-lh9wgx-container"><!--$--><a class="framer-T2K81 framer-DXrl9 framer-AP5Qs framer-gt63z2 framer-v-yuj4rn framer-1miaoa4" data-framer-name="Small" href="contact.html" style="max-width:100%;width:100%"><div class="framer-kr7e0j" data-framer-name="Filler" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));border-bottom-left-radius:8px;border-bottom-right-radius:8px;border-top-left-radius:8px;border-top-right-radius:8px"></div><div class="framer-1syze86" data-framer-name="Texts" style="--border-bottom-width:0px;--border-color:rgba(0, 0, 0, 0);--border-left-width:0px;--border-right-width:0px;--border-style:solid;--border-top-width:0px;background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top-left-radius:4px;border-top-right-radius:4px"><div class="framer-urc3fr" data-framer-name="Text 1" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-IObMHc1Ho-iG7duIxqS);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;--variable-reference-IObMHc1Ho-iG7duIxqS:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-IObMHc1Ho-iG7duIxqS))">Contact us</p></div><div class="framer-1wn57g8" data-framer-name="Text 2" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-IObMHc1Ho-iG7duIxqS);--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;--variable-reference-IObMHc1Ho-iG7duIxqS:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:translateX(-50%)"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-IObMHc1Ho-iG7duIxqS))">Contact us</p></div></div><div class="framer-13zd8ve" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-od661o" data-framer-name="Arrow"><svg class="framer-VdeRv framer-1of7e3r" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1pwlz8c" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></a><!--/$--></div><!--/$--></div></div></header>
 
 <section id="services-hero" class="map-services-hero-section in-view">
   <div class="map-services-hero-bg-wrapper">
