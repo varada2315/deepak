@@ -704,124 +704,284 @@
   .map-lightbox-close { top: -40px; right: 0; }
 }
 </style>
+<style id="terraline-nav-styles">
+/* ==========================================================================
+   TERRALINE RIGHT-ALIGNED MINIMAL ARCHITECTURAL NAVBAR (MAP ARCHITECTS STYLE)
+   ========================================================================== */
+.terraline-global-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 10000 !important;
+  padding: 32px 6% !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  transition: background-color 0.35s ease, padding 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease !important;
+  pointer-events: none !important;
+}
+
+.terraline-global-nav.scrolled {
+  background-color: rgba(8, 9, 14, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  padding: 18px 6% !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.nav-inner {
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  position: relative !important;
+  pointer-events: auto !important;
+}
+
+/* Logo (Left) */
+.nav-logo {
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+}
+
+.logo-text {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #FFFFFF !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.logo-dot {
+  font-size: 13px !important;
+  vertical-align: super !important;
+  margin-left: 2px !important;
+  color: #F77422 !important;
+}
+
+.nav-logo:hover .logo-text {
+  opacity: 0.85 !important;
+}
+
+/* Right-Aligned Desktop Navigation Links */
+.nav-links-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 36px !important;
+  pointer-events: auto !important;
+}
+
+.nav-link {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 450 !important;
+  letter-spacing: 0.03em !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+  position: relative !important;
+  padding: 6px 0 !important;
+  transition: color 0.25s ease !important;
+}
+
+.nav-link:hover {
+  color: #FFFFFF !important;
+}
+
+.nav-link.active {
+  color: #F77422 !important;
+  font-weight: 500 !important;
+}
+
+.nav-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 0% !important;
+  height: 2px !important;
+  background-color: #F77422 !important;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100% !important;
+}
+
+/* Mobile Toggle (Hidden on Desktop) */
+.nav-mobile-toggle {
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  z-index: 10002 !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  width: 40px !important;
+  height: 40px !important;
+  pointer-events: auto !important;
+}
+
+.hamburger-bar {
+  display: block !important;
+  width: 24px !important;
+  height: 2px !important;
+  background-color: #FFFFFF !important;
+  transition: transform 0.3s ease, opacity 0.3s ease !important;
+  transform-origin: center !important;
+}
+
+.nav-mobile-toggle.active .hamburger-bar:nth-child(1) {
+  transform: translateY(4px) rotate(45deg) !important;
+}
+
+.nav-mobile-toggle.active .hamburger-bar:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg) !important;
+}
+
+/* Mobile Drawer Menu */
+.nav-mobile-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(8, 9, 14, 0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  z-index: 10001 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.35s ease, visibility 0.35s ease !important;
+}
+
+.nav-mobile-drawer.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.nav-mobile-drawer-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 90% !important;
+  max-width: 400px !important;
+}
+
+.nav-mobile-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 28px !important;
+  margin-bottom: 48px !important;
+}
+
+.nav-mobile-item {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.nav-mobile-item:hover,
+.nav-mobile-item.active {
+  color: #F77422 !important;
+  transform: translateY(-2px) !important;
+}
+
+.nav-mobile-footer-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-top: 24px !important;
+  width: 100% !important;
+}
+
+.nav-mobile-contact-line {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-decoration: none !important;
+}
+
+.nav-mobile-city {
+  font-size: 12px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .nav-links-right {
+    display: none !important;
+  }
+  .nav-mobile-toggle {
+    display: flex !important;
+  }
+  .terraline-global-nav {
+    padding: 20px 6% !important;
+  }
+}
+
+</style>
 </head>
 <body>
 <header class="terraline-global-nav" id="terraline-nav">
   <div class="nav-inner">
-    <!-- Brand Logo -->
+    <!-- Brand Logo (Left) -->
     <a href="/index.html" class="nav-logo" aria-label="Terraline Home">
-      <span class="logo-text">TERRALINE®</span>
+      <span class="logo-text">TERRALINE<span class="logo-dot">®</span></span>
     </a>
 
-    <!-- Desktop Navigation Pill -->
-    <nav class="nav-menu-pill" aria-label="Main Navigation">
-      <div class="nav-item-wrapper">
-        <a href="/projects.html" class="nav-item active">
-          <span>Works</span>
-          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M1 1l4 4 4-4"/>
-          </svg>
-        </a>
-        <div class="nav-dropdown">
-          <a href="/projects.html" class="dropdown-item ">All Works</a>
-          <a href="/project_loft.html" class="dropdown-item ">Serene Loft</a>
-          <a href="/project_atelier.html" class="dropdown-item ">Atelier Living</a>
-          <a href="/project_luma.html" class="dropdown-item active">Luma Renovation</a>
-          <a href="/project_nordic.html" class="dropdown-item ">Nordic Living</a>
-        </div>
-      </div>
-
-      <div class="nav-item-wrapper">
-        <a href="/services.html" class="nav-item ">
-          <span>Services</span>
-          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M1 1l4 4 4-4"/>
-          </svg>
-        </a>
-        <div class="nav-dropdown">
-          <a href="/services.html" class="dropdown-item ">All Services</a>
-          <a href="/interior-design.html" class="dropdown-item ">Interior Design</a>
-          <a href="/commercial-spaces.html" class="dropdown-item ">Commercial Spaces</a>
-          <a href="/renovation-remodeling.html" class="dropdown-item ">Renovation & Remodeling</a>
-        </div>
-      </div>
-
-      <div class="nav-item-wrapper">
-        <a href="/about.html" class="nav-item ">
-          <span>About</span>
-        </a>
-      </div>
-
-      <div class="nav-item-wrapper">
-        <a href="/contact.html" class="nav-item ">
-          <span>Contact</span>
-        </a>
-      </div>
+    <!-- Right-Aligned Desktop Navigation Links -->
+    <nav class="nav-links-right" aria-label="Main Navigation">
+      <a href="/index.html" class="nav-link ">Home</a>
+      <a href="/about.html" class="nav-link ">About</a>
+      <a href="/services.html" class="nav-link ">Services</a>
+      <a href="/projects.html" class="nav-link active">Works</a>
+      <a href="/contact.html" class="nav-link ">Contact</a>
     </nav>
 
-    <!-- Header Actions (CTA & Mobile Hamburger) -->
-    <div class="nav-actions">
-      <a href="/contact.html" class="nav-cta-btn">
-        <span>Contact us</span>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
-
-      <!-- Mobile Hamburger Button -->
-      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
+    <!-- Mobile Hamburger Toggle -->
+    <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
   </div>
 
-  <!-- Mobile Drawer Overlay -->
+  <!-- Mobile Drawer Menu -->
   <div class="nav-mobile-drawer" id="nav-mobile-drawer" aria-hidden="true">
-    <div class="mobile-drawer-inner">
-      <div class="mobile-section">
-        <div class="mobile-section-title">Navigation</div>
-        <div class="mobile-nav-links">
-          <a href="/index.html" class="mobile-link ">Home</a>
-          <a href="/about.html" class="mobile-link ">About Us</a>
-          <a href="/contact.html" class="mobile-link ">Contact Us</a>
-        </div>
+    <div class="nav-mobile-drawer-inner">
+      <nav class="nav-mobile-links">
+        <a href="/index.html" class="nav-mobile-item ">Home</a>
+        <a href="/about.html" class="nav-mobile-item ">About</a>
+        <a href="/services.html" class="nav-mobile-item ">Services</a>
+        <a href="/projects.html" class="nav-mobile-item active">Works</a>
+        <a href="/contact.html" class="nav-mobile-item ">Contact</a>
+      </nav>
+      <div class="nav-mobile-footer-info">
+        <a href="tel:+917760205735" class="nav-mobile-contact-line">+91 77602 05735</a>
+        <a href="mailto:terraline.hq@gmail.com" class="nav-mobile-contact-line">terraline.hq@gmail.com</a>
+        <span class="nav-mobile-city">Bengaluru, Karnataka, India</span>
       </div>
-
-      <div class="mobile-section">
-        <div class="mobile-section-title">Our Works</div>
-        <div class="mobile-nav-links">
-          <a href="/projects.html" class="mobile-link ">All Works Overview</a>
-          <div class="mobile-sub-group">
-            <a href="/project_loft.html" class="mobile-sublink ">Serene Loft</a>
-            <a href="/project_atelier.html" class="mobile-sublink ">Atelier Living</a>
-            <a href="/project_luma.html" class="mobile-sublink active">Luma Renovation</a>
-            <a href="/project_nordic.html" class="mobile-sublink ">Nordic Living</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="mobile-section">
-        <div class="mobile-section-title">Our Services</div>
-        <div class="mobile-nav-links">
-          <a href="/services.html" class="mobile-link ">All Services Overview</a>
-          <div class="mobile-sub-group">
-            <a href="/interior-design.html" class="mobile-sublink ">Interior Design</a>
-            <a href="/commercial-spaces.html" class="mobile-sublink ">Commercial Spaces</a>
-            <a href="/renovation-remodeling.html" class="mobile-sublink ">Renovation & Remodeling</a>
-          </div>
-        </div>
-      </div>
-
-      <a href="/contact.html" class="mobile-cta-btn">
-        <span>Start Your Project</span>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
     </div>
   </div>
 </header>
