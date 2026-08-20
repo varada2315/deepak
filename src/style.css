@@ -1345,3 +1345,700 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
     padding: 20px 6% !important;
   }
 }
+
+
+/* ==================================================
+   1. NAVBAR & HEADER (LIGHT THEME)
+   ================================================== */
+.terraline-global-nav {
+  background: transparent !important;
+}
+
+.terraline-global-nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nav-logo .logo-text {
+  color: #111827 !important;
+}
+
+.nav-logo .logo-dot {
+  color: #F77422 !important;
+}
+
+.nav-link {
+  color: #111827 !important;
+  font-weight: 500 !important;
+}
+
+.nav-link:hover {
+  color: #F77422 !important;
+}
+
+.nav-link.active {
+  color: #F77422 !important;
+  font-weight: 600 !important;
+}
+
+.hamburger-bar {
+  background-color: #111827 !important;
+}
+
+.nav-mobile-drawer {
+  background: rgba(255, 255, 255, 0.98) !important;
+}
+
+.nav-mobile-item {
+  color: #111827 !important;
+}
+
+.nav-mobile-item:hover, .nav-mobile-item.active {
+  color: #F77422 !important;
+}
+
+.nav-mobile-footer-info {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.nav-mobile-contact-line {
+  color: rgba(17, 24, 39, 0.7) !important;
+}
+
+.nav-mobile-city {
+  color: rgba(17, 24, 39, 0.45) !important;
+}
+
+/* ==================================================
+   2. HERO SECTIONS & CARDS (LIGHT THEME)
+   ================================================== */
+.map-architects-hero, .map-services-hero-section, .map-about-hero-section, 
+.map-projects-hero-section, .map-contact-hero-section, .map-detail-hero-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.map-hero-card {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12) !important;
+}
+
+.map-hero-label, .map-section-label, .map-arch-item-num, .map-contact-eyebrow, .map-inquiry-badge {
+  color: #F77422 !important;
+}
+
+.map-hero-heading, .map-hero-title, .map-arch-title, .map-interior-title, 
+.map-construction-title, .map-pmc-title, .map-green-title, .map-closing-title, 
+.map-projects-hero-title, .map-contact-hero-title, .map-inquiry-title, 
+.map-detail-title, .map-project-title-large, .map-project-title {
+  color: #111827 !important;
+}
+
+.map-hero-subtext, .map-hero-subtitle, .map-arch-desc, .map-interior-desc, 
+.map-construction-desc, .map-pmc-desc, .map-green-desc, .map-closing-desc, 
+.map-contact-hero-subtitle, .map-inquiry-desc, .map-detail-narrative-text {
+  color: rgba(17, 24, 39, 0.78) !important;
+}
+
+.map-social-text, .map-social-bold {
+  color: #111827 !important;
+}
+
+.map-hero-overlay, .map-services-hero-overlay, .map-about-hero-overlay, 
+.map-projects-hero-img-overlay, .map-contact-img-overlay {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.75) 100%) !important;
+}
+
+/* ==================================================
+   3. SECTIONS & ALTERNATING SURFACES
+   ================================================== */
+section, main, .map-approach-section, .map-arch-section, .map-interior-section, 
+.map-construction-section, .map-pmc-section, .map-green-section, .map-selected-work-section, 
+.map-closing-cta-section, .map-inquiry-section, .map-location-section, 
+.map-contact-closing-cta-section, .map-philosophy-section, .map-team-section, 
+.map-careers-section, .map-detail-narrative-section, .map-detail-nav-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.map-approach-section, .map-interior-section, .map-pmc-section, .map-closing-cta-section, 
+.map-inquiry-section, .map-contact-closing-cta-section, .map-philosophy-section, 
+.map-careers-section, .map-detail-narrative-section {
+  background-color: #F8F9FA !important;
+}
+
+/* ==================================================
+   4. CARDS, FORMS & CONTAINERS
+   ================================================== */
+.map-inquiry-form-wrap, .map-arch-project-card, .map-interior-project-card, 
+.map-construction-project-card, .map-pmc-project-card, .map-green-project-card, 
+.map-inquiry-card, .map-approach-card, .map-philosophy-card, .map-team-card,
+.map-contact-card, .map-location-map-wrap {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+.map-inquiry-card-label, .map-form-label, .map-meta-item, .map-project-cat, 
+.map-arch-item-title, .map-interior-item-title, .map-location-key {
+  color: rgba(17, 24, 39, 0.65) !important;
+}
+
+.map-inquiry-card-val, .map-location-val {
+  color: #111827 !important;
+}
+
+/* Form Inputs & Pills */
+.map-input-field {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #111827 !important;
+}
+.map-input-field:focus {
+  border-color: #F77422 !important;
+  background: #FFFFFF !important;
+}
+.map-input-field::placeholder {
+  color: rgba(17, 24, 39, 0.4) !important;
+}
+
+.map-pill-label, .map-filter-btn {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #111827 !important;
+}
+.map-pill-label:hover, .map-filter-btn:hover {
+  border-color: #F77422 !important;
+  color: #F77422 !important;
+}
+.map-pill-checkbox:checked + .map-pill-label, .map-filter-btn.active {
+  background: #F77422 !important;
+  border-color: #F77422 !important;
+  color: #FFFFFF !important;
+}
+
+.map-category-badge, .map-arch-item-tag, .map-interior-item-tag {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #111827 !important;
+}
+
+/* ==================================================
+   5. BUTTONS (PRIMARY ORANGE VS SECONDARY LIGHT)
+   ================================================== */
+/* Primary Orange Buttons (Always White Text on Orange) */
+.tl-btn-primary, .btn-primary, .cta-btn-primary, .map-btn-primary, 
+.map-form-submit-btn, .nav-contact-btn {
+  background: #F77422 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(247, 116, 34, 0.3) !important;
+}
+.tl-btn-primary:hover, .btn-primary:hover, .cta-btn-primary:hover, 
+.map-btn-primary:hover, .map-form-submit-btn:hover {
+  background: #ff853a !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 12px 32px rgba(247, 116, 34, 0.4) !important;
+}
+.tl-btn-primary *, .btn-primary *, .cta-btn-primary *, 
+.map-btn-primary *, .map-form-submit-btn * {
+  color: #FFFFFF !important;
+}
+
+/* Secondary Buttons & Editorial Links */
+.map-btn-secondary {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  color: #111827 !important;
+}
+.map-btn-secondary:hover {
+  background: #111827 !important;
+  border-color: #111827 !important;
+  color: #FFFFFF !important;
+}
+
+.tl-link-secondary, .link-editorial, .map-arch-proj-link, .map-interior-proj-link, 
+.map-construction-proj-link, .map-pmc-proj-link, .map-green-proj-link, .map-back-link {
+  color: #111827 !important;
+}
+.tl-link-secondary:hover, .link-editorial:hover, .map-arch-proj-link:hover, 
+.map-interior-proj-link:hover, .map-construction-proj-link:hover, .map-pmc-proj-link:hover, 
+.map-green-proj-link:hover, .map-back-link:hover {
+  color: #F77422 !important;
+}
+
+/* Dividers & Borders */
+hr, .map-arch-divider, .map-interior-divider, .map-construction-divider, 
+.map-pmc-divider, .map-green-divider, .map-location-info-row {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==================================================
+   6. GLOBAL FOOTER (LIGHT THEME)
+   ================================================== */
+.terraline-global-footer {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==========================================================================
+   TERRALINE DEFINITIVE LIGHT THEME (ARCHITECTURAL / EDITORIAL LIGHT)
+   ========================================================================== */
+:root {
+  --tl-brand-orange: #F77422;
+  --tl-brand-orange-hover: #ff853a;
+  --tl-brand-orange-glow: rgba(247, 116, 34, 0.25);
+  --tl-bg-base: #FFFFFF;
+  --tl-bg-surface: #F8F9FA;
+  --tl-bg-card: #FFFFFF;
+  --tl-border-subtle: rgba(0, 0, 0, 0.08);
+  --tl-border-hover: rgba(247, 116, 34, 0.35);
+  --tl-text-primary: #111827;
+  --tl-text-secondary: rgba(17, 24, 39, 0.78);
+  --tl-text-muted: rgba(17, 24, 39, 0.5);
+}
+
+/* Global Reset */
+html, body {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+/* All Headings & Paragraphs */
+h1, h2, h3, h4, h5, h6 {
+  color: #111827 !important;
+}
+p, span, li, a {
+  color: inherit;
+}
+
+/* ==================================================
+   1. NAVBAR & HEADER
+   ================================================== */
+.terraline-global-nav {
+  background: transparent !important;
+}
+
+.terraline-global-nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nav-logo .logo-text {
+  color: #111827 !important;
+}
+
+.nav-logo .logo-dot {
+  color: #F77422 !important;
+}
+
+.nav-link {
+  color: #111827 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+}
+
+.nav-link:hover {
+  color: #F77422 !important;
+}
+
+.nav-link.active {
+  color: #F77422 !important;
+  font-weight: 600 !important;
+}
+
+.hamburger-bar {
+  background-color: #111827 !important;
+}
+
+.nav-mobile-drawer {
+  background: rgba(255, 255, 255, 0.98) !important;
+}
+
+.nav-mobile-item {
+  color: #111827 !important;
+  text-transform: uppercase !important;
+}
+
+.nav-mobile-item:hover, .nav-mobile-item.active {
+  color: #F77422 !important;
+}
+
+.nav-mobile-footer-info {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.nav-mobile-contact-line {
+  color: rgba(17, 24, 39, 0.7) !important;
+}
+
+.nav-mobile-city {
+  color: rgba(17, 24, 39, 0.45) !important;
+}
+
+/* ==================================================
+   2. HOME PAGE HERO & SECTIONS
+   ================================================== */
+.map-architects-hero {
+  background-color: #FFFFFF !important;
+}
+
+.map-hero-card {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12) !important;
+}
+
+.map-hero-heading {
+  color: #111827 !important;
+}
+
+.map-hero-subtext {
+  color: rgba(17, 24, 39, 0.78) !important;
+}
+
+.map-hero-label {
+  color: #F77422 !important;
+}
+
+.map-social-text, .map-social-bold {
+  color: #111827 !important;
+}
+
+.map-hero-overlay {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.75) 100%) !important;
+}
+
+/* Home: About Preview */
+.map-about-preview-section {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+.map-about-heading, .map-about-subheading {
+  color: #111827 !important;
+}
+.map-about-body, .map-about-stat-label {
+  color: rgba(17, 24, 39, 0.75) !important;
+}
+.map-about-stat-number {
+  color: #F77422 !important;
+}
+
+/* Home: Services Section */
+.map-services-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+.map-service-item {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+.map-service-title {
+  color: #111827 !important;
+}
+.map-service-desc {
+  color: rgba(17, 24, 39, 0.72) !important;
+}
+
+/* Home: Process Section */
+.map-process-section {
+  background-color: #F8F9FA !important;
+  background-image: none !important;
+  color: #111827 !important;
+}
+.map-process-step-item {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+.map-process-title, .map-process-step-title {
+  color: #111827 !important;
+}
+.map-process-desc, .map-process-step-desc {
+  color: rgba(17, 24, 39, 0.72) !important;
+}
+
+/* Home: Projects Section */
+.map-projects-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+.map-project-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+.map-project-title {
+  color: #111827 !important;
+}
+.map-project-category {
+  color: rgba(17, 24, 39, 0.6) !important;
+}
+
+/* Home: Why Terraline */
+.map-why-section {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+.map-why-item-title {
+  color: #111827 !important;
+}
+.map-why-item-desc {
+  color: rgba(17, 24, 39, 0.72) !important;
+}
+.map-why-item-num {
+  color: #F77422 !important;
+}
+.map-why-item-divider, .map-why-item-divider-bottom {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Home: Final CTA */
+.map-final-cta-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+.map-final-cta-heading {
+  color: #111827 !important;
+}
+.map-final-cta-body {
+  color: rgba(17, 24, 39, 0.75) !important;
+}
+.map-final-cta-contact-value {
+  color: #111827 !important;
+}
+
+/* ==================================================
+   3. SERVICES PAGE SECTIONS
+   ================================================== */
+.map-services-hero-section, .map-arch-section, .map-construction-section, 
+.map-green-section, .map-selected-work-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.map-approach-section, .map-interior-section, .map-pmc-section, .map-closing-cta-section {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+
+.map-services-hero-title, .map-arch-title, .map-interior-title, 
+.map-construction-title, .map-pmc-title, .map-green-title, .map-closing-title {
+  color: #111827 !important;
+}
+
+.map-services-hero-subtitle, .map-arch-desc, .map-interior-desc, 
+.map-construction-desc, .map-pmc-desc, .map-green-desc, .map-closing-desc {
+  color: rgba(17, 24, 39, 0.76) !important;
+}
+
+.map-arch-project-card, .map-interior-project-card, .map-construction-project-card, 
+.map-pmc-project-card, .map-green-project-card, .map-approach-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+.map-arch-item-title, .map-interior-item-title, .map-arch-proj-title, 
+.map-interior-proj-title, .map-pmc-proj-title, .map-green-proj-title {
+  color: #111827 !important;
+}
+
+.map-arch-item-desc, .map-interior-item-desc, .map-arch-proj-desc, 
+.map-interior-proj-desc, .map-pmc-proj-desc, .map-green-proj-desc {
+  color: rgba(17, 24, 39, 0.72) !important;
+}
+
+.map-arch-divider, .map-interior-divider, .map-construction-divider, 
+.map-pmc-divider, .map-green-divider {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==================================================
+   4. ABOUT PAGE SECTIONS
+   ================================================== */
+.map-about-hero-section, .map-about-intro-section, .map-team-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.map-philosophy-section, .map-careers-section {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+
+.map-philosophy-card, .map-team-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* ==================================================
+   5. PROJECTS PAGE & CASE STUDY DETAILS
+   ================================================== */
+.map-projects-hero-section, .map-projects-listing-section, 
+.map-detail-hero-section, .map-detail-nav-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.map-detail-narrative-section, .map-detail-cta-section {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+
+.map-projects-hero-title, .map-detail-title, .map-project-title-large {
+  color: #111827 !important;
+}
+
+.map-detail-narrative-text {
+  color: rgba(17, 24, 39, 0.76) !important;
+}
+
+.map-meta-item, .map-project-cat {
+  color: rgba(17, 24, 39, 0.65) !important;
+}
+
+/* Category Filter Buttons */
+.map-filter-btn {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #111827 !important;
+}
+.map-filter-btn:hover {
+  border-color: #F77422 !important;
+  color: #F77422 !important;
+}
+.map-filter-btn.active {
+  background: #F77422 !important;
+  border-color: #F77422 !important;
+  color: #FFFFFF !important;
+}
+
+/* ==================================================
+   6. CONTACT PAGE SECTIONS & FORMS
+   ================================================== */
+.map-contact-hero-section, .map-location-section {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+.map-inquiry-section, .map-contact-closing-cta-section {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+
+.map-contact-hero-title, .map-inquiry-title {
+  color: #111827 !important;
+}
+
+.map-contact-hero-subtitle, .map-inquiry-desc, .map-location-desc {
+  color: rgba(17, 24, 39, 0.76) !important;
+}
+
+.map-inquiry-form-wrap, .map-inquiry-card, .map-location-map-wrap {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+.map-inquiry-card-label, .map-form-label, .map-location-key {
+  color: rgba(17, 24, 39, 0.65) !important;
+}
+
+.map-inquiry-card-val, .map-location-val {
+  color: #111827 !important;
+}
+
+/* Form Inputs & Pills */
+.map-input-field {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #111827 !important;
+}
+.map-input-field:focus {
+  border-color: #F77422 !important;
+  background: #FFFFFF !important;
+}
+.map-input-field::placeholder {
+  color: rgba(17, 24, 39, 0.4) !important;
+}
+
+.map-pill-label {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #111827 !important;
+}
+.map-pill-label:hover {
+  border-color: #F77422 !important;
+  color: #F77422 !important;
+}
+.map-pill-checkbox:checked + .map-pill-label {
+  background: #F77422 !important;
+  border-color: #F77422 !important;
+  color: #FFFFFF !important;
+}
+
+/* ==================================================
+   7. BUTTONS (PRIMARY ORANGE VS SECONDARY LIGHT)
+   ================================================== */
+/* Primary Orange Buttons (Always White Text on Orange) */
+.tl-btn-primary, .btn-primary, .cta-btn-primary, .map-btn-primary, 
+.map-form-submit-btn, .map-btn-cta-primary, .nav-contact-btn {
+  background: #F77422 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #F77422 !important;
+  box-shadow: 0 8px 24px rgba(247, 116, 34, 0.3) !important;
+}
+.tl-btn-primary:hover, .btn-primary:hover, .cta-btn-primary:hover, 
+.map-btn-primary:hover, .map-form-submit-btn:hover, .map-btn-cta-primary:hover {
+  background: #ff853a !important;
+  border-color: #ff853a !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 12px 32px rgba(247, 116, 34, 0.4) !important;
+}
+.tl-btn-primary *, .btn-primary *, .cta-btn-primary *, 
+.map-btn-primary *, .map-form-submit-btn *, .map-btn-cta-primary * {
+  color: #FFFFFF !important;
+}
+
+/* Secondary Buttons & Editorial Links */
+.map-btn-secondary, .map-btn-cta-secondary {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  color: #111827 !important;
+}
+.map-btn-secondary:hover, .map-btn-cta-secondary:hover {
+  background: #111827 !important;
+  border-color: #111827 !important;
+  color: #FFFFFF !important;
+}
+
+.tl-link-secondary, .link-editorial, .map-arch-proj-link, .map-interior-proj-link, 
+.map-construction-proj-link, .map-pmc-proj-link, .map-green-proj-link, .map-back-link {
+  color: #111827 !important;
+}
+.tl-link-secondary:hover, .link-editorial:hover, .map-arch-proj-link:hover, 
+.map-interior-proj-link:hover, .map-construction-proj-link:hover, .map-pmc-proj-link:hover, 
+.map-green-proj-link:hover, .map-back-link:hover {
+  color: #F77422 !important;
+}
+
+/* ==================================================
+   8. GLOBAL FOOTER (LIGHT THEME)
+   ================================================== */
+.terraline-global-footer {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
