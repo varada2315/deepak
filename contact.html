@@ -972,8 +972,69 @@ textarea.map-input-field {
 }
 
 </style>
+<style id="contact-dark-overrides">
+
+body, html, .map-contact-body {
+  background-color: #08090E !important;
+  color: #FFFFFF !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.map-contact-hero-section, .map-inquiry-section, .map-location-section, .map-contact-closing-section {
+  background-color: #08090E !important;
+  color: #FFFFFF !important;
+}
+
+.map-contact-heading, .map-inquiry-title, .map-location-heading, .map-closing-title,
+.map-contact-detail-val, .map-inquiry-card-val, .map-location-val {
+  color: #FFFFFF !important;
+}
+
+.map-contact-intro, .map-inquiry-desc, .map-location-desc, .map-closing-desc {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.map-contact-detail-label, .map-inquiry-card-label, .map-form-label, .map-location-label {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.map-inquiry-card, .map-inquiry-form-wrap, .map-location-card, .map-closing-box {
+  background: #0E0F16 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.map-inquiry-card:hover {
+  background: #141620 !important;
+  border-color: rgba(247, 116, 34, 0.35) !important;
+}
+
+.map-input-field {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+.map-input-field:focus {
+  border-color: #F77422 !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.map-pill-label {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.map-pill-checkbox:checked + .map-pill-label {
+  background: rgba(247, 116, 34, 0.22) !important;
+  border-color: #F77422 !important;
+  color: #FFFFFF !important;
+}
+
+</style>
 </head>
-<body>
+<body class="map-contact-body">
 <header class="terraline-global-nav" id="terraline-nav">
   <div class="nav-inner">
     <!-- Brand Logo (Left) -->
