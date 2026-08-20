@@ -908,7 +908,7 @@ textarea.map-input-field {
 
           <!-- Right: Interactive Form -->
           <div class="map-inquiry-form-wrap">
-            <form id="map-inquiry-form" onsubmit="event.preventDefault(); document.getElementById('map-form-success').style.display='block'; setTimeout(function(){ document.getElementById('map-inquiry-form').reset(); }, 2000);">
+            <form id="map-inquiry-form">
               <!-- Scope / Service Pills -->
               <div class="map-form-group">
                 <label class="map-form-label">SERVICES REQUIRED</label>
@@ -1205,6 +1205,75 @@ textarea.map-input-field {
     document.addEventListener('DOMContentLoaded', initNav);
   } else {
     initNav();
+  }
+})();
+</script>
+<script id="contact-form-handler-js">
+(function() {
+  function initForm() {
+    var form = document.getElementById('map-inquiry-form');
+    var successMsg = document.getElementById('map-form-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var name = (document.getElementById('inq-name') || {}).value || '';
+      var phone = (document.getElementById('inq-phone') || {}).value || '';
+      var email = (document.getElementById('inq-email') || {}).value || '';
+      var loc = (document.getElementById('inq-loc') || {}).value || 'Bengaluru, India';
+      var msg = (document.getElementById('inq-msg') || {}).value || '';
+
+      // Collect checked services
+      var checkedServices = [];
+      var checkboxes = form.querySelectorAll('input[name="service"]:checked');
+      checkboxes.forEach(function(cb) {
+        checkedServices.push(cb.value);
+      });
+      var servicesStr = checkedServices.length > 0 ? checkedServices.join(', ') : 'All Services';
+
+      // Validation
+      if (!name.trim() || !phone.trim() || !email.trim() || !msg.trim()) {
+        alert('Please complete all required fields.');
+        return;
+      }
+
+      // Build WhatsApp message
+      var formattedText = 'Hello Terraline Studio, I would like to submit a project inquiry:
+
+' +
+        '*Name:* ' + name.trim() + '
+' +
+        '*Phone:* ' + phone.trim() + '
+' +
+        '*Email:* ' + email.trim() + '
+' +
+        '*Location:* ' + loc.trim() + '
+' +
+        '*Services Required:* ' + servicesStr + '
+' +
+        '*Project Details:* ' + msg.trim();
+
+      var waUrl = 'https://wa.me/917760205735?text=' + encodeURIComponent(formattedText);
+
+      // Show success feedback
+      if (successMsg) {
+        successMsg.style.display = 'block';
+      }
+
+      // Open WhatsApp window
+      window.open(waUrl, '_blank');
+
+      setTimeout(function() {
+        form.reset();
+      }, 3000);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initForm);
+  } else {
+    initForm();
   }
 })();
 </script>
