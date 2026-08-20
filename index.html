@@ -3954,48 +3954,51 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<footer class="terraline-global-footer" style="background-color:#101014; width:100%; padding: 80px 6% 40px; box-sizing: border-box; color: #ffffff; position: relative; z-index: 10;">
-  <div style="max-width: 1320px; margin: 0 auto;">
+<footer class="terraline-global-footer">
+  <div class="tl-footer-inner">
     <div class="tl-footer-grid">
-      <div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); display: block; margin-bottom: 12px;">NEWSLETTER</span>
-        <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400; color: #ffffff; margin: 0 0 20px 0;">Subscribe for news and insights</h3>
-        <form style="display: flex; gap: 12px; max-width: 400px;" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-          <input type="email" placeholder="Your email" required style="flex: 1; background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3); color: #fff; padding: 10px 0; font-size: 14px; outline: none;" />
-          <button type="submit" style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; padding: 10px 20px; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 2px; cursor: pointer; transition: background 0.3s ease;">Subscribe</button>
+      <!-- 1. Newsletter Column -->
+      <div class="tl-footer-col">
+        <span class="tl-footer-eyebrow">NEWSLETTER</span>
+        <h3 class="tl-footer-heading">Subscribe for news and insights</h3>
+        <form class="tl-footer-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Terraline insights!');">
+          <input type="email" placeholder="Your email address" required class="tl-footer-input" aria-label="Email address for newsletter">
+          <button type="submit" class="tl-footer-btn">Subscribe</button>
         </form>
       </div>
 
-      <div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); display: block; margin-bottom: 16px;">GET IN TOUCH</span>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-family: 'Inter', sans-serif; font-size: 15px;">
-          <li><a href="tel:+917760205735" style="color: #ffffff; text-decoration: none;">+91 77602 05735</a></li>
-          <li><a href="mailto:terraline.hq@gmail.com" style="color: #ffffff; text-decoration: none;">terraline.hq@gmail.com</a></li>
-          <li><span style="color: rgba(255, 255, 255, 0.8);">Bangalore, India</span></li>
+      <!-- 2. Get in Touch Column -->
+      <div class="tl-footer-col">
+        <span class="tl-footer-eyebrow">GET IN TOUCH</span>
+        <ul class="tl-footer-list">
+          <li><a href="tel:+917760205735" class="tl-footer-link">+91 77602 05735</a></li>
+          <li><a href="mailto:terraline.hq@gmail.com" class="tl-footer-link">terraline.hq@gmail.com</a></li>
+          <li><span class="tl-footer-dim-text">Bengaluru, Karnataka, India</span></li>
         </ul>
       </div>
 
-      <div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); display: block; margin-bottom: 16px;">NAVIGATION</span>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-family: 'Inter', sans-serif; font-size: 15px;">
-          <li><a href="/index.html" style="color: #ffffff; text-decoration: none;">HOME</a></li>
-          <li><a href="/about.html" style="color: #ffffff; text-decoration: none;">ABOUT</a></li>
-          <li><a href="/services.html" style="color: #ffffff; text-decoration: none;">SERVICES</a></li>
-          <li><a href="/projects.html" style="color: #ffffff; text-decoration: none;">PROJECTS</a></li>
-          <li><a href="/contact.html" style="color: #ffffff; text-decoration: none;">CONTACT</a></li>
+      <!-- 3. Navigation Column -->
+      <div class="tl-footer-col">
+        <span class="tl-footer-eyebrow">NAVIGATION</span>
+        <ul class="tl-footer-list">
+          <li><a href="/index.html" class="tl-footer-nav-link">HOME</a></li>
+          <li><a href="/about.html" class="tl-footer-nav-link">ABOUT</a></li>
+          <li><a href="/services.html" class="tl-footer-nav-link">SERVICES</a></li>
+          <li><a href="/projects.html" class="tl-footer-nav-link">PROJECTS</a></li>
+          <li><a href="/contact.html" class="tl-footer-nav-link">CONTACT</a></li>
         </ul>
       </div>
     </div>
 
-    <div style="margin-bottom: 40px; text-align: left;">
-      <h2 style="font-family: 'Inter', system-ui, sans-serif; font-size: clamp(60px, 12vw, 160px); font-weight: 400; letter-spacing: -0.06em; line-height: 0.85; color: #ffffff; margin: 0; opacity: 0.95;">
-        Terraline®
-      </h2>
+    <!-- Architectural Studio Wordmark Signature -->
+    <div class="tl-footer-wordmark-wrap">
+      <div class="tl-footer-giant-wordmark">TERRALINE<span class="accent-dot">®</span></div>
     </div>
 
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.6);">
-      <div>© 2025 TERRALINE® . All rights reserved.</div>
-      <div>Integrated Architecture & Design Studio</div>
+    <!-- Bottom Legal & Tagline Bar -->
+    <div class="tl-footer-bottom-bar">
+      <div>© 2026 TERRALINE®. All rights reserved.</div>
+      <div>Integrated Architecture &amp; Design Studio • Bengaluru</div>
     </div>
   </div>
 </footer>
