@@ -3066,6 +3066,105 @@ body, html {
   padding: 0;
 }
 </style>
+
+<style id="tl-framer-responsive-override">
+/* ==========================================================================
+   TERRALINE UNIVERSAL RESPONSIVE & MOBILE VISIBILITY OVERRIDE
+   ========================================================================== */
+.tl-main-content-wrap,
+.ssr-variant.tl-main-content-wrap,
+#main,
+.framer-g238xt,
+.framer-RfG8p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  min-height: auto !important;
+  overflow: visible !important;
+  background-color: #08090E !important;
+}
+
+.map-architects-hero,
+.map-about-preview-section,
+.map-services-section,
+.tl-process-section,
+.map-projects-section,
+.map-why-section,
+.map-final-cta-section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+}
+
+.map-architects-hero {
+  display: flex !important;
+}
+
+@media (max-width: 900px) {
+  .ssr-variant.hidden-15vnvkm.hidden-g238xt,
+  .ssr-variant.hidden-18wzrqf:not(.tl-main-content-wrap) {
+    display: none !important;
+  }
+}
+</style>
+
+
+<style id="tl-universal-mobile-fix">
+/* ==========================================================================
+   TERRALINE UNIVERSAL MOBILE, TABLET & CROSS-BROWSER VISIBILITY
+   ========================================================================== */
+html, body {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  background-color: #08090E !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#main,
+.tl-main-content-wrap,
+.ssr-variant.tl-main-content-wrap,
+main,
+section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure Hero is flex aligned */
+.map-architects-hero,
+.map-contact-hero-section,
+.map-detail-hero {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Prevent Framer breakpoint media queries from hiding active page contents */
+@media (max-width: 1200px) {
+  .hidden-15vnvkm, .hidden-18wzrqf, .hidden-kj2bcc, .hidden-1kisfp, .hidden-tnr28l, .hidden-6ca3kd {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Hide Framer obsolete duplicate fallback shells if any */
+  .ssr-variant.hidden-g238xt:not(:has(section)),
+  .ssr-variant.hidden-15vnvkm.hidden-g238xt {
+    display: none !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -3121,7 +3220,7 @@ body, html {
 
 	
 
-	<div id="main"  data-framer-ssr-released-at="2026-06-26T12:53:25.744Z" data-framer-page-optimized-at="2026-06-26T14:19:43.208Z" data-framer-generated-page><!--$--><!--$--><style data-framer-html-style>:root body { background: var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255)); } :root { font-size: 100%; }</style><div class="framer-RfG8p framer-g238xt" data-layout-template="true" style="min-height:100vh;width:auto"><div class="ssr-variant hidden-15vnvkm hidden-18wzrqf">
+	<div id="main"  data-framer-ssr-released-at="2026-06-26T12:53:25.744Z" data-framer-page-optimized-at="2026-06-26T14:19:43.208Z" data-framer-generated-page><!--$--><!--$--><style data-framer-html-style>:root body { background: var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255)); } :root { font-size: 100%; }</style><div class="framer-RfG8p framer-g238xt" data-layout-template="true" style="min-height:100vh;width:auto"><div class="ssr-variant tl-main-content-wrap">
 <section id="hero" class="map-architects-hero">
   <div class="map-hero-bg-wrapper">
     <img src="/images/hero_architecture_bg.webp" alt="Terraline Interior Architecture" class="map-hero-bg" loading="eager" fetchpriority="high" decoding="async">
@@ -3717,7 +3816,7 @@ body, html {
 
 
 
-<div class="ssr-variant hidden-18wzrqf"><div class="ssr-variant hidden-15vnvkm hidden-g238xt"><div id="template-overlay"></div><!--/$--><!--/$--></div><script>(()=>{function u(){function n(t,e,i){let r=document.createElement("a");r.href=t,r.target=i,r.rel=e,document.body.appendChild(r),r.click(),r.remove()}function o(t){if(this.dataset.hydrated){this.removeEventListener("click",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;if(/Mac|iPod|iPhone|iPad/u.test(navigator.userAgent)?t.metaKey:t.ctrlKey)return n(e,"","_blank");let r=this.getAttribute("rel")??"",c=this.getAttribute("target")??"";n(e,r,c)}function a(t){if(this.dataset.hydrated){this.removeEventListener("auxclick",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");e&&n(e,"","_blank")}function s(t){if(this.dataset.hydrated){this.removeEventListener("keydown",s);return}if(t.key!=="Enter")return;t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;let i=this.getAttribute("rel")??"",r=this.getAttribute("target")??"";n(e,i,r)}document.querySelectorAll("[data-nested-link]").forEach(t=>{t instanceof HTMLElement&&(t.addEventListener("click",o),t.addEventListener("auxclick",a),t.addEventListener("keydown",s))})}return u})()()</script>
+<div class="ssr-variant tl-main-content-wrap"><div class="ssr-variant tl-main-content-wrap"><div id="template-overlay"></div><!--/$--><!--/$--></div><script>(()=>{function u(){function n(t,e,i){let r=document.createElement("a");r.href=t,r.target=i,r.rel=e,document.body.appendChild(r),r.click(),r.remove()}function o(t){if(this.dataset.hydrated){this.removeEventListener("click",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;if(/Mac|iPod|iPhone|iPad/u.test(navigator.userAgent)?t.metaKey:t.ctrlKey)return n(e,"","_blank");let r=this.getAttribute("rel")??"",c=this.getAttribute("target")??"";n(e,r,c)}function a(t){if(this.dataset.hydrated){this.removeEventListener("auxclick",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");e&&n(e,"","_blank")}function s(t){if(this.dataset.hydrated){this.removeEventListener("keydown",s);return}if(t.key!=="Enter")return;t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;let i=this.getAttribute("rel")??"",r=this.getAttribute("target")??"";n(e,i,r)}document.querySelectorAll("[data-nested-link]").forEach(t=>{t instanceof HTMLElement&&(t.addEventListener("click",o),t.addEventListener("auxclick",a),t.addEventListener("keydown",s))})}return u})()()</script>
 
 	
 

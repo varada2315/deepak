@@ -946,6 +946,61 @@ body, html, .map-detail-page {
 }
 
 </style>
+
+<style id="tl-universal-mobile-fix">
+/* ==========================================================================
+   TERRALINE UNIVERSAL MOBILE, TABLET & CROSS-BROWSER VISIBILITY
+   ========================================================================== */
+html, body {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  background-color: #08090E !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#main,
+.tl-main-content-wrap,
+.ssr-variant.tl-main-content-wrap,
+main,
+section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure Hero is flex aligned */
+.map-architects-hero,
+.map-contact-hero-section,
+.map-detail-hero {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Prevent Framer breakpoint media queries from hiding active page contents */
+@media (max-width: 1200px) {
+  .hidden-15vnvkm, .hidden-18wzrqf, .hidden-kj2bcc, .hidden-1kisfp, .hidden-tnr28l, .hidden-6ca3kd {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Hide Framer obsolete duplicate fallback shells if any */
+  .ssr-variant.hidden-g238xt:not(:has(section)),
+  .ssr-variant.hidden-15vnvkm.hidden-g238xt {
+    display: none !important;
+  }
+}
+</style>
+
 </head>
 <body class="map-detail-page">
 <header class="terraline-global-nav" id="terraline-nav">
