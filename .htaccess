@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect /route.html to /route (optional, but keep both working)
+  # Rewrite clean URLs to .html files if file exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+  # Fallback for missing subfolder pages back to root html if requested with trailing slash
+  RewriteRule ^projects/.*$ /projects.html [L,R=301]
+  RewriteRule ^services/.*$ /services.html [L,R=301]
+  RewriteRule ^about/.*$ /about.html [L,R=301]
+  RewriteRule ^contact/.*$ /contact.html [L,R=301]
+</IfModule>
