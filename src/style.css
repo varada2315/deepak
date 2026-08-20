@@ -1421,3 +1421,241 @@ p {
     padding: 20px 6% !important;
   }
 }
+
+
+/* ==========================================================================
+   TERRALINE COMPREHENSIVE RESPONSIVE & CROSS-BROWSER COMPATIBILITY SYSTEM
+   ========================================================================== */
+
+/* 1. Global Viewport & Reset Fixes */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  background-color: #08090E !important;
+  color: #FFFFFF !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, iframe, picture, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent iOS Safari 16px input zoom */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 2. Global Footer Grid Mobile Responsiveness */
+.tl-footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 48px;
+  margin-bottom: 60px;
+}
+
+.tl-footer-wordmark {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(32px, 11vw, 150px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.04);
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  margin-bottom: 36px;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+}
+
+.tl-footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* 3. Tablet & Mobile Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .map-detail-intro-grid,
+  .map-detail-content-grid,
+  .map-detail-gallery-grid,
+  .map-inquiry-grid,
+  .map-location-grid,
+  .map-contact-closing-grid,
+  .map-contact-hero-grid,
+  .map-about-hero-grid,
+  .map-about-intro-grid,
+  .map-about-philosophy-grid,
+  .map-about-team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .map-approach-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .map-approach-bottom-split {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .map-process-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Navbar adjustments */
+  .nav-links-right {
+    display: none !important;
+  }
+
+  .nav-mobile-toggle {
+    display: flex !important;
+  }
+
+  .terraline-global-nav {
+    padding: 16px 5% !important;
+  }
+
+  /* Footer adjustments */
+  .tl-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .tl-footer-bottom-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Phone general padding & sizing */
+  section {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+
+  .map-approach-section,
+  .map-inquiry-section,
+  .map-location-section,
+  .map-contact-hero-section,
+  .map-contact-closing-section,
+  .map-detail-hero,
+  .map-detail-intro-section,
+  .map-detail-content-section,
+  .map-detail-gallery-section,
+  .map-detail-closing-cta-section {
+    padding-top: 70px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .map-contact-hero-section {
+    padding-top: 120px !important;
+  }
+
+  .map-detail-hero {
+    padding-top: 110px !important;
+  }
+
+  /* 1-Column Stacking */
+  .map-approach-grid-4,
+  .map-process-grid-4,
+  .map-projects-grid,
+  .map-form-grid-2,
+  .map-statement-features {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Cards & Inputs */
+  .map-approach-card,
+  .map-process-card,
+  .map-inquiry-form-wrap,
+  .map-approach-statement-box {
+    padding: 24px 18px !important;
+  }
+
+  .map-contact-hero-img-wrap,
+  .map-detail-hero-img-wrap,
+  .map-location-map-wrap,
+  .map-closing-img-wrap {
+    height: 260px !important;
+  }
+
+  .map-gallery-item.tall,
+  .map-gallery-item.standard,
+  .map-gallery-item.span-full {
+    height: 240px !important;
+  }
+
+  /* Buttons on phone */
+  .map-form-submit-btn,
+  .map-detail-btn-primary,
+  .map-detail-btn-secondary,
+  .map-closing-btn-primary,
+  .map-advantage-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding: 14px 20px !important;
+  }
+
+  .map-closing-actions,
+  .map-detail-cta-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 14px !important;
+  }
+
+  /* Typography on Phone */
+  h1, .map-contact-heading, .map-detail-title {
+    font-size: clamp(28px, 8.5vw, 42px) !important;
+    line-height: 1.15 !important;
+  }
+
+  h2, .map-approach-title, .map-closing-title, .map-detail-cta-heading {
+    font-size: clamp(24px, 7vw, 34px) !important;
+    line-height: 1.2 !important;
+  }
+
+  .map-contact-intro, .map-detail-lead-text, .map-approach-intro {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+}
