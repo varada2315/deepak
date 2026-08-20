@@ -321,29 +321,83 @@
   color: #F77422;
 }
 
-/* 6. NEXT PROJECT & BACK TO WORKS */
-.map-detail-next-section {
-  padding: 100px 0 120px;
+/* 6. PREVIOUS / NEXT PROJECT NAVIGATION & SHOWCASE */
+.map-detail-nav-section {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.map-detail-next-box {
+.map-detail-prev-next-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.map-detail-text-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.65) !important;
+  text-decoration: none;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.map-detail-text-nav-link:hover {
+  color: #F77422 !important;
+}
+
+.map-detail-text-nav-link.center {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.map-detail-text-nav-link.prev:hover {
+  transform: translateX(-4px);
+}
+
+.map-detail-text-nav-link.next:hover {
+  transform: translateX(4px);
+}
+
+/* Next Showcase Card */
+.map-detail-next-showcase-card {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 56px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
   align-items: center;
   background: #0E0F16;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 48px;
   box-sizing: border-box;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.map-detail-next-content {
+.map-detail-next-showcase-card:hover {
+  border-color: rgba(247, 116, 34, 0.35);
+  transform: translateY(-2px);
+}
+
+.map-next-showcase-content {
   display: flex;
   flex-direction: column;
 }
 
-.map-detail-next-label {
+.map-next-showcase-label {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -353,64 +407,41 @@
   display: block;
 }
 
-.map-detail-next-title {
+.map-next-showcase-title {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
   font-size: clamp(28px, 3.2vw, 44px);
   font-weight: 500;
   color: #FFFFFF;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 28px 0;
+  margin: 0 0 12px 0;
 }
 
-.map-detail-next-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.map-next-showcase-meta {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 32px;
 }
 
-.map-detail-next-btn {
+.map-next-showcase-action {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #F77422;
-  color: #FFFFFF !important;
+  color: #F77422;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
   font-size: 14.5px;
   font-weight: 600;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 30px;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
-.map-detail-next-btn:hover {
-  background: #ff853a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(247, 116, 34, 0.4);
+.map-detail-next-showcase-card:hover .map-next-showcase-action {
+  transform: translateX(5px);
 }
 
-.map-detail-back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.75) !important;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 13px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 30px;
-  transition: all 0.25s ease;
-}
-
-.map-detail-back-btn:hover {
-  color: #FFFFFF !important;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.map-detail-next-img-wrap {
+.map-next-showcase-img-wrap {
+  position: relative;
   width: 100%;
   height: 340px;
   border-radius: 12px;
@@ -419,7 +450,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.map-detail-next-img {
+.map-next-showcase-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -427,11 +458,112 @@
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.map-detail-next-box:hover .map-detail-next-img {
+.map-detail-next-showcase-card:hover .map-next-showcase-img {
   transform: scale(1.04);
 }
 
-/* 7. LIGHTBOX MODAL */
+/* 7. FINAL PORTFOLIO CTA */
+.map-detail-closing-cta-section {
+  padding: 120px 0 130px;
+  background-color: #08090E;
+  text-align: center;
+}
+
+.map-detail-cta-content {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-detail-cta-label {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #F77422;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.map-detail-cta-heading {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+}
+
+.map-detail-cta-desc {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 40px 0;
+  max-width: 580px;
+}
+
+.map-detail-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.map-detail-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #F77422;
+  color: #FFFFFF !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 15px 32px;
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(247, 116, 34, 0.38);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.map-detail-btn-primary:hover {
+  background: #ff853a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(247, 116, 34, 0.48);
+}
+
+.map-detail-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 14px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.map-detail-btn-secondary:hover {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* 8. LIGHTBOX MODAL */
 .map-lightbox-modal {
   position: fixed;
   inset: 0;
@@ -512,16 +644,20 @@
   .map-detail-gallery-grid { grid-template-columns: 1fr; }
   .map-gallery-item.tall, .map-gallery-item.standard { height: 380px; }
   .map-gallery-item.span-full { height: 380px; }
-  .map-detail-next-box { grid-template-columns: 1fr; gap: 36px; padding: 32px; }
-  .map-detail-next-img-wrap { height: 260px; }
+  .map-detail-next-showcase-card { grid-template-columns: 1fr; gap: 36px; padding: 36px; }
+  .map-next-showcase-img-wrap { height: 260px; }
 }
 
 @media (max-width: 640px) {
   .map-detail-hero { padding-top: 110px; }
   .map-detail-hero-img-wrap { height: 300px; }
   .map-gallery-item.tall, .map-gallery-item.standard, .map-gallery-item.span-full { height: 250px; }
-  .map-detail-next-actions { flex-direction: column; align-items: stretch; }
-  .map-detail-next-btn, .map-detail-back-btn { justify-content: center; width: 100%; box-sizing: border-box; }
+  .map-detail-prev-next-bar { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .map-detail-next-showcase-card { padding: 24px; }
+  .map-next-showcase-img-wrap { height: 240px; }
+  .map-detail-closing-cta-section { padding: 80px 0 90px; }
+  .map-detail-cta-actions { flex-direction: column; align-items: stretch; width: 100%; }
+  .map-detail-btn-primary, .map-detail-btn-secondary { width: 100%; justify-content: center; box-sizing: border-box; }
   .map-lightbox-modal { padding: 15px; }
   .map-lightbox-close { top: -40px; right: 0; }
 }
@@ -780,26 +916,60 @@
       </div>
     </section>
 
-    <!-- 6. NEXT PROJECT & BACK TO WORKS -->
-    <section class="map-detail-next-section">
+    <!-- 6. PREVIOUS / NEXT PROJECT NAVIGATION & SHOWCASE -->
+    <section class="map-detail-nav-section">
       <div class="map-detail-container">
-        <div class="map-detail-next-box">
-          <div class="map-detail-next-content">
-            <span class="map-detail-next-label">NEXT PROJECT</span>
-            <h2 class="map-detail-next-title">Serene Urban Loft</h2>
-            <div class="map-detail-next-actions">
-              <a href="/project_loft.html" class="map-detail-next-btn">
-                <span>View Project</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
-              </a>
-              <a href="/projects.html" class="map-detail-back-btn">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
-                <span>Back to Works</span>
-              </a>
+        <!-- Minimal Prev / Next Bar -->
+        <div class="map-detail-prev-next-bar">
+          <a href="/project_nordic.html" class="map-detail-text-nav-link prev">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
+            <span>Previous: Nordic Living Residence</span>
+          </a>
+          <a href="/projects.html" class="map-detail-text-nav-link center">
+            <span>← BACK TO WORKS</span>
+          </a>
+          <a href="/project_loft.html" class="map-detail-text-nav-link next">
+            <span>Next: Serene Urban Loft</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        <!-- Large Next Project Showcase Card -->
+        <a href="/project_loft.html" class="map-detail-next-showcase-card">
+          <div class="map-next-showcase-content">
+            <span class="map-next-showcase-label">NEXT PROJECT</span>
+            <h2 class="map-next-showcase-title">Serene Urban Loft</h2>
+            <span class="map-next-showcase-meta">Interior Architecture • Bengaluru</span>
+            <div class="map-next-showcase-action">
+              <span>View Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
             </div>
           </div>
-          <div class="map-detail-next-img-wrap">
-            <img src="/images/project_01_serene_loft.png" alt="Serene Urban Loft" class="map-detail-next-img" />
+          <div class="map-next-showcase-img-wrap">
+            <img src="/images/project_01_serene_loft.png" alt="Serene Urban Loft" class="map-next-showcase-img" />
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 7. FINAL PORTFOLIO CTA -->
+    <section class="map-detail-closing-cta-section">
+      <div class="map-detail-container">
+        <div class="map-detail-cta-content">
+          <span class="map-detail-cta-label">START A PROJECT</span>
+          <h2 class="map-detail-cta-heading">Have a Project in Mind?</h2>
+          <p class="map-detail-cta-desc">
+            Let's discuss your vision and explore how Terraline can help bring it to life through thoughtful architecture, interiors, and integrated delivery.
+          </p>
+          <div class="map-detail-cta-actions">
+            <a href="https://wa.me/?text=Hello%20Terraline%20Studio%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20my%20project." target="_blank" rel="noopener noreferrer" class="map-detail-btn-primary">
+              <span>Book a Consultation</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="/services.html" class="map-detail-btn-secondary">
+              <span>View Our Services</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </a>
           </div>
         </div>
       </div>
