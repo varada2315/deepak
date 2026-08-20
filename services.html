@@ -3277,6 +3277,257 @@
   }
 }
 </style>
+<style id="map-selected-work-styles">
+.map-selected-work-section {
+  position: relative;
+  width: 100%;
+  background-color: #0E0F16;
+  color: #FFFFFF;
+  padding: 130px 6% 120px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-selected-header-block {
+  max-width: 800px;
+  margin-bottom: 64px;
+}
+
+.map-selected-label {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: #F77422;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.map-selected-heading {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(34px, 3.8vw, 54px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+}
+
+.map-selected-intro {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 15.5px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.76);
+  margin: 0;
+  max-width: 620px;
+}
+
+/* Asymmetric Grid Layout */
+.map-selected-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 64px;
+}
+
+.map-selected-row-split {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 36px;
+}
+
+.map-project-card-editorial {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.map-project-img-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #141620;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.map-project-img-box.large {
+  height: 560px;
+}
+
+.map-project-img-box.medium {
+  height: 246px;
+}
+
+.map-project-img-box.panoramic {
+  height: 380px;
+}
+
+.map-project-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-project-card-editorial:hover .map-project-thumb {
+  transform: scale(1.035);
+}
+
+.map-project-meta-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 20px 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+  margin-top: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.map-project-card-editorial:hover .map-project-meta-bar {
+  border-color: rgba(247, 116, 34, 0.4);
+}
+
+.map-project-info-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-project-category {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #F77422;
+}
+
+.map-project-name {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.015em;
+  transition: color 0.3s ease;
+}
+
+.map-project-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.map-project-action svg {
+  transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.map-project-card-editorial:hover .map-project-action {
+  color: #F77422;
+}
+
+.map-project-card-editorial:hover .map-project-action svg {
+  transform: translateX(4px);
+  stroke: #F77422;
+}
+
+.map-selected-stacked-col {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  justify-content: space-between;
+}
+
+/* Bottom Actions */
+.map-selected-bottom {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.map-selected-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #FFFFFF !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 30px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-selected-all-btn:hover {
+  background: #F77422;
+  border-color: #F77422;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(247, 116, 34, 0.35);
+}
+
+.map-selected-all-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.map-selected-all-btn:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .map-selected-row-split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .map-project-img-box.large {
+    height: 420px;
+  }
+  .map-project-img-box.medium {
+    height: 280px;
+  }
+  .map-project-img-box.panoramic {
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .map-selected-work-section {
+    padding: 90px 5% 80px;
+  }
+  .map-project-img-box.large,
+  .map-project-img-box.medium,
+  .map-project-img-box.panoramic {
+    height: 240px;
+  }
+  .map-project-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .map-selected-all-btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -4104,38 +4355,104 @@
   </div>
 </section>
 
-  <!-- 8. Related Featured Projects -->
-  <section class="map-section alt-bg">
-    <div class="map-container">
-      <span class="map-label">FEATURED PORTFOLIO</span>
-      <h2 class="map-heading">Spaces Built With Excellence</h2>
-      <div class="map-projects-grid">
-        <a href="project_loft.html" class="map-project-card">
-          <div class="map-project-img-wrapper">
-            <img src="/images/project_01_serene_loft.png" alt="Serene Urban Loft" />
-          </div>
-          <span class="map-project-cat">INTERIOR ARCHITECTURE</span>
-          <h3 class="map-project-title">Serene Urban Loft</h3>
-        </a>
-
-        <a href="project_atelier.html" class="map-project-card">
-          <div class="map-project-img-wrapper">
-            <img src="/images/project_02_atelier_living.png" alt="Atelier Living Residence" />
-          </div>
-          <span class="map-project-cat">RESIDENTIAL ARCHITECTURE</span>
-          <h3 class="map-project-title">Atelier Living Residence</h3>
-        </a>
-
-        <a href="project_luma.html" class="map-project-card">
-          <div class="map-project-img-wrapper">
-            <img src="/images/project_04_luma_renovation.png" alt="Luma House Renovation" />
-          </div>
-          <span class="map-project-cat">RENOVATION & REMODELING</span>
-          <h3 class="map-project-title">Luma House Renovation</h3>
-        </a>
-      </div>
+  <!-- 8. Selected Projects / Selected Work Section -->
+<section id="selected-work" class="map-selected-work-section">
+  <div class="map-container">
+    <!-- Header Block -->
+    <div class="map-selected-header-block">
+      <span class="map-selected-label">SELECTED WORK</span>
+      <h2 class="map-selected-heading">Built Through<br>Design &amp; Detail.</h2>
+      <p class="map-selected-intro">
+        Explore a selection of projects that reflect Terraline's approach to architecture, interiors, construction, and integrated project delivery.
+      </p>
     </div>
-  </section>
+
+    <!-- Editorial Asymmetric Projects Grid (4 Projects) -->
+    <div class="map-selected-grid">
+      <!-- Row 1: Large Featured (Left) + Stacked 2 Projects (Right) -->
+      <div class="map-selected-row-split">
+        <!-- Project 1: Atelier Living Residence (Large) -->
+        <a href="project_atelier.html" class="map-project-card-editorial">
+          <div class="map-project-img-box large">
+            <img src="/images/project_02_atelier_living.png" alt="Atelier Living Residence" class="map-project-thumb" />
+          </div>
+          <div class="map-project-meta-bar">
+            <div class="map-project-info-left">
+              <span class="map-project-category">Residential Architecture • Bengaluru</span>
+              <h3 class="map-project-name">Atelier Living Residence</h3>
+            </div>
+            <div class="map-project-action">
+              <span>View Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Stacked 2 Previews (Right) -->
+        <div class="map-selected-stacked-col">
+          <!-- Project 2: Serene Urban Loft -->
+          <a href="project_loft.html" class="map-project-card-editorial">
+            <div class="map-project-img-box medium">
+              <img src="/images/project_01_serene_loft.png" alt="Serene Urban Loft" class="map-project-thumb" />
+            </div>
+            <div class="map-project-meta-bar">
+              <div class="map-project-info-left">
+                <span class="map-project-category">Interior Architecture • Bengaluru</span>
+                <h3 class="map-project-name">Serene Urban Loft</h3>
+              </div>
+              <div class="map-project-action">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Project 3: Commercial Tech Hub -->
+          <a href="projects.html" class="map-project-card-editorial">
+            <div class="map-project-img-box medium">
+              <img src="/images/project_03_commercial_workplace.png" alt="Commercial Tech Hub" class="map-project-thumb" />
+            </div>
+            <div class="map-project-meta-bar">
+              <div class="map-project-info-left">
+                <span class="map-project-category">Commercial Workplace • Bengaluru</span>
+                <h3 class="map-project-name">Commercial Tech Hub</h3>
+              </div>
+              <div class="map-project-action">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 2: Full-Width Panoramic Featured Project (Project 4: Luma Living Residence) -->
+      <a href="project_luma.html" class="map-project-card-editorial">
+        <div class="map-project-img-box panoramic">
+          <img src="/images/project_04_luma_renovation.png" alt="Luma Living Residence" class="map-project-thumb" />
+        </div>
+        <div class="map-project-meta-bar">
+          <div class="map-project-info-left">
+            <span class="map-project-category">Renovation &amp; Remodeling • Bengaluru</span>
+            <h3 class="map-project-name">Luma Living Residence</h3>
+          </div>
+          <div class="map-project-action">
+            <span>View Project</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Bottom CTA Button -->
+    <div class="map-selected-bottom">
+      <a href="projects.html" class="map-selected-all-btn">
+        <span>View All Projects</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- 9. Final Closing CTA Section -->
 <section id="services-closing-cta" class="map-closing-cta-section">
