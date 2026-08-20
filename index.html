@@ -3862,48 +3862,81 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<footer class="terraline-global-footer" style="background-color:#101014; width:100%; padding: 80px 6% 40px; box-sizing: border-box; color: #ffffff; position: relative; z-index: 10;">
-  <div style="max-width: 1320px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 48px; margin-bottom: 60px;">
-      <div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); display: block; margin-bottom: 12px;">NEWSLETTER</span>
-        <h3 style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400; color: #ffffff; margin: 0 0 20px 0;">Subscribe for news and insights</h3>
-        <form style="display: flex; gap: 12px; max-width: 400px;" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-          <input type="email" placeholder="Your email" required style="flex: 1; background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3); color: #fff; padding: 10px 0; font-size: 14px; outline: none;" />
-          <button type="submit" style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; padding: 10px 20px; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 2px; cursor: pointer; transition: background 0.3s ease;">Subscribe</button>
-        </form>
+<footer class="terraline-global-footer">
+  <div class="terraline-footer-container">
+    <div class="terraline-footer-grid">
+      <!-- Col 1: Brand & CTA -->
+      <div class="terraline-footer-brand-col">
+        <a href="/index.html" class="terraline-footer-logo-wrap">
+          <span class="terraline-footer-logo-text">Terraline<span class="terraline-dot">®</span></span>
+        </a>
+        <p class="terraline-footer-brand-desc">
+          A multidisciplinary architecture, interior design, and construction practice shaping spaces with enduring clarity and material rigor.
+        </p>
+        <div class="terraline-footer-cta-wrap">
+          <a href="https://wa.me/917760205735?text=Hello%20Terraline%20Studio%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20my%20project." target="_blank" rel="noopener noreferrer" class="terraline-footer-cta-btn">
+            <span>BOOK A CONSULTATION</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
       </div>
 
-      <div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); display: block; margin-bottom: 16px;">GET IN TOUCH</span>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-family: 'Inter', sans-serif; font-size: 15px;">
-          <li><a href="tel:+917760205735" style="color: #ffffff; text-decoration: none; transition: color 0.3s ease;">+91 77602 05735</a></li>
-          <li><a href="mailto:terraline.hq@gmail.com" style="color: #ffffff; text-decoration: none; transition: color 0.3s ease;">terraline.hq@gmail.com</a></li>
-          <li><span style="color: rgba(255, 255, 255, 0.8);">Bangalore, India</span></li>
+      <!-- Col 2: Navigation -->
+      <div class="terraline-footer-col">
+        <span class="terraline-footer-heading">NAVIGATION</span>
+        <ul class="terraline-footer-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/projects.html">Works</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
 
-      <div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); display: block; margin-bottom: 16px;">NAVIGATION</span>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; font-family: 'Inter', sans-serif; font-size: 15px;">
-          <li><a href="/index.html" style="color: #ffffff; text-decoration: none;">Home</a></li>
-          <li><a href="/projects.html" style="color: #ffffff; text-decoration: none;">Projects</a></li>
-          <li><a href="/services.html" style="color: #ffffff; text-decoration: none;">Services</a></li>
-          <li><a href="/about.html" style="color: #ffffff; text-decoration: none;">About Us</a></li>
-          <li><a href="/contact.html" style="color: #ffffff; text-decoration: none;">Contact</a></li>
+      <!-- Col 3: Services -->
+      <div class="terraline-footer-col">
+        <span class="terraline-footer-heading">SERVICES</span>
+        <ul class="terraline-footer-links">
+          <li><a href="/services.html#service-architecture">Architecture</a></li>
+          <li><a href="/services.html#service-interior-design">Interior Design</a></li>
+          <li><a href="/services.html#service-construction">Construction</a></li>
+          <li><a href="/services.html#service-project-management">Project Management</a></li>
+          <li><a href="/services.html#service-green-building">Green Building Consultancy</a></li>
         </ul>
+      </div>
+
+      <!-- Col 4: Contact & Social -->
+      <div class="terraline-footer-col">
+        <span class="terraline-footer-heading">CONTACT</span>
+        <ul class="terraline-footer-links">
+          <li><a href="tel:+917760205735">+91 77602 05735</a></li>
+          <li><a href="mailto:terraline.hq@gmail.com">terraline.hq@gmail.com</a></li>
+          <li class="terraline-footer-static-text">Bengaluru, Karnataka, India</li>
+        </ul>
+
+        <div class="terraline-footer-social-wrap">
+          <span class="terraline-footer-subheading">CONNECT</span>
+          <div class="terraline-footer-social-links">
+            <a href="https://www.instagram.com/terraline_studio/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a href="https://www.linkedin.com/company/terraline-studio/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div style="margin-bottom: 40px; text-align: left;">
-      <h2 style="font-family: 'Inter', system-ui, sans-serif; font-size: clamp(60px, 12vw, 160px); font-weight: 400; letter-spacing: -0.06em; line-height: 0.85; color: #ffffff; margin: 0; opacity: 0.95;">
-        Terraline®
-      </h2>
+    <!-- Editorial Brand Display Wordmark -->
+    <div class="terraline-footer-wordmark-wrap">
+      <span class="terraline-footer-wordmark">Terraline Studio</span>
     </div>
 
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 24px; font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.6);">
-      <div>© 2025 TERRALINE® . All rights reserved.</div>
-      <div>Integrated Architecture & Design Studio</div>
+    <!-- Bottom Bar -->
+    <div class="terraline-footer-bottom-bar">
+      <div class="terraline-footer-copyright">
+        © Terraline. All Rights Reserved.
+      </div>
+      <div class="terraline-footer-motto">
+        Design • Detail • Delivery
+      </div>
     </div>
   </div>
 </footer>

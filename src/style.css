@@ -699,3 +699,246 @@ code {
   }
 }
 
+
+
+/* ==========================================================================
+   GLOBAL FOOTER (MAP ARCHITECTURAL DESIGN)
+   ========================================================================== */
+.terraline-global-footer {
+  background-color: #06070A !important;
+  color: #FFFFFF !important;
+  width: 100% !important;
+  padding: 100px 6% 40px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 10 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+.terraline-footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.terraline-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 1.1fr;
+  gap: 60px;
+  margin-bottom: 70px;
+}
+
+.terraline-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.terraline-footer-logo-wrap {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.terraline-footer-logo-text {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+.terraline-footer-logo-text .terraline-dot {
+  color: #F77422;
+  font-size: 16px;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.terraline-footer-brand-desc {
+  font-size: 14.5px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 28px 0;
+  max-width: 340px;
+}
+
+.terraline-footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #F77422;
+  color: #FFFFFF !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(247, 116, 34, 0.35);
+  transition: all 0.25s ease;
+  width: fit-content;
+}
+
+.terraline-footer-cta-btn:hover {
+  background: #ff853a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(247, 116, 34, 0.45);
+}
+
+.terraline-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.terraline-footer-heading {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #F77422;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.terraline-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.terraline-footer-links a {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.terraline-footer-links a:hover {
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+.terraline-footer-static-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+.terraline-footer-social-wrap {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terraline-footer-subheading {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.terraline-footer-social-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.terraline-footer-social-links a {
+  font-size: 13.5px;
+  font-weight: 450;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.terraline-footer-social-links a:hover {
+  color: #F77422;
+}
+
+/* Big Display Wordmark */
+.terraline-footer-wordmark-wrap {
+  padding: 40px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.terraline-footer-wordmark {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(48px, 10vw, 130px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  color: rgba(255, 255, 255, 0.08);
+  text-transform: none;
+  display: block;
+  user-select: none;
+  transition: color 0.4s ease;
+}
+
+.terraline-footer-wordmark-wrap:hover .terraline-footer-wordmark {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* Bottom Bar */
+.terraline-footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.terraline-footer-copyright {
+  letter-spacing: 0.02em;
+}
+
+.terraline-footer-motto {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Footer */
+@media (max-width: 1024px) {
+  .terraline-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .terraline-global-footer {
+    padding: 70px 6% 32px !important;
+  }
+  .terraline-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 40px;
+  }
+  .terraline-footer-brand-desc {
+    max-width: 100%;
+  }
+  .terraline-footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
