@@ -2623,6 +2623,473 @@
 }
 </style>
 
+<style id="map-green-custom-styles">
+.map-green-section {
+  position: relative;
+  width: 100%;
+  background-color: #08090E;
+  color: #FFFFFF;
+  padding: 130px 6% 110px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-green-top-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.map-green-header-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-green-label {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #F77422;
+  display: inline-block;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.map-green-main-title {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(34px, 3.8vw, 54px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+}
+
+.map-green-intro-text {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 15.5px;
+  font-weight: 350;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 36px 0;
+  max-width: 660px;
+}
+
+.map-green-positioning-box {
+  display: flex;
+  gap: 18px;
+  background: rgba(247, 116, 34, 0.04);
+  border: 1px solid rgba(247, 116, 34, 0.18);
+  border-radius: 12px;
+  padding: 20px 24px;
+  max-width: 660px;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
+.map-green-pos-bar {
+  width: 3px;
+  background: #F77422;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.map-green-pos-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-green-pos-tag {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #F77422;
+  text-transform: uppercase;
+}
+
+.map-green-pos-quote {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+.map-green-integrated-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 20px 24px;
+  max-width: 660px;
+  box-sizing: border-box;
+}
+
+.map-green-int-tag {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.map-green-int-text {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 350;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.map-green-main-img-col {
+  position: relative;
+  width: 100%;
+}
+
+.map-green-main-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #141620;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.map-green-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-green-main-img-wrap:hover .map-green-main-img {
+  transform: scale(1.035);
+}
+
+.map-green-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 3 Core Consultancy Areas Grid */
+.map-green-services-wrap {
+  margin-bottom: 70px;
+}
+
+.map-green-resp-header {
+  margin-bottom: 32px;
+}
+
+.map-green-sublabel {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #F77422;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.map-green-resp-title {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.map-green-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.map-green-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-green-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(247, 116, 34, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.map-green-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.map-green-num {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #F77422;
+}
+
+.map-green-card-title {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.map-green-card-desc {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+/* Related Project Card */
+.map-green-project-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background-color: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  align-items: center;
+  margin-bottom: 50px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.map-green-project-card:hover {
+  border-color: rgba(247, 116, 34, 0.35);
+  transform: translateY(-2px);
+}
+
+.map-green-proj-img-wrap {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+  background: #141620;
+}
+
+.map-green-proj-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-green-project-card:hover .map-green-proj-img {
+  transform: scale(1.035);
+}
+
+.map-green-proj-info {
+  padding: 38px 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.map-green-proj-cat {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #F77422;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.map-green-proj-title {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.map-green-proj-meta-grid {
+  display: flex;
+  gap: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 0;
+}
+
+.map-green-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-green-proj-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.map-green-proj-btn .map-arrow-icon {
+  transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.map-green-proj-btn:hover {
+  color: #F77422;
+}
+
+.map-green-proj-btn:hover .map-arrow-icon {
+  transform: translateX(5px);
+  stroke: #F77422;
+}
+
+/* Bottom CTA */
+.map-green-bottom-cta {
+  padding-top: 20px;
+}
+
+.map-green-cta-box {
+  background: linear-gradient(135deg, rgba(247, 116, 34, 0.08) 0%, rgba(20, 22, 32, 0.6) 100%);
+  border: 1px solid rgba(247, 116, 34, 0.22);
+  border-radius: 14px;
+  padding: 36px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.map-green-cta-heading {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 21px;
+  font-weight: 550;
+  color: #FFFFFF;
+  margin: 0 0 8px 0;
+}
+
+.map-green-cta-sub {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 350;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.map-green-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #F77422;
+  color: #FFFFFF !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 13px 26px;
+  border-radius: 30px;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(247, 116, 34, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.map-green-cta-button:hover {
+  background: #ff853a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(247, 116, 34, 0.45);
+}
+
+.map-green-cta-button svg {
+  transition: transform 0.25s ease;
+}
+
+.map-green-cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .map-green-top-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .map-green-main-img-wrap {
+    height: 380px;
+  }
+  .map-green-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .map-green-project-card {
+    grid-template-columns: 1fr;
+  }
+  .map-green-proj-img-wrap {
+    height: 240px;
+  }
+  .map-green-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .map-green-section {
+    padding: 90px 5% 70px;
+  }
+  .map-green-card {
+    padding: 24px 20px;
+  }
+  .map-green-proj-info {
+    padding: 26px 22px;
+  }
+  .map-green-proj-meta-grid {
+    gap: 16px;
+  }
+  .map-green-cta-button {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -3325,28 +3792,130 @@
   
 
   <!-- 7. Service 05: Green Building Consultancy -->
-  <section id="sustainability" class="map-service-block">
-    <div class="map-container">
-      <div class="map-service-grid">
-        <div class="map-service-img-wrapper">
-          <img src="/images/service_05_green_building.png" alt="Green Building & Energy Efficiency" class="map-service-img" />
+  <section id="sustainability" class="map-green-section">
+  <div class="map-container">
+    <!-- Header Block / Top 2-Column Grid -->
+    <div class="map-green-top-grid">
+      <!-- Left Column: Editorial Content -->
+      <div class="map-green-header-block">
+        <span class="map-green-label">04 // GREEN BUILDING CONSULTANCY</span>
+        <h2 class="map-green-main-title">Designing for Performance. Building for the Future.</h2>
+        <p class="map-green-intro-text">
+          Terraline positions sustainability as an integrated, essential part of the design and execution process—helping create spaces that respond intelligently to local climate, utilize energy efficiently, and work toward recognised green-building standards.
+        </p>
+        
+        <!-- Core Positioning Quote / Callout -->
+        <div class="map-green-positioning-box">
+          <div class="map-green-pos-bar"></div>
+          <div class="map-green-pos-content">
+            <span class="map-green-pos-tag">CLIMATE RESPONSIVENESS &amp; EFFICIENCY</span>
+            <p class="map-green-pos-quote">"Climate responsive, energy efficient design aligned with green building standards and sustainability certifications."</p>
+          </div>
         </div>
-        <div>
-          <span class="map-label">05 / SUSTAINABILITY</span>
-          <h2 class="map-service-title">Green Building & Energy Efficiency</h2>
-          <p class="map-body-text">
-            Advising and executing eco-friendly, energy-efficient, and sustainable building solutions. We integrate IGBC and GRIHA standards to create healthy, low-emission living and working environments.
+
+        <!-- Integrated Approach Statement -->
+        <div class="map-green-integrated-box">
+          <span class="map-green-int-tag">INTEGRATED PERFORMANCE</span>
+          <p class="map-green-int-text">
+            Sustainability is never treated as an isolated add-on. We evaluate environmental performance alongside spatial aesthetics, structural functionality, and long-term usability from initial concept through delivery.
           </p>
-          <ul class="map-service-scope">
-            <li><span class="map-scope-bullet"></span> IGBC & GRIHA Green Building Certification</li>
-            <li><span class="map-scope-bullet"></span> Solar Energy & Rainwater Harvesting Planning</li>
-            <li><span class="map-scope-bullet"></span> Energy Modeling & Daylighting Optimization</li>
-            <li><span class="map-scope-bullet"></span> Healthy Indoor Air & Low-VOC Material Selection</li>
-          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column: Dummy Sustainability Image -->
+      <div class="map-green-main-img-col">
+        <div class="map-green-main-img-wrap">
+          <img src="/images/service_05_green_building.png" alt="Terraline Green Building &amp; Energy Efficiency" class="map-green-main-img" />
+          <div class="map-green-img-caption">Climate-Responsive Architecture &amp; Environmental Analysis</div>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- 3 Core Consultancy Areas (Website Inputs Grid) -->
+    <div class="map-green-services-wrap">
+      <div class="map-green-resp-header">
+        <span class="map-green-sublabel">CORE CONSULTANCY AREAS</span>
+        <h3 class="map-green-resp-title">Measured Environmental Intelligence.</h3>
+      </div>
+
+      <div class="map-green-cards-grid">
+        <!-- 01 Energy Modelling -->
+        <div class="map-green-card">
+          <div class="map-green-card-top">
+            <span class="map-green-num">01</span>
+            <h4 class="map-green-card-title">Energy Modelling</h4>
+          </div>
+          <p class="map-green-card-desc">Evaluate energy performance and thermal behavior during the design process to support more efficient buildings, reduced heat gain, and lower operational demand.</p>
+        </div>
+
+        <!-- 02 Certifications -->
+        <div class="map-green-card">
+          <div class="map-green-card-top">
+            <span class="map-green-num">02</span>
+            <h4 class="map-green-card-title">Certifications</h4>
+          </div>
+          <p class="map-green-card-desc">Support and guide projects in working toward relevant green-building benchmarks, environmental compliance, and recognised sustainability certifications.</p>
+        </div>
+
+        <!-- 03 Daylighting & Environmental Analysis -->
+        <div class="map-green-card">
+          <div class="map-green-card-top">
+            <span class="map-green-num">03</span>
+            <h4 class="map-green-card-title">Daylighting &amp; Environmental Analysis</h4>
+          </div>
+          <p class="map-green-card-desc">Analyse daylight distribution, sun paths, shading systems, and local airflow conditions to help create comfortable, responsive, and naturally lit environments.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Project Preview Card -->
+    <div class="map-green-project-card">
+      <div class="map-green-proj-img-wrap">
+        <img src="/images/project_04_luma_renovation.png" alt="Luma Living Sustainable Renovation" class="map-green-proj-img" />
+      </div>
+      <div class="map-green-proj-info">
+        <div class="map-green-proj-header">
+          <span class="map-green-proj-cat">Climate-Responsive Renovation</span>
+          <h3 class="map-green-proj-title">Luma Living Residence</h3>
+        </div>
+        <div class="map-green-proj-meta-grid">
+          <div class="map-green-meta-item">
+            <span class="map-meta-lbl">LOCATION</span>
+            <span class="map-meta-val">Bengaluru</span>
+          </div>
+          <div class="map-green-meta-item">
+            <span class="map-meta-lbl">SCALE</span>
+            <span class="map-meta-val">4500 SFT</span>
+          </div>
+          <div class="map-green-meta-item">
+            <span class="map-meta-lbl">SCOPE</span>
+            <span class="map-meta-val">Daylighting &amp; Adaptive Reuse</span>
+          </div>
+        </div>
+        <div class="map-green-proj-actions">
+          <a href="projects.html" class="map-green-proj-btn">
+            <span>View Project</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="map-arrow-icon"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section CTA Bottom -->
+    <div class="map-green-bottom-cta">
+      <div class="map-green-cta-box">
+        <div class="map-green-cta-text">
+          <h4 class="map-green-cta-heading">Ready to integrate sustainability into your next space?</h4>
+          <p class="map-green-cta-sub">Consult with Terraline to plan climate-responsive architecture and certified energy efficiency.</p>
+        </div>
+        <a href="contact.html" class="map-green-cta-button">
+          <span>Design Better. Build Responsibly</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- 8. Related Featured Projects -->
   <section class="map-section alt-bg">
