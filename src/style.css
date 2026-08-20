@@ -1,11 +1,8 @@
 @supports (font-display: swap) { * { font-display: swap; } }
 /* Global Viewport & Responsive Reset */
-html, body {
+html, body, html {
   margin: 0;
   padding: 0;
-  max-width: 100vw;
-  overflow-x: hidden;
-  box-sizing: border-box;
   background-color: #08090E !important;
   color: #FFFFFF !important;
 }
@@ -44,13 +41,42 @@ img, video, iframe {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+@media (prefers-color-scheme: dark) {
+  :root {
+  --text: rgba(255, 255, 255, 0.78);
+  --text-h: #FFFFFF;
+  --bg: #08090E;
+  --border: rgba(255, 255, 255, 0.08);
+  --code-bg: #141620;
+  --accent: #F77422;
+  --accent-bg: rgba(247, 116, 34, 0.15);
+  --accent-border: rgba(247, 116, 34, 0.4);
+  --social-bg: rgba(255, 255, 255, 0.05);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  --heading: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: dark;
+  color: var(--text);
+  background: #08090E;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
   }
 }
 
-body {
+body, html {
   margin: 0;
   padding: 0;
   background-color: #08090E !important;
