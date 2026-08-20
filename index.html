@@ -2140,444 +2140,242 @@ footer h1,
 })();
 </script>
 <style id="map-process-custom-styles">
-/* Modern Animated Process Section with Glassmorphism & Blueprint Grid */
-.map-process-section {
-    position: relative;
-    width: 100%;
-    background-color: #0A0B10;
-    background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    color: #FFFFFF;
-    padding: 140px 6%;
-    box-sizing: border-box;
-    overflow: hidden;
+/* ==========================================================================
+   TERRALINE EDITORIAL ARCHITECTURAL PROCESS SECTION
+   ========================================================================== */
+.tl-process-section {
+  position: relative;
+  width: 100%;
+  background-color: #08090E;
+  color: #FFFFFF;
+  padding: 130px 6%;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Ambient Glow Orbs */
-.map-process-section::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(247, 116, 34, 0.1) 0%, transparent 70%);
-    filter: blur(80px);
-    pointer-events: none;
+.tl-process-container {
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
-.map-process-section::after {
-    content: '';
-    position: absolute;
-    bottom: 10%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(247, 116, 34, 0.08) 0%, transparent 70%);
-    filter: blur(100px);
-    pointer-events: none;
+.tl-process-header {
+  max-width: 760px;
+  margin-bottom: 64px;
 }
 
-.map-process-container {
-    max-width: 1320px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+.tl-process-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #F77422;
+  margin-bottom: 16px;
 }
 
-.map-process-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 60px;
-    gap: 40px;
+.tl-process-title {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
 }
 
-.map-process-header {
-    max-width: 720px;
+.tl-process-intro {
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.76);
+  margin: 0;
 }
 
-.map-process-label {
-    display: inline-block;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #F77422;
-    margin-bottom: 20px;
+/* 4 Phase Columns Grid */
+.tl-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
 }
 
-.map-process-heading {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: clamp(34px, 4.2vw, 54px);
-    font-weight: 400;
-    line-height: 1.12;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-    margin: 0 0 20px 0;
+.tl-process-card {
+  background: #0E0F16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 36px 26px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.map-process-intro {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: clamp(15px, 1.5vw, 17px);
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.75);
-    margin: 0;
+.tl-process-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(247, 116, 34, 0.4);
+  background: #13141E;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Step Counter Pill */
-.map-process-counter-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.85);
-    white-space: nowrap;
+.tl-process-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.map-process-counter-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #F77422;
-    box-shadow: 0 0 10px #F77422;
-    animation: processPulse 2s infinite;
+.tl-process-num {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: #F77422;
+  line-height: 1;
 }
 
-@keyframes processPulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(247, 116, 34, 0.7); }
-    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(247, 116, 34, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(247, 116, 34, 0); }
+.tl-process-phase-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-/* Phase Navigation Tabs */
-.map-process-phase-tabs {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 60px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scrollbar-width: none;
+.tl-process-phase-name {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
 }
 
-.map-process-phase-tabs::-webkit-scrollbar {
-    display: none;
+.tl-process-phase-summary {
+  font-size: 14px;
+  font-weight: 350;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 28px 0;
+  min-height: 44px;
 }
 
-.map-process-tab-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.65);
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+.tl-process-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.map-process-tab-btn:hover,
-.map-process-tab-btn.active {
-    background: rgba(247, 116, 34, 0.12);
-    border-color: #F77422;
-    color: #FFFFFF;
-    transform: translateY(-2px);
+.tl-process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
-/* Timeline Wrapper */
-.map-process-timeline-wrapper {
-    position: relative;
-    width: 100%;
-    margin-bottom: 72px;
+.tl-step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F77422;
+  margin-top: 6px;
+  flex-shrink: 0;
 }
 
-/* Animated Connecting Line */
-.map-process-track-bg {
-    position: absolute;
-    top: 14px;
-    left: 2.5%;
-    width: 95%;
-    height: 2px;
-    background-color: rgba(255, 255, 255, 0.1);
-    z-index: 1;
+.tl-step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.map-process-track-fill {
-    position: absolute;
-    top: 14px;
-    left: 2.5%;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg, #F77422 0%, #FF9E60 100%);
-    box-shadow: 0 0 12px rgba(247, 116, 34, 0.6);
-    z-index: 2;
-    transition: width 0.4s ease-out;
+.tl-step-name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #FFFFFF;
 }
 
-/* Grid of 8 Steps on Desktop */
-.map-process-steps-grid {
-    position: relative;
-    z-index: 3;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px 24px;
+.tl-step-desc {
+  font-size: 12.5px;
+  font-weight: 350;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
 }
 
-/* Glassmorphic Step Cards */
-.map-process-step-item {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 12px;
-    padding: 28px 24px;
-    box-sizing: border-box;
-    backdrop-filter: blur(12px);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+/* Bottom Actions */
+.tl-process-bottom {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 
-.map-process-step-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #F77422, transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease;
+.tl-process-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #F77422;
+  color: #FFFFFF !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(247, 116, 34, 0.35);
+  transition: all 0.25s ease;
 }
 
-.map-process-section.in-view .map-process-step-item {
-    opacity: 1;
-    transform: translateY(0);
+.tl-process-cta-btn:hover {
+  background: #ff853a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(247, 116, 34, 0.45);
 }
 
-.map-process-step-item:hover,
-.map-process-step-item.active-step {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(247, 116, 34, 0.04) 100%);
-    border-color: rgba(247, 116, 34, 0.4);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(247, 116, 34, 0.1);
+.tl-process-sec-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.map-process-step-item:hover::before,
-.map-process-step-item.active-step::before {
-    opacity: 1;
+.tl-process-sec-link:hover {
+  color: #F77422;
 }
 
-.map-process-marker-container {
-    display: flex;
-    align-items: center;
-    height: 24px;
-    margin-bottom: 16px;
-}
-
-.map-process-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #F77422;
-    box-shadow: 0 0 0 4px rgba(247, 116, 34, 0.2);
-    transform: scale(0.7);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.map-process-step-item:hover .map-process-dot,
-.map-process-step-item.active-step .map-process-dot {
-    transform: scale(1.3);
-    box-shadow: 0 0 0 8px rgba(247, 116, 34, 0.35), 0 0 15px #F77422;
-    background-color: #FFFFFF;
-}
-
-.map-process-step-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.map-process-num {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: #F77422;
-    margin-bottom: 12px;
-    transition: color 0.3s ease;
-}
-
-.map-process-step-item:hover .map-process-num {
-    color: #FF9E60;
-}
-
-.map-process-title {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 19px;
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    color: #FFFFFF;
-    margin: 0 0 12px 0;
-    line-height: 1.3;
-}
-
-.map-process-desc {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
-}
-
-.map-process-bottom {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.map-process-btn {
-    background-color: transparent;
-    color: #FFFFFF;
-    border: 1px solid #F77422;
-    padding: 16px 36px;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.map-process-btn:hover {
-    background-color: #F77422;
-    color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(247, 116, 34, 0.3);
-}
-
-.map-process-btn .map-btn-arrow {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease;
-}
-
-.map-process-btn:hover .map-btn-arrow {
-    transform: translateX(6px);
-}
-
-/* Mobile & Tablet Styles */
-@media (max-width: 1024px) {
-    .map-process-header-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .map-process-steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-    
-    .map-process-track-bg, .map-process-track-fill {
-        display: none;
-    }
+@media (max-width: 1100px) {
+  .tl-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
 @media (max-width: 640px) {
-    .map-process-steps-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+  .tl-process-section {
+    padding: 80px 5%;
+  }
+  .tl-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .tl-process-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .tl-process-cta-btn {
+    justify-content: center;
+  }
 }
 </style>
-<script id="map-process-scroll-anim">
-(function() {
-    function initProcessInteractivity() {
-        const processSec = document.getElementById('process');
-        const trackFill = document.getElementById('process-track-fill');
-        const stepItems = document.querySelectorAll('.map-process-step-item');
-        const activeText = document.getElementById('map-active-step-text');
-        const tabBtns = document.querySelectorAll('.map-process-tab-btn');
-        if (!processSec) return;
 
-        // Scroll Progress & Active Step Detection
-        function handleProcessScroll() {
-            const rect = processSec.getBoundingClientRect();
-            const winHeight = window.innerHeight;
-
-            if (rect.top <= winHeight && rect.bottom >= 0) {
-                processSec.classList.add('in-view');
-                if (trackFill) {
-                    const totalScrollable = rect.height;
-                    const currentProgress = (winHeight - rect.top) / (totalScrollable + winHeight * 0.2);
-                    const clampedProgress = Math.min(Math.max(currentProgress * 100, 0), 100);
-                    trackFill.style.width = clampedProgress + '%';
-                }
-            }
-        }
-
-        // Hover & Active Step Switching
-        stepItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                stepItems.forEach(s => s.classList.remove('active-step'));
-                item.classList.add('active-step');
-                const num = item.dataset.step;
-                const title = item.dataset.title;
-                if (activeText) {
-                    activeText.innerText = `Step ${num} of 08 — ${title}`;
-                }
-            });
-        });
-
-        // Phase Tab Filtering
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const phase = btn.dataset.phase;
-
-                stepItems.forEach(item => {
-                    if (phase === 'all' || item.dataset.phase === phase) {
-                        item.style.display = 'flex';
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        window.addEventListener('scroll', handleProcessScroll);
-        window.addEventListener('resize', handleProcessScroll);
-        handleProcessScroll();
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initProcessInteractivity);
-    } else {
-        initProcessInteractivity();
-    }
-    window.addEventListener('load', initProcessInteractivity);
-})();
-</script>
 <style id="global-nav-header-fix">
 .framer-2uznpr-container,
 .framer-M9nBZ,
@@ -3501,136 +3299,143 @@ header.framer-M9nBZ {
   </div>
 </section>
 
-<section id="process" class="map-process-section">
-  <div class="map-process-container">
-    <!-- Header Row with Active Step Counter -->
-    <div class="map-process-header-row">
-      <div class="map-process-header">
-        <span class="map-process-label">OUR PROCESS</span>
-        <h2 class="map-process-heading">
-          A Thoughtful Process,<br>From Vision to Completion.
-        </h2>
-        <p class="map-process-intro">
-          Every successful project begins with careful planning. Our integrated workflow ensures clarity, transparency, and quality at every stage, from the first conversation to the final handover.
+<section id="process" class="tl-process-section">
+  <div class="tl-process-container">
+    <!-- Header -->
+    <div class="tl-process-header">
+      <span class="tl-process-eyebrow">OUR PROCESS</span>
+      <h2 class="tl-process-title">
+        A Structured Workflow,<br>From Vision to Handover.
+      </h2>
+      <p class="tl-process-intro">
+        Every project is executed through a disciplined four-phase framework that unites architecture, interior design, engineering, and project management with complete transparency.
+      </p>
+    </div>
+
+    <!-- 4 Architectural Phase Columns Grid -->
+    <div class="tl-process-grid">
+      <!-- Phase 1 -->
+      <div class="tl-process-card">
+        <div class="tl-process-card-header">
+          <span class="tl-process-num">01</span>
+          <span class="tl-process-phase-tag">PHASE 01</span>
+        </div>
+        <h3 class="tl-process-phase-name">Discovery &amp; Strategy</h3>
+        <p class="tl-process-phase-summary">
+          Aligning lifestyle aspirations, spatial requirements, and financial parameters before design begins.
         </p>
+        <div class="tl-process-steps-list">
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">01. Design Brief</strong>
+              <span class="tl-step-desc">Lifestyle mapping, site context, and functional requirements.</span>
+            </div>
+          </div>
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">02. Budget Planning</strong>
+              <span class="tl-step-desc">Initial feasibility, timeline estimation, and cost framework.</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="map-process-counter-badge">
-        <span class="map-process-counter-dot"></span>
-        <span id="map-active-step-text">Phase 1 — Discovery & Planning</span>
+      <!-- Phase 2 -->
+      <div class="tl-process-card">
+        <div class="tl-process-card-header">
+          <span class="tl-process-num">02</span>
+          <span class="tl-process-phase-tag">PHASE 02</span>
+        </div>
+        <h3 class="tl-process-phase-name">Design &amp; Concept</h3>
+        <p class="tl-process-phase-summary">
+          Translating conceptual ideas into refined architectural layouts, daylight studies, and tailored interior experiences.
+        </p>
+        <div class="tl-process-steps-list">
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">03. Architectural Design</strong>
+              <span class="tl-step-desc">Volumetric massing, spatial planning, and 3D visualization.</span>
+            </div>
+          </div>
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">04. Interior Experience</strong>
+              <span class="tl-step-desc">Material choreography, custom joinery, and lighting design.</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Phase Tabs for Fast Navigation -->
-    <div class="map-process-phase-tabs">
-      <button class="map-process-tab-btn active" data-phase="all">All 8 Steps</button>
-      <button class="map-process-tab-btn" data-phase="1">01. Strategy & Brief</button>
-      <button class="map-process-tab-btn" data-phase="2">02. Design & Concepts</button>
-      <button class="map-process-tab-btn" data-phase="3">03. Materials & Specs</button>
-      <button class="map-process-tab-btn" data-phase="4">04. Execution & Handover</button>
-    </div>
-
-    <!-- Timeline Wrapper -->
-    <div class="map-process-timeline-wrapper">
-      <div class="map-process-track-bg"></div>
-      <div class="map-process-track-fill" id="process-track-fill"></div>
-
-      <div class="map-process-steps-grid" id="map-process-grid">
-        <div class="map-process-step-item active-step" data-step="01" data-phase="1" data-title="Design Brief">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
+      <!-- Phase 3 -->
+      <div class="tl-process-card">
+        <div class="tl-process-card-header">
+          <span class="tl-process-num">03</span>
+          <span class="tl-process-phase-tag">PHASE 03</span>
+        </div>
+        <h3 class="tl-process-phase-name">Materials &amp; Details</h3>
+        <p class="tl-process-phase-summary">
+          Curating authentic material palettes, physical sampling, and preparing millimeter-accurate construction drawings.
+        </p>
+        <div class="tl-process-steps-list">
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">05. Material Selection</strong>
+              <span class="tl-step-desc">Stone, timber, textures, and bespoke fixture approvals.</span>
+            </div>
           </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">01</span>
-            <h3 class="map-process-title">Design Brief</h3>
-            <p class="map-process-desc">Understanding your goals, lifestyle, functional requirements, and project vision.</p>
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">06. Detailed Documentation</strong>
+              <span class="tl-step-desc">Working drawings, structural engineering, and itemized BOQs.</span>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="map-process-step-item" data-step="02" data-phase="1" data-title="Budget Planning">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
-          </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">02</span>
-            <h3 class="map-process-title">Budget Planning</h3>
-            <p class="map-process-desc">Preparing an initial budget framework to establish clarity before design begins.</p>
-          </div>
+      <!-- Phase 4 -->
+      <div class="tl-process-card">
+        <div class="tl-process-card-header">
+          <span class="tl-process-num">04</span>
+          <span class="tl-process-phase-tag">PHASE 04</span>
         </div>
-
-        <div class="map-process-step-item" data-step="03" data-phase="2" data-title="Architectural Design">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
+        <h3 class="tl-process-phase-name">Execution &amp; Handover</h3>
+        <p class="tl-process-phase-summary">
+          Executing construction with rigorous site supervision, quality audits, and seamless final handover.
+        </p>
+        <div class="tl-process-steps-list">
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">07. Construction &amp; PMC</strong>
+              <span class="tl-step-desc">Site execution, quality milestones, and project management.</span>
+            </div>
           </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">03</span>
-            <h3 class="map-process-title">Architectural Design</h3>
-            <p class="map-process-desc">Developing thoughtful planning, layouts, and visual concepts aligned with your requirements.</p>
-          </div>
-        </div>
-
-        <div class="map-process-step-item" data-step="04" data-phase="2" data-title="Interior Design">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
-          </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">04</span>
-            <h3 class="map-process-title">Interior Design</h3>
-            <p class="map-process-desc">Refining materials, finishes, furniture, lighting, and spatial experience.</p>
-          </div>
-        </div>
-
-        <div class="map-process-step-item" data-step="05" data-phase="3" data-title="Material Selection">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
-          </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">05</span>
-            <h3 class="map-process-title">Material Selection</h3>
-            <p class="map-process-desc">Finalising materials, finishes, and product selections with client approval.</p>
-          </div>
-        </div>
-
-        <div class="map-process-step-item" data-step="06" data-phase="3" data-title="Detailed Documentation">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
-          </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">06</span>
-            <h3 class="map-process-title">Detailed Documentation</h3>
-            <p class="map-process-desc">Preparing detailed drawings, specifications, and quantities for accurate execution.</p>
-          </div>
-        </div>
-
-        <div class="map-process-step-item" data-step="07" data-phase="4" data-title="Construction & Execution">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
-          </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">07</span>
-            <h3 class="map-process-title">Construction & Execution</h3>
-            <p class="map-process-desc">Executing the approved design with continuous quality checks and site coordination.</p>
-          </div>
-        </div>
-
-        <div class="map-process-step-item" data-step="08" data-phase="4" data-title="Project Handover">
-          <div class="map-process-marker-container">
-            <span class="map-process-dot"></span>
-          </div>
-          <div class="map-process-step-content">
-            <span class="map-process-num">08</span>
-            <h3 class="map-process-title">Project Handover</h3>
-            <p class="map-process-desc">Delivering a completed space with attention to quality, functionality, and long-term value.</p>
+          <div class="tl-process-step">
+            <span class="tl-step-dot"></span>
+            <div class="tl-step-info">
+              <strong class="tl-step-name">08. Project Handover</strong>
+              <span class="tl-step-desc">Comprehensive snagging sign-off and lifetime space delivery.</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Button Row -->
-    <div class="map-process-bottom">
-      <a href="/services.html" class="map-btn map-btn-secondary map-process-btn">
-        View Our Services
-        <svg class="map-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <!-- Bottom Actions -->
+    <div class="tl-process-bottom">
+      <a href="/services.html" class="tl-process-cta-btn">
+        <span>EXPLORE OUR SERVICES</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <a href="/contact.html" class="tl-process-sec-link">
+        <span>BOOK A CONSULTATION</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
       </a>
     </div>
   </div>
