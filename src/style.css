@@ -1190,6 +1190,7 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   position: relative !important;
   padding: 6px 0 !important;
   transition: color 0.25s ease !important;
+  text-transform: uppercase !important;
 }
 
 .nav-link:hover {
@@ -1301,6 +1302,7 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   color: rgba(255, 255, 255, 0.8) !important;
   text-decoration: none !important;
   transition: color 0.2s ease, transform 0.2s ease !important;
+  text-transform: uppercase !important;
 }
 
 .nav-mobile-item:hover,
