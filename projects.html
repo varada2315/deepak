@@ -1220,6 +1220,229 @@ header.framer-M9nBZ {
   }
 }
 </style>
+<style id="map-projects-grid-styles">
+.map-projects-portfolio-section {
+  position: relative;
+  width: 100%;
+  background-color: #08090E;
+  color: #FFFFFF;
+  padding: 100px 6% 140px;
+  box-sizing: border-box;
+}
+
+.map-portfolio-header {
+  max-width: 780px;
+  margin-bottom: 70px;
+}
+
+.map-portfolio-label {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: #F77422;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.map-portfolio-heading {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(36px, 4.2vw, 58px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+}
+
+.map-portfolio-intro {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Asymmetric Editorial Portfolio Grid */
+.map-portfolio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.map-portfolio-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.map-portfolio-item.is-hidden {
+  display: none !important;
+}
+
+.map-portfolio-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Image Presentation Containers */
+.map-portfolio-img-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #141620;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.map-portfolio-img-box.featured-large {
+  height: 580px;
+}
+
+.map-portfolio-img-box.paired-medium {
+  height: 420px;
+}
+
+.map-portfolio-img-box.panoramic-wide {
+  height: 460px;
+}
+
+.map-portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-portfolio-item:hover .map-portfolio-img {
+  transform: scale(1.035);
+}
+
+/* Meta & Info Styling */
+.map-portfolio-meta-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 22px 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 18px;
+  margin-top: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.map-portfolio-item:hover .map-portfolio-meta-bar {
+  border-color: rgba(247, 116, 34, 0.4);
+}
+
+.map-portfolio-info-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-portfolio-cat-loc {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #F77422;
+}
+
+.map-portfolio-title {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.map-portfolio-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.map-portfolio-action svg {
+  transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.map-portfolio-item:hover .map-portfolio-action {
+  color: #F77422;
+}
+
+.map-portfolio-item:hover .map-portfolio-action svg {
+  transform: translateX(5px);
+  stroke: #F77422;
+}
+
+.map-portfolio-empty {
+  display: none;
+  text-align: center;
+  padding: 80px 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .map-projects-portfolio-section {
+    padding: 70px 5% 100px;
+  }
+  .map-portfolio-row-2col {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .map-portfolio-img-box.featured-large {
+    height: 440px;
+  }
+  .map-portfolio-img-box.paired-medium {
+    height: 340px;
+  }
+  .map-portfolio-img-box.panoramic-wide {
+    height: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .map-projects-portfolio-section {
+    padding: 50px 5% 80px;
+  }
+  .map-portfolio-header {
+    margin-bottom: 40px;
+  }
+  .map-portfolio-grid {
+    gap: 40px;
+  }
+  .map-portfolio-img-box.featured-large,
+  .map-portfolio-img-box.paired-medium,
+  .map-portfolio-img-box.panoramic-wide {
+    height: 260px;
+  }
+  .map-portfolio-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -1433,7 +1656,206 @@ header.framer-M9nBZ {
     initFilterButtons();
   }
 })();
-</script><section class="framer-15mr9ao" data-framer-name="Works" id="works"><div class="framer-1ou3rlh" data-framer-name="Container"><div class="framer-rxh777"><div class="framer-yk4ffw"><!--$--><!--$--><div class="ssr-variant hidden-1nhnpyy hidden-eugdk3"><div class="framer-19uf5c0-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-1r83oas framer-87ug8p" data-framer-name="Desktop" href="/project_loft.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" width="1313" height="1362" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/WoCIt8wRMP1eQextH4OkPIsf8ak.webp?scale-down-to=1024&amp;width=1313&amp;height=1362 987w,https://framerusercontent.com/images/WoCIt8wRMP1eQextH4OkPIsf8ak.webp?width=1313&amp;height=1362 1313w" src="https://framerusercontent.com/images/WoCIt8wRMP1eQextH4OkPIsf8ak.webp?width=1313&amp;height=1362" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Serene Loft</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Open-plan loft styled for clarity &amp; spatial breathing.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><div class="ssr-variant hidden-b9y9ql"><div class="framer-19uf5c0-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-2statl framer-87ug8p" data-framer-name="Mobile" href="/project_loft.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" width="1313" height="1362" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/WoCIt8wRMP1eQextH4OkPIsf8ak.webp?scale-down-to=1024&amp;width=1313&amp;height=1362 987w,https://framerusercontent.com/images/WoCIt8wRMP1eQextH4OkPIsf8ak.webp?width=1313&amp;height=1362 1313w" src="https://framerusercontent.com/images/WoCIt8wRMP1eQextH4OkPIsf8ak.webp?width=1313&amp;height=1362" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Serene Loft</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Open-plan loft styled for clarity &amp; spatial breathing.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><!--/$--><!--/$--></div><div class="framer-bezew0"><!--$--><!--$--><div class="ssr-variant hidden-1nhnpyy hidden-eugdk3"><div class="framer-aqqy8u-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-1r83oas framer-87ug8p" data-framer-name="Desktop" href="/project_atelier.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" width="3500" height="3500" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?scale-down-to=512&amp;width=3500&amp;height=3500 512w,https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?scale-down-to=1024&amp;width=3500&amp;height=3500 1024w,https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?scale-down-to=2048&amp;width=3500&amp;height=3500 2048w,https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?width=3500&amp;height=3500 3500w" src="https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?width=3500&amp;height=3500" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Atelier Living</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Refined interior blending functionality with elegance.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><div class="ssr-variant hidden-b9y9ql"><div class="framer-aqqy8u-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-2statl framer-87ug8p" data-framer-name="Mobile" href="/project_atelier.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" width="3500" height="3500" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?scale-down-to=512&amp;width=3500&amp;height=3500 512w,https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?scale-down-to=1024&amp;width=3500&amp;height=3500 1024w,https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?scale-down-to=2048&amp;width=3500&amp;height=3500 2048w,https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?width=3500&amp;height=3500 3500w" src="https://framerusercontent.com/images/ZU9dsHKhHmPe1v4pW97sfjQ8vg.webp?width=3500&amp;height=3500" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Atelier Living</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Refined interior blending functionality with elegance.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><!--/$--><!--/$--></div><div class="framer-1mmr01r"><!--$--><!--$--><div class="ssr-variant hidden-1nhnpyy hidden-eugdk3"><div class="framer-1kcceoy-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-1r83oas framer-87ug8p" data-framer-name="Desktop" href="/project_luma.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="2000" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?scale-down-to=512&amp;width=2000&amp;height=2000 512w,https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?scale-down-to=1024&amp;width=2000&amp;height=2000 1024w,https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?width=2000&amp;height=2000 2000w" src="https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?width=2000&amp;height=2000" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:68.4% 58.7%;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Luma Renovation</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Full-home renovation enhancing layout &amp; harmony.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><div class="ssr-variant hidden-b9y9ql"><div class="framer-1kcceoy-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-2statl framer-87ug8p" data-framer-name="Mobile" href="/project_luma.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="2000" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?scale-down-to=512&amp;width=2000&amp;height=2000 512w,https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?scale-down-to=1024&amp;width=2000&amp;height=2000 1024w,https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?width=2000&amp;height=2000 2000w" src="https://framerusercontent.com/images/UtWVm1rY7zHpufeIp5n4IDU3yA.webp?width=2000&amp;height=2000" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:68.4% 58.7%;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Luma Renovation</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Full-home renovation enhancing layout &amp; harmony.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><!--/$--><!--/$--></div><div class="framer-pdvk3j"><!--$--><!--$--><div class="ssr-variant hidden-1nhnpyy hidden-eugdk3"><div class="framer-ao60w7-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-1r83oas framer-87ug8p" data-framer-name="Desktop" href="/project_nordic.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="1367" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?scale-down-to=512&amp;width=2000&amp;height=1367 512w,https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?scale-down-to=1024&amp;width=2000&amp;height=1367 1024w,https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?width=2000&amp;height=1367 2000w" src="https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?width=2000&amp;height=1367" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:57.3% 64.9%;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Nordic Living</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Soft interiors with clean lines &amp; natural materials.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><div class="ssr-variant hidden-b9y9ql"><div class="framer-ao60w7-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-2statl framer-87ug8p" data-framer-name="Mobile" href="/project_nordic.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="1367" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?scale-down-to=512&amp;width=2000&amp;height=1367 512w,https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?scale-down-to=1024&amp;width=2000&amp;height=1367 1024w,https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?width=2000&amp;height=1367 2000w" src="https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?width=2000&amp;height=1367" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:57.3% 64.9%;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Nordic Living</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Soft interiors with clean lines &amp; natural materials.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><!--/$--><!--/$--></div><div class="framer-2ztbpq"><!--$--><!--$--><div class="ssr-variant hidden-1nhnpyy hidden-eugdk3"><div class="framer-1ljc6ej-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-1r83oas framer-87ug8p" data-framer-name="Desktop" href="/project_loft.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="2000" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?scale-down-to=512&amp;width=2000&amp;height=2000 512w,https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?scale-down-to=1024&amp;width=2000&amp;height=2000 1024w,https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?width=2000&amp;height=2000 2000w" src="https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?width=2000&amp;height=2000" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Stoneframe Loft</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Minimal redesign focused on flow, proportion &amp; calm.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><div class="ssr-variant hidden-b9y9ql"><div class="framer-1ljc6ej-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-2statl framer-87ug8p" data-framer-name="Mobile" href="/project_loft.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="2000" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px), 1px), 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px)" srcset="https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?scale-down-to=512&amp;width=2000&amp;height=2000 512w,https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?scale-down-to=1024&amp;width=2000&amp;height=2000 1024w,https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?width=2000&amp;height=2000 2000w" src="https://framerusercontent.com/images/sSbc3Ts8YS8wKJaWJjOS8pYt3AQ.webp?width=2000&amp;height=2000" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Stoneframe Loft</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Minimal redesign focused on flow, proportion &amp; calm.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><!--/$--><!--/$--></div><div class="framer-nq4wlo"><!--$--><div class="ssr-variant hidden-1nhnpyy"><!--$--><div class="ssr-variant hidden-eugdk3"><div class="framer-1c354c9-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-1r83oas framer-87ug8p" data-framer-name="Desktop" href="/project_atelier.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="1367" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px), 1px)" srcset="https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?scale-down-to=512&amp;width=2000&amp;height=1367 512w,https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?scale-down-to=1024&amp;width=2000&amp;height=1367 1024w,https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?width=2000&amp;height=1367 2000w" src="https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?width=2000&amp;height=1367" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:64.9% 67.7%;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Ashwood Residence</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Warm modern home balancing texture &amp; comfort.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><div class="ssr-variant hidden-b9y9ql"><div class="framer-1c354c9-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-2statl framer-87ug8p" data-framer-name="Mobile" href="/project_atelier.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="1367" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px), 1px)" srcset="https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?scale-down-to=512&amp;width=2000&amp;height=1367 512w,https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?scale-down-to=1024&amp;width=2000&amp;height=1367 1024w,https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?width=2000&amp;height=1367 2000w" src="https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?width=2000&amp;height=1367" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:64.9% 67.7%;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Ashwood Residence</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Warm modern home balancing texture &amp; comfort.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div></div><!--/$--></div><div class="ssr-variant hidden-b9y9ql hidden-eugdk3"><!--$--><div class="framer-1c354c9-container" style="will-change:transform;opacity:0;transform:translateY(30px)"><!--$--><a class="framer-OySoB framer-bwNAm framer-w815r framer-SaC0B framer-AP5Qs framer-1r83oas framer-v-2statl framer-87ug8p" data-framer-name="Mobile" href="/project_atelier.html" style="background-color:rgba(0, 0, 0, 0);height:100%;width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px"><div class="framer-vupr8h" data-framer-name="Thumbnail" style="border-bottom-left-radius:1px;border-bottom-right-radius:1px;border-top-left-radius:1px;border-top-right-radius:1px"><div class="framer-1jg3ni0" data-framer-name="Image" style="border-bottom-left-radius:2px;border-bottom-right-radius:2px;border-top-left-radius:2px;border-top-right-radius:2px"><div class="framer-d22gc6" data-framer-name="Thumbnail" style="transform:none"><div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy" width="2000" height="1367" sizes="(min-width: 1200px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px) - 32px, 1px), (max-width: 809.98px) max(max(min(100vw - 40px, 1300px) - 28px, 50px), 1px), (min-width: 810px) and (max-width: 1199.98px) max(max(max((min(100vw - 104px, 1300px) - 32px) / 2, 50px) * 1, 1px), 1px)" srcset="https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?scale-down-to=512&amp;width=2000&amp;height=1367 512w,https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?scale-down-to=1024&amp;width=2000&amp;height=1367 1024w,https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?width=2000&amp;height=1367 2000w" src="https://framerusercontent.com/images/3FgS5SvTydPgDz7VrJ8lLKJo.webp?width=2000&amp;height=1367" alt style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:64.9% 67.7%;object-fit:cover"></div></div><div class="framer-18x2nn6" data-framer-name="Clip" style="background-color:var(--token-90eb39eb-8ae7-4d64-805e-41357c9bae67, rgb(255, 255, 255));transform:rotate(40deg)"></div></div></div><div class="framer-18fm8jb" data-framer-name="Text"><div class="framer-dztemq" data-framer-name="Title"><div class="framer-j0u65i" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-1lwpl3i:var(--variable-reference-oR_nez1fH-woNJ9I1iY);--variable-reference-oR_nez1fH-woNJ9I1iY:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));transform:none"><h5 class="framer-text framer-styles-preset-1imltxn" data-styles-preset="BPr6nE5GX" dir="auto" style="--framer-text-color:var(--extracted-1lwpl3i, var(--variable-reference-oR_nez1fH-woNJ9I1iY))">Ashwood Residence</h5></div><div class="framer-14z7u9" data-framer-name="Default" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--variable-reference-E0Llxu5AE-woNJ9I1iY);--variable-reference-E0Llxu5AE-woNJ9I1iY:var(--token-7ce9bada-1663-4a83-b58d-29e0a67bc261, rgba(61, 61, 61, 0.85));transform:none"><p class="framer-text framer-styles-preset-kz4is" data-styles-preset="YrK0iTyFl" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-E0Llxu5AE-woNJ9I1iY))">Warm modern home balancing texture &amp; comfort.</p></div></div><div class="framer-besqwg" data-framer-name="Text"><div class="framer-1glpwzd" data-framer-name="Arrow Placeholder" style="border-bottom-left-radius:35px;border-bottom-right-radius:35px;border-top-left-radius:35px;border-top-right-radius:35px"><div class="framer-rxxud2" data-framer-name="Arrow"><svg class="framer-VdeRv framer-6duimv" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg><svg class="framer-VdeRv framer-1wtxl7j" role="presentation" viewBox="0 0 24 24" style="--1335ju:1.5;--18mrqx2:var(--token-05c8fc94-9d88-4996-8c43-5ba6b09ba5c8, rgb(10, 11, 18));--3it368:1"><use href="#2430009286"/></svg></div></div></div></div></a><!--/$--></div><!--/$--></div><!--/$--></div></div></div><div class="ssr-variant hidden-eugdk3"><div class="framer-o6xcgf-container" data-framer-appear-id="o6xcgf" data-framer-name="Grid lines" name="Grid lines" style="opacity:0.001;transform:translateY(80px)"><div name="Grid lines" class="framer-9qX6z framer-1suy42w framer-v-1suy42w" data-framer-name="Default" style="--u9p93t:0px 32px 0px 32px;height:100%;width:100%"><div class="framer-16kd6mw" data-framer-name="Container"><div class="framer-ajnq3s" data-framer-name="filler" style="background-color:var(--token-5e16aaa6-e6d8-464a-8663-70c5c696d6b3, rgb(234, 234, 234));opacity:0"></div><div class="framer-hlehic" data-framer-name="Line" style="background-color:var(--token-5e16aaa6-e6d8-464a-8663-70c5c696d6b3, rgb(234, 234, 234))"></div><div class="framer-dvtgec" data-framer-name="Line" style="background-color:var(--token-5e16aaa6-e6d8-464a-8663-70c5c696d6b3, rgb(234, 234, 234))"></div><div class="framer-52ihiq" data-framer-name="filler" style="background-color:var(--token-5e16aaa6-e6d8-464a-8663-70c5c696d6b3, rgb(234, 234, 234));opacity:0"></div></div></div></div></div><div class="ssr-variant hidden-b9y9ql hidden-1nhnpyy"><div class="framer-o6xcgf-container" data-framer-appear-id="o6xcgf" data-framer-name="Grid lines" name="Grid lines" style="opacity:0.001;transform:translateY(80px)"><div name="Grid lines" class="framer-9qX6z framer-1suy42w framer-v-1suy42w" data-framer-name="Default" style="--u9p93t:0px 24px 0px 24px;height:100%;width:100%"><div class="framer-16kd6mw" data-framer-name="Container"><div class="framer-ajnq3s" data-framer-name="filler" style="background-color:var(--token-5e16aaa6-e6d8-464a-8663-70c5c696d6b3, rgb(234, 234, 234));opacity:0"></div><div class="framer-52ihiq" data-framer-name="filler" style="background-color:var(--token-5e16aaa6-e6d8-464a-8663-70c5c696d6b3, rgb(234, 234, 234));opacity:0"></div></div></div></div></div></section><div class="framer-vutv4b-container"><!--$--><div></div><!--/$--></div></div><div id="overlay"></div><div class="framer-1lz6xd5"></div><div class="ssr-variant hidden-t88lue"><div class="framer-1l1u7oe-container" data-framer-name="Footer" name="Footer"></div></div><div class="ssr-variant hidden-80nirp hidden-1kisfp"><div class="framer-1l1u7oe-container" data-framer-name="Footer" name="Footer"></div></div></div><div id="template-overlay"></div><!--/$--></div><script>(()=>{function u(){function n(t,e,i){let r=document.createElement("a");r.href=t,r.target=i,r.rel=e,document.body.appendChild(r),r.click(),r.remove()}function o(t){if(this.dataset.hydrated){this.removeEventListener("click",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;if(/Mac|iPod|iPhone|iPad/u.test(navigator.userAgent)?t.metaKey:t.ctrlKey)return n(e,"","_blank");let r=this.getAttribute("rel")??"",c=this.getAttribute("target")??"";n(e,r,c)}function a(t){if(this.dataset.hydrated){this.removeEventListener("auxclick",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");e&&n(e,"","_blank")}function s(t){if(this.dataset.hydrated){this.removeEventListener("keydown",s);return}if(t.key!=="Enter")return;t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;let i=this.getAttribute("rel")??"",r=this.getAttribute("target")??"";n(e,i,r)}document.querySelectorAll("[data-nested-link]").forEach(t=>{t instanceof HTMLElement&&(t.addEventListener("click",o),t.addEventListener("auxclick",a),t.addEventListener("keydown",s))})}return u})()()</script>
+</script><!-- Project Listing Section -->
+<section id="projects-grid-section" class="map-projects-portfolio-section">
+  <div class="map-container">
+    <!-- Section Header -->
+    <div class="map-portfolio-header">
+      <span class="map-portfolio-label">SELECTED WORK</span>
+      <h2 class="map-portfolio-heading">Our Projects</h2>
+      <p class="map-portfolio-intro">
+        Explore a curated collection of Terraline's work across architecture, interiors, construction, and integrated design.
+      </p>
+    </div>
+
+    <!-- Editorial Asymmetric Portfolio Grid -->
+    <div class="map-portfolio-grid" id="portfolio-items-container">
+      
+      <!-- Project 1: Large Featured Card (Atelier Living Residence - Architecture) -->
+      <a href="/project_atelier.html" class="map-portfolio-item" data-category="architecture all">
+        <div class="map-portfolio-img-box featured-large">
+          <img src="/images/project_02_atelier_living.png" alt="Atelier Living Residence" class="map-portfolio-img" />
+        </div>
+        <div class="map-portfolio-meta-bar">
+          <div class="map-portfolio-info-left">
+            <span class="map-portfolio-cat-loc">Architecture • Bengaluru</span>
+            <h3 class="map-portfolio-title">Atelier Living Residence</h3>
+          </div>
+          <div class="map-portfolio-action">
+            <span>View Project</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2-Column Editorial Pairing (Projects 2 & 3) -->
+      <div class="map-portfolio-row-2col">
+        <!-- Project 2: Serene Urban Loft (Interiors) -->
+        <a href="/project_loft.html" class="map-portfolio-item" data-category="interiors all">
+          <div class="map-portfolio-img-box paired-medium">
+            <img src="/images/project_01_serene_loft.png" alt="Serene Urban Loft" class="map-portfolio-img" />
+          </div>
+          <div class="map-portfolio-meta-bar">
+            <div class="map-portfolio-info-left">
+              <span class="map-portfolio-cat-loc">Interiors • Bengaluru</span>
+              <h3 class="map-portfolio-title">Serene Urban Loft</h3>
+            </div>
+            <div class="map-portfolio-action">
+              <span>View Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3: Commercial Tech Hub (Construction / Design & Build) -->
+        <a href="/commercial-spaces.html" class="map-portfolio-item" data-category="construction design-build all">
+          <div class="map-portfolio-img-box paired-medium">
+            <img src="/images/project_03_commercial_workplace.png" alt="Commercial Tech Hub" class="map-portfolio-img" />
+          </div>
+          <div class="map-portfolio-meta-bar">
+            <div class="map-portfolio-info-left">
+              <span class="map-portfolio-cat-loc">Design &amp; Build • Bengaluru</span>
+              <h3 class="map-portfolio-title">Commercial Tech Hub</h3>
+            </div>
+            <div class="map-portfolio-action">
+              <span>View Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Project 4: Panoramic Wide Card (Luma Living Residence - Design & Build / Architecture) -->
+      <a href="/project_luma.html" class="map-portfolio-item" data-category="design-build architecture all">
+        <div class="map-portfolio-img-box panoramic-wide">
+          <img src="/images/project_04_luma_renovation.png" alt="Luma Living Residence" class="map-portfolio-img" />
+        </div>
+        <div class="map-portfolio-meta-bar">
+          <div class="map-portfolio-info-left">
+            <span class="map-portfolio-cat-loc">Design &amp; Build • Bengaluru</span>
+            <h3 class="map-portfolio-title">Luma Living Residence</h3>
+          </div>
+          <div class="map-portfolio-action">
+            <span>View Project</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2-Column Editorial Pairing (Projects 5 & 6) -->
+      <div class="map-portfolio-row-2col">
+        <!-- Project 5: Nordic Living Residence (Interiors) -->
+        <a href="/project_nordic.html" class="map-portfolio-item" data-category="interiors all">
+          <div class="map-portfolio-img-box paired-medium">
+            <img src="https://framerusercontent.com/images/cUlz8ziij9tu7rDJX3yAaQXzc.webp?width=2000&amp;height=1367" alt="Nordic Living Residence" class="map-portfolio-img" />
+          </div>
+          <div class="map-portfolio-meta-bar">
+            <div class="map-portfolio-info-left">
+              <span class="map-portfolio-cat-loc">Interiors • Bengaluru</span>
+              <h3 class="map-portfolio-title">Nordic Living Residence</h3>
+            </div>
+            <div class="map-portfolio-action">
+              <span>View Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 6: Sustainable Construction Hub (Construction) -->
+        <a href="/renovation-remodeling.html" class="map-portfolio-item" data-category="construction all">
+          <div class="map-portfolio-img-box paired-medium">
+            <img src="/images/service_03_construction.png" alt="Sustainable Construction Hub" class="map-portfolio-img" />
+          </div>
+          <div class="map-portfolio-meta-bar">
+            <div class="map-portfolio-info-left">
+              <span class="map-portfolio-cat-loc">Construction • Bengaluru</span>
+              <h3 class="map-portfolio-title">Sustainable Construction Hub</h3>
+            </div>
+            <div class="map-portfolio-action">
+              <span>View Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Empty Message if no projects found for filter -->
+    <div id="portfolio-empty-msg" class="map-portfolio-empty">
+      No projects found in this category.
+    </div>
+  </div>
+</section>
+
+<script id="map-projects-filter-script">
+(function() {
+  function applyFilter(category) {
+    var items = document.querySelectorAll('.map-portfolio-item');
+    var rows = document.querySelectorAll('.map-portfolio-row-2col');
+    var emptyMsg = document.getElementById('portfolio-empty-msg');
+    var visibleCount = 0;
+
+    items.forEach(function(item) {
+      var cats = (item.getAttribute('data-category') || '').toLowerCase().split(' ');
+      if (category === 'all' || cats.indexOf(category.toLowerCase()) !== -1) {
+        item.classList.remove('is-hidden');
+        item.style.display = '';
+        visibleCount++;
+      } else {
+        item.classList.add('is-hidden');
+        item.style.display = 'none';
+      }
+    });
+
+    // Handle 2-col rows display if all children are hidden
+    rows.forEach(function(row) {
+      var visibleChildren = row.querySelectorAll('.map-portfolio-item:not(.is-hidden)');
+      if (visibleChildren.length === 0) {
+        row.style.display = 'none';
+      } else if (visibleChildren.length === 1) {
+        row.style.display = 'grid';
+        row.style.gridTemplateColumns = '1fr';
+      } else {
+        row.style.display = 'grid';
+        row.style.gridTemplateColumns = '';
+      }
+    });
+
+    if (emptyMsg) {
+      emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  function initFilterButtons() {
+    var filterButtons = document.querySelectorAll('.map-filter-btn');
+    if (!filterButtons.length) return;
+
+    filterButtons.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterButtons.forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        var selectedFilter = this.getAttribute('data-filter');
+        applyFilter(selectedFilter);
+      });
+    });
+
+    // Listen for custom filter event
+    window.addEventListener('terraline:filter-projects', function(e) {
+      if (e.detail && e.detail.filter) {
+        applyFilter(e.detail.filter);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFilterButtons);
+  } else {
+    initFilterButtons();
+  }
+})();
+</script><div class="framer-vutv4b-container"><!--$--><div></div><!--/$--></div></div><div id="overlay"></div><div class="framer-1lz6xd5"></div><div class="ssr-variant hidden-t88lue"><div class="framer-1l1u7oe-container" data-framer-name="Footer" name="Footer"></div></div><div class="ssr-variant hidden-80nirp hidden-1kisfp"><div class="framer-1l1u7oe-container" data-framer-name="Footer" name="Footer"></div></div></div><div id="template-overlay"></div><!--/$--></div><script>(()=>{function u(){function n(t,e,i){let r=document.createElement("a");r.href=t,r.target=i,r.rel=e,document.body.appendChild(r),r.click(),r.remove()}function o(t){if(this.dataset.hydrated){this.removeEventListener("click",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;if(/Mac|iPod|iPhone|iPad/u.test(navigator.userAgent)?t.metaKey:t.ctrlKey)return n(e,"","_blank");let r=this.getAttribute("rel")??"",c=this.getAttribute("target")??"";n(e,r,c)}function a(t){if(this.dataset.hydrated){this.removeEventListener("auxclick",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");e&&n(e,"","_blank")}function s(t){if(this.dataset.hydrated){this.removeEventListener("keydown",s);return}if(t.key!=="Enter")return;t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;let i=this.getAttribute("rel")??"",r=this.getAttribute("target")??"";n(e,i,r)}document.querySelectorAll("[data-nested-link]").forEach(t=>{t instanceof HTMLElement&&(t.addEventListener("click",o),t.addEventListener("auxclick",a),t.addEventListener("keydown",s))})}return u})()()</script>
 
 	<script>!function(){var w="framer_variant";function u(a,r){let e=r.indexOf("#"),t=e===-1?r:r.substring(0,e),o=e===-1?"":r.substring(e),n=t.indexOf("?"),h=n===-1?t:t.substring(0,n),d=n===-1?"":t.substring(n),s=new URLSearchParams(d),m=new URLSearchParams(a);for(let[i,l]of m)s.has(i)||i!==w&&s.append(i,l);let c=s.toString();return c===""?t+o:h+"?"+c+o}var g='div#main a[href^="#"],div#main a[href^="/"],div#main a[href^="."]',f="div#main a[data-framer-preserve-params]",S=document.currentScript?.hasAttribute("data-preserve-internal-params");if(window.location.search&&!navigator.webdriver&&!/bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(navigator.userAgent)){let a=document.querySelectorAll(S?`${g},${f}`:f);for(let r of a){let e=u(window.location.search,r.href);r.setAttribute("href",e)}}
 
