@@ -644,180 +644,256 @@
 }
 </style>
 <style id="map-approach-custom-styles">
+/* ==========================================================================
+   TERRALINE INTEGRATED APPROACH & METHODOLOGY (MAP ARCHITECTS STYLE)
+   ========================================================================== */
 .map-approach-section {
-    position: relative;
-    width: 100%;
-    background-color: #0E0F16;
-    color: #FFFFFF;
-    padding: 140px 6%;
-    box-sizing: border-box;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  width: 100%;
+  background-color: #08090E;
+  color: #FFFFFF;
+  padding: 130px 6%;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-approach-container {
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .map-approach-header {
-    max-width: 860px;
-    margin-bottom: 80px;
+  max-width: 820px;
+  margin-bottom: 64px;
+}
+
+.map-approach-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #F77422;
+  margin-bottom: 16px;
+}
+
+.map-approach-title {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 22px 0;
+}
+
+.map-approach-title .accent {
+  color: #F77422;
 }
 
 .map-approach-intro {
-    max-width: 720px;
-    margin-top: 24px;
+  font-size: 16.5px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.76);
+  margin: 0;
+  max-width: 740px;
 }
 
-.map-process-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    margin-bottom: 70px;
+/* 4 Phase Cards Grid */
+.map-approach-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
 }
 
-.map-process-steps-container {
-    position: relative;
-    width: 100%;
+.map-approach-card {
+  background: #0E0F16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 36px 26px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.map-process-line {
-    position: absolute;
-    top: 14px;
-    left: 0;
-    width: 0%;
-    height: 1px;
-    background: linear-gradient(90deg, #F77422 0%, rgba(255, 255, 255, 0.2) 100%);
-    z-index: 1;
-    transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+.map-approach-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(247, 116, 34, 0.45);
+  background: #13141E;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.map-approach-section.in-view .map-process-line {
-    width: 100%;
+.map-approach-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.map-process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    position: relative;
-    z-index: 2;
+.map-approach-num {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: #F77422;
+  line-height: 1;
 }
 
-.map-process-step {
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.map-approach-step-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
 }
 
-.map-approach-section.in-view .map-process-step:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
-.map-approach-section.in-view .map-process-step:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
-.map-approach-section.in-view .map-process-step:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
-.map-approach-section.in-view .map-process-step:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.75s; }
-
-.map-step-number {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    color: #F77422;
-    margin-bottom: 16px;
-    background-color: #0E0F16;
-    display: inline-block;
-    padding-right: 12px;
+.map-approach-step-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0 0 12px 0;
 }
 
-.map-step-title {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: #FFFFFF;
-    margin: 0 0 12px 0;
+.map-approach-step-text {
+  font-size: 14px;
+  font-weight: 350;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0 0 24px 0;
+  min-height: 66px;
 }
 
-.map-step-desc {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.72);
-    margin: 0;
+.map-approach-deliverables {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.map-approach-img-wrapper {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: #161722;
-    opacity: 0;
-    transform: scale(0.97);
-    transition: opacity 1.2s ease 0.8s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s;
+.map-approach-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 450;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.map-approach-section.in-view .map-approach-img-wrapper {
-    opacity: 1;
-    transform: scale(1);
+.map-approach-item-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #F77422;
+  flex-shrink: 0;
+}
+
+/* Bottom Split Row (Showcase Image + Statement Box) */
+.map-approach-bottom-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.map-approach-img-box {
+  width: 100%;
+  min-height: 340px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #0E0F16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
 .map-approach-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 1.2s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.map-approach-img-wrapper:hover .map-approach-img {
-    transform: scale(1.03);
+.map-approach-img-box:hover .map-approach-img {
+  transform: scale(1.035);
 }
 
-.map-approach-statement {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.03);
-    border-left: 3px solid #F77422;
-    padding: 32px 40px;
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease 1s, transform 0.8s ease 1s;
+.map-approach-statement-box {
+  background: #0E0F16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #F77422;
+  border-radius: 14px;
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
-.map-approach-section.in-view .map-approach-statement {
-    opacity: 1;
-    transform: translateY(0);
+.map-statement-quote {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(16px, 1.4vw, 18px);
+  font-weight: 350;
+  line-height: 1.65;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+  font-style: italic;
 }
 
-.map-statement-text {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: clamp(16px, 1.6vw, 19px);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.92);
-    margin: 0;
+.map-statement-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@media (max-width: 992px) {
-    .map-process-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-        padding-left: 24px;
-    }
+.map-feature-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
 
-    .map-process-line {
-        top: 0;
-        left: 6px;
-        width: 1px;
-        height: 0%;
-    }
+.map-feature-check {
+  color: #F77422;
+  font-weight: 700;
+}
 
-    .map-approach-section.in-view .map-process-line {
-        width: 1px;
-        height: 100%;
-    }
+@media (max-width: 1100px) {
+  .map-approach-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .map-approach-bottom-split {
+    grid-template-columns: 1fr;
+  }
+}
 
-    .map-approach-img-wrapper {
-        height: 280px;
-    }
+@media (max-width: 640px) {
+  .map-approach-section {
+    padding: 80px 5%;
+  }
+  .map-approach-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .map-statement-features {
+    grid-template-columns: 1fr;
+  }
+  .map-approach-statement-box {
+    padding: 26px 20px;
+  }
 }
 </style>
 <script id="map-approach-anim-script">
@@ -3898,56 +3974,139 @@
 </section>
 
 <section id="integrated-approach" class="map-approach-section">
-  <div class="map-container">
+  <div class="map-approach-container">
+    <!-- Section Header -->
     <div class="map-approach-header">
-      <span class="map-label">OUR APPROACH</span>
-      <h2 class="map-heading">
-        One Process.<br>One Responsibility.<br>One Exceptional Outcome.
+      <span class="map-approach-eyebrow">OUR APPROACH</span>
+      <h2 class="map-approach-title">
+        One Process.<br>
+        One Responsibility.<br>
+        <span class="accent">One Exceptional Outcome.</span>
       </h2>
-      <p class="map-body-text map-approach-intro">
+      <p class="map-approach-intro">
         Every successful project begins with understanding your vision and ends with a thoughtfully delivered space. Our integrated design and build approach brings architecture, interiors, construction, and project management together under one team—creating a seamless experience from concept to completion.
       </p>
     </div>
 
-    <div class="map-process-wrapper">
-      <div class="map-process-steps-container">
-        <div class="map-process-line"></div>
-        <div class="map-process-grid">
-          <div class="map-process-step">
-            <span class="map-step-number">STEP 01</span>
-            <h3 class="map-step-title">Discover</h3>
-            <p class="map-step-desc">Understanding your requirements, lifestyle, goals, budget, and project vision before any design begins.</p>
+    <!-- 4 Architectural Process Cards -->
+    <div class="map-approach-grid-4">
+      <!-- Step 01: Discover -->
+      <div class="map-approach-card">
+        <div class="map-approach-card-top">
+          <span class="map-approach-num">01</span>
+          <span class="map-approach-step-tag">STEP 01</span>
+        </div>
+        <h3 class="map-approach-step-title">Discover</h3>
+        <p class="map-approach-step-text">
+          Understanding your requirements, lifestyle, goals, budget, and project vision before any design begins.
+        </p>
+        <div class="map-approach-deliverables">
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Comprehensive Client Brief</span>
           </div>
-
-          <div class="map-process-step">
-            <span class="map-step-number">STEP 02</span>
-            <h3 class="map-step-title">Design</h3>
-            <p class="map-step-desc">Developing intelligent architectural and interior solutions that balance functionality, aesthetics, sustainability, and long-term value.</p>
-          </div>
-
-          <div class="map-process-step">
-            <span class="map-step-number">STEP 03</span>
-            <h3 class="map-step-title">Build</h3>
-            <p class="map-step-desc">Executing the approved design with quality craftsmanship, transparent communication, and careful site management.</p>
-          </div>
-
-          <div class="map-process-step">
-            <span class="map-step-number">STEP 04</span>
-            <h3 class="map-step-title">Deliver</h3>
-            <p class="map-step-desc">Handing over a completed space that reflects the original vision while meeting quality, budget, and timeline expectations.</p>
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Budget &amp; Feasibility Scoping</span>
           </div>
         </div>
       </div>
 
-      <div class="map-approach-img-wrapper">
-        <img src="/images/about_careers_workshop.webp" alt="Terraline Team Execution & Site Supervision" class="map-approach-img" loading="lazy" decoding="async">
+      <!-- Step 02: Design -->
+      <div class="map-approach-card">
+        <div class="map-approach-card-top">
+          <span class="map-approach-num">02</span>
+          <span class="map-approach-step-tag">STEP 02</span>
+        </div>
+        <h3 class="map-approach-step-title">Design</h3>
+        <p class="map-approach-step-text">
+          Developing intelligent architectural and interior solutions that balance functionality, aesthetics, and sustainability.
+        </p>
+        <div class="map-approach-deliverables">
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Spatial Layouts &amp; 3D Modeling</span>
+          </div>
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Material &amp; Lighting Curation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 03: Build -->
+      <div class="map-approach-card">
+        <div class="map-approach-card-top">
+          <span class="map-approach-num">03</span>
+          <span class="map-approach-step-tag">STEP 03</span>
+        </div>
+        <h3 class="map-approach-step-title">Build</h3>
+        <p class="map-approach-step-text">
+          Executing the approved design with quality craftsmanship, transparent communication, and careful site management.
+        </p>
+        <div class="map-approach-deliverables">
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Precision On-Site Execution</span>
+          </div>
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Continuous Quality Audits</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 04: Deliver -->
+      <div class="map-approach-card">
+        <div class="map-approach-card-top">
+          <span class="map-approach-num">04</span>
+          <span class="map-approach-step-tag">STEP 04</span>
+        </div>
+        <h3 class="map-approach-step-title">Deliver</h3>
+        <p class="map-approach-step-text">
+          Handing over a completed space that reflects the original vision while meeting quality, budget, and timeline expectations.
+        </p>
+        <div class="map-approach-deliverables">
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Snag-Free Final Handover</span>
+          </div>
+          <div class="map-approach-item">
+            <span class="map-approach-item-dot"></span>
+            <span>Long-Term Enduring Value</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="map-approach-statement">
-      <p class="map-statement-text">
-        "Our integrated model ensures better coordination, cost clarity, quality control, faster delivery, and a single point of accountability throughout the entire project."
-      </p>
+    <!-- Bottom Split Section (Visual Image + Statement Box) -->
+    <div class="map-approach-bottom-split">
+      <div class="map-approach-img-box">
+        <img src="/images/about_careers_workshop.webp" alt="Terraline Team Execution &amp; Site Supervision" class="map-approach-img" loading="lazy" decoding="async">
+      </div>
+      <div class="map-approach-statement-box">
+        <p class="map-statement-quote">
+          "Our integrated model ensures better coordination, cost clarity, quality control, faster delivery, and a single point of accountability throughout the entire project."
+        </p>
+        <div class="map-statement-features">
+          <div class="map-feature-badge">
+            <span class="map-feature-check">✓</span>
+            <span>Single Point of Contact</span>
+          </div>
+          <div class="map-feature-badge">
+            <span class="map-feature-check">✓</span>
+            <span>Budget &amp; Scope Clarity</span>
+          </div>
+          <div class="map-feature-badge">
+            <span class="map-feature-check">✓</span>
+            <span>Strict Quality Supervision</span>
+          </div>
+          <div class="map-feature-badge">
+            <span class="map-feature-check">✓</span>
+            <span>Milestone-Driven Delivery</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
