@@ -733,7 +733,8 @@ textarea.map-input-field {
 }
 </style>
 </head>
-<body class="map-contact-body">
+<body>
+<a href="#main-content" class="tl-skip-link">Skip to main content</a>
 
 <header class="terraline-global-nav" id="terraline-nav">
   <div class="nav-inner">
@@ -1014,7 +1015,8 @@ textarea.map-input-field {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </button>
 
-              <div id="map-form-success" class="map-form-success-msg">
+              <div id="map-form-error" class="map-form-error-msg" role="alert" aria-live="polite"></div>
+              <div id="map-form-success" class="map-form-success-msg" role="status" aria-live="polite">
                 ✓ Thank you! Your inquiry has been received. Our team will get in touch with you shortly.
               </div>
             </form>
@@ -1255,16 +1257,63 @@ textarea.map-input-field {
   function initForm() {
     var form = document.getElementById('map-inquiry-form');
     var successMsg = document.getElementById('map-form-success');
+    var errorMsg = document.getElementById('map-form-error');
     if (!form) return;
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      var name = (document.getElementById('inq-name') || {}).value || '';
-      var phone = (document.getElementById('inq-phone') || {}).value || '';
-      var email = (document.getElementById('inq-email') || {}).value || '';
-      var loc = (document.getElementById('inq-loc') || {}).value || 'Bengaluru, India';
-      var msg = (document.getElementById('inq-msg') || {}).value || '';
+      if (errorMsg) errorMsg.style.display = 'none';
+      if (successMsg) successMsg.style.display = 'none';
+
+      var nameInput = document.getElementById('inq-name');
+      var phoneInput = document.getElementById('inq-phone');
+      var emailInput = document.getElementById('inq-email');
+      var locInput = document.getElementById('inq-loc');
+      var msgInput = document.getElementById('inq-msg');
+
+      var name = (nameInput || {}).value || '';
+      var phone = (phoneInput || {}).value || '';
+      var email = (emailInput || {}).value || '';
+      var loc = (locInput || {}).value || 'Bengaluru, India';
+      var msg = (msgInput || {}).value || '';
+
+      // Detailed field validations
+      if (!name.trim()) {
+        if (errorMsg) {
+          errorMsg.textContent = 'Please enter your name.';
+          errorMsg.style.display = 'block';
+        }
+        if (nameInput) nameInput.focus();
+        return;
+      }
+
+      if (!phone.trim()) {
+        if (errorMsg) {
+          errorMsg.textContent = 'Please enter your phone or WhatsApp number.';
+          errorMsg.style.display = 'block';
+        }
+        if (phoneInput) phoneInput.focus();
+        return;
+      }
+
+      if (!email.trim() || email.indexOf('@') === -1) {
+        if (errorMsg) {
+          errorMsg.textContent = 'Please enter a valid email address.';
+          errorMsg.style.display = 'block';
+        }
+        if (emailInput) emailInput.focus();
+        return;
+      }
+
+      if (!msg.trim()) {
+        if (errorMsg) {
+          errorMsg.textContent = 'Please tell us about your project vision and requirements.';
+          errorMsg.style.display = 'block';
+        }
+        if (msgInput) msgInput.focus();
+        return;
+      }
 
       // Collect checked services
       var checkedServices = [];
@@ -1273,12 +1322,6 @@ textarea.map-input-field {
         checkedServices.push(cb.value);
       });
       var servicesStr = checkedServices.length > 0 ? checkedServices.join(', ') : 'All Services';
-
-      // Validation
-      if (!name.trim() || !phone.trim() || !email.trim() || !msg.trim()) {
-        alert('Please complete all required fields.');
-        return;
-      }
 
       // Build WhatsApp message
       var formattedText = 'Hello Terraline Studio, I would like to submit a project inquiry:
