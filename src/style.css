@@ -970,14 +970,14 @@ code {
   --tl-brand-orange: #F77422;
   --tl-brand-orange-hover: #ff853a;
   --tl-brand-orange-glow: rgba(247, 116, 34, 0.4);
-  --tl-bg-base: #FFFFFF;
-  --tl-bg-surface: #F8F9FA;
-  --tl-bg-card: #FFFFFF;
-  --tl-border-subtle: rgba(0, 0, 0, 0.08);
+  --tl-bg-base: #08090E;
+  --tl-bg-surface: #0E0F16;
+  --tl-bg-card: #141620;
+  --tl-border-subtle: rgba(255, 255, 255, 0.08);
   --tl-border-hover: rgba(247, 116, 34, 0.35);
-  --tl-text-primary: #111827;
-  --tl-text-secondary: rgba(17, 24, 39, 0.78);
-  --tl-text-muted: rgba(17, 24, 39, 0.48);
+  --tl-text-primary: #FFFFFF;
+  --tl-text-secondary: rgba(255, 255, 255, 0.78);
+  --tl-text-muted: rgba(255, 255, 255, 0.45);
   --tl-ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1108,10 +1108,8 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   text-align: left;
 }
 
-
-
 /* ==========================================================================
-   TERRALINE RIGHT-ALIGNED MINIMAL ARCHITECTURAL NAVBAR (LIGHT THEME)
+   TERRALINE RIGHT-ALIGNED MINIMAL ARCHITECTURAL NAVBAR (MAP ARCHITECTS STYLE)
    ========================================================================== */
 .terraline-global-nav {
   position: fixed !important;
@@ -1127,11 +1125,11 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
 }
 
 .terraline-global-nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.94) !important;
+  background-color: rgba(8, 9, 14, 0.92) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   padding: 18px 6% !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .nav-inner {
@@ -1159,7 +1157,7 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   font-weight: 600 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  color: #111827 !important;
+  color: #FFFFFF !important;
   transition: opacity 0.2s ease !important;
 }
 
@@ -1185,9 +1183,9 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
 .nav-link {
   font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif !important;
   font-size: 14.5px !important;
-  font-weight: 500 !important;
+  font-weight: 450 !important;
   letter-spacing: 0.03em !important;
-  color: rgba(17, 24, 39, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   text-decoration: none !important;
   position: relative !important;
   padding: 6px 0 !important;
@@ -1196,12 +1194,12 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
 }
 
 .nav-link:hover {
-  color: #111827 !important;
+  color: #FFFFFF !important;
 }
 
 .nav-link.active {
   color: #F77422 !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .nav-link::after {
@@ -1240,7 +1238,7 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   display: block !important;
   width: 24px !important;
   height: 2px !important;
-  background-color: #111827 !important;
+  background-color: #FFFFFF !important;
   transition: transform 0.3s ease, opacity 0.3s ease !important;
   transform-origin: center !important;
 }
@@ -1260,7 +1258,7 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  background: rgba(255, 255, 255, 0.98) !important;
+  background: rgba(8, 9, 14, 0.98) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   z-index: 10001 !important;
@@ -1301,7 +1299,7 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   font-size: 26px !important;
   font-weight: 400 !important;
   letter-spacing: -0.02em !important;
-  color: #111827 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   text-decoration: none !important;
   transition: color 0.2s ease, transform 0.2s ease !important;
   text-transform: uppercase !important;
@@ -1317,14 +1315,14 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   display: flex !important;
   flex-direction: column !important;
   gap: 8px !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   padding-top: 24px !important;
   width: 100% !important;
 }
 
 .nav-mobile-contact-line {
   font-size: 14px !important;
-  color: rgba(17, 24, 39, 0.6) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   text-decoration: none !important;
 }
 
@@ -1332,7 +1330,7 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   font-size: 12px !important;
   letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  color: rgba(17, 24, 39, 0.4) !important;
+  color: rgba(255, 255, 255, 0.35) !important;
 }
 
 /* Responsive Breakpoints */
@@ -1346,124 +1344,4 @@ button, .tl-btn-primary, .btn-primary, .terraline-footer-cta-btn, .map-pill-labe
   .terraline-global-nav {
     padding: 20px 6% !important;
   }
-}
-
-
-/* ==========================================================================
-   TERRALINE GLOBAL LIGHT THEME OVERRIDES (BLACK -> WHITE INVERSION)
-   ========================================================================== */
-body, html {
-  background-color: #FFFFFF !important;
-  color: #111827 !important;
-}
-
-/* Sections */
-section, main, .map-contact-hero-section, .map-inquiry-section, .map-location-section, 
-.map-contact-closing-cta-section, .map-services-hero-section, .map-approach-section, 
-.map-arch-section, .map-interior-section, .map-construction-section, .map-pmc-section, 
-.map-green-section, .map-selected-work-section, .map-closing-cta-section,
-.map-projects-hero-section, .map-projects-listing-section, .map-about-hero-section, 
-.map-about-intro-section, .map-philosophy-section, .map-team-section, .map-careers-section,
-.map-detail-hero-section, .map-detail-narrative-section, .map-detail-nav-section, .map-detail-cta-section {
-  background-color: #FFFFFF !important;
-  color: #111827 !important;
-}
-
-/* Alternate Section Backgrounds for Architectural Rhythm */
-.map-approach-section, .map-interior-section, .map-pmc-section, .map-closing-cta-section,
-.map-inquiry-section, .map-contact-closing-cta-section, .map-philosophy-section, .map-careers-section,
-.map-detail-narrative-section, .map-detail-cta-section {
-  background-color: #F8F9FA !important;
-}
-
-/* Cards & Surface Containers */
-.map-inquiry-form-wrap, .map-arch-project-card, .map-interior-project-card, 
-.map-construction-project-card, .map-pmc-project-card, .map-green-project-card,
-.map-inquiry-card, .map-approach-card, .map-philosophy-card, .map-team-card {
-  background: #FFFFFF !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-}
-
-/* Typography Inversion */
-h1, h2, h3, h4, h5, h6, .map-hero-title, .map-arch-title, .map-interior-title, 
-.map-construction-title, .map-pmc-title, .map-green-title, .map-closing-title,
-.map-detail-title, .map-projects-hero-title, .map-contact-hero-title, .map-inquiry-title,
-.map-inquiry-card-val, .map-project-title-large, .map-project-title, .map-location-val {
-  color: #111827 !important;
-}
-
-p, .map-hero-subtitle, .map-arch-desc, .map-interior-desc, .map-construction-desc, 
-.map-pmc-desc, .map-green-desc, .map-closing-desc, .map-detail-narrative-text, 
-.map-contact-hero-subtitle, .map-inquiry-desc, .map-location-desc {
-  color: rgba(17, 24, 39, 0.76) !important;
-}
-
-.map-meta-item, .map-project-cat, .map-arch-item-title, .map-interior-item-title,
-.map-inquiry-card-label, .map-form-label {
-  color: rgba(17, 24, 39, 0.65) !important;
-}
-
-/* Form Inputs & Pills */
-.map-input-field {
-  background: #FFFFFF !important;
-  border: 1px solid rgba(0, 0, 0, 0.15) !important;
-  color: #111827 !important;
-}
-.map-input-field:focus {
-  border-color: #F77422 !important;
-  background: #FFFFFF !important;
-}
-.map-input-field::placeholder {
-  color: rgba(17, 24, 39, 0.38) !important;
-}
-
-.map-pill-label, .map-filter-btn {
-  background: #FFFFFF !important;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  color: #111827 !important;
-}
-.map-pill-checkbox:checked + .map-pill-label, .map-filter-btn.active {
-  background: #F77422 !important;
-  border-color: #F77422 !important;
-  color: #FFFFFF !important;
-}
-
-/* Category Badges & Pills */
-.map-category-badge, .map-arch-item-tag, .map-interior-item-tag {
-  background: rgba(0, 0, 0, 0.05) !important;
-  color: #111827 !important;
-}
-
-/* Secondary Editorial Links */
-.tl-link-secondary, .link-editorial, .map-arch-proj-link, .map-interior-proj-link, 
-.map-construction-proj-link, .map-pmc-proj-link, .map-green-proj-link, .map-back-link {
-  color: #111827 !important;
-}
-.tl-link-secondary:hover, .link-editorial:hover, .map-arch-proj-link:hover, 
-.map-interior-proj-link:hover, .map-construction-proj-link:hover, .map-pmc-proj-link:hover, 
-.map-green-proj-link:hover, .map-back-link:hover {
-  color: #F77422 !important;
-}
-
-/* Borders & Dividers */
-hr, .map-arch-divider, .map-interior-divider, .map-construction-divider, 
-.map-pmc-divider, .map-green-divider, .map-location-info-row {
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-/* Hero Overlays on Light Theme */
-.map-hero-overlay, .map-services-hero-overlay, .map-about-hero-overlay, 
-.map-projects-hero-img-overlay, .map-contact-img-overlay {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.75) 100%) !important;
-}
-
-/* Keep Orange CTAs Perfectly Orange with White Text */
-.tl-btn-primary, .btn-primary, .cta-btn-primary, .map-form-submit-btn, .nav-contact-btn {
-  background: #F77422 !important;
-  color: #FFFFFF !important;
-}
-.tl-btn-primary:hover, .btn-primary:hover, .cta-btn-primary:hover, .map-form-submit-btn:hover {
-  background: #ff853a !important;
-  color: #FFFFFF !important;
 }
