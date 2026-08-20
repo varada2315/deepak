@@ -25,7 +25,9 @@
   box-sizing: border-box;
 }
 
-/* 1. HERO SECTION */
+/* ==================================================
+   1. HERO SECTION
+   ================================================== */
 .map-contact-hero-section {
   position: relative;
   width: 100%;
@@ -186,7 +188,9 @@ a.map-contact-detail-val:hover {
   pointer-events: none;
 }
 
-/* 2. INTERACTIVE CONTACT & INQUIRY FORM SECTION */
+/* ==================================================
+   2. INTERACTIVE CONTACT & INQUIRY FORM SECTION
+   ================================================== */
 .map-inquiry-section {
   padding: 110px 0 120px;
   background-color: #08090E;
@@ -411,10 +415,13 @@ textarea.map-input-field {
   text-align: center;
 }
 
-/* 3. STUDIO LOCATION & MAP SECTION */
+/* ==================================================
+   3. STUDIO LOCATION & MAP SECTION
+   ================================================== */
 .map-location-section {
-  padding: 100px 0 120px;
+  padding: 100px 0 90px;
   background-color: #08090E;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .map-location-grid {
@@ -476,6 +483,161 @@ textarea.map-input-field {
   filter: grayscale(100%) invert(92%) contrast(83%);
 }
 
+/* ==================================================
+   4. FINAL CLOSING CTA SECTION
+   ================================================== */
+.map-contact-closing-section {
+  padding: 90px 0 130px;
+  background-color: #08090E;
+}
+
+.map-closing-box {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+  background: #0E0F16;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 64px;
+  box-sizing: border-box;
+}
+
+.map-closing-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-closing-label {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #F77422;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.map-closing-heading {
+  font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 24px 0;
+}
+
+.map-closing-heading .accent {
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+}
+
+.map-closing-desc {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 40px 0;
+  max-width: 540px;
+}
+
+.map-closing-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.map-closing-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #F77422;
+  color: #FFFFFF !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 15px 32px;
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(247, 116, 34, 0.38);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.map-closing-btn-primary:hover {
+  background: #ff853a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(247, 116, 34, 0.48);
+}
+
+.map-closing-btn-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.map-closing-btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.map-closing-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.map-closing-link-secondary:hover {
+  color: #F77422 !important;
+}
+
+.map-closing-link-secondary svg {
+  transition: transform 0.25s ease;
+}
+
+.map-closing-link-secondary:hover svg {
+  transform: translateX(4px);
+}
+
+.map-closing-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #141620;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-closing-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-closing-box:hover .map-closing-img {
+  transform: scale(1.035);
+}
+
+.map-closing-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 9, 14, 0) 60%, rgba(8, 9, 14, 0.6) 100%);
+  pointer-events: none;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .map-inquiry-grid {
@@ -489,6 +651,14 @@ textarea.map-input-field {
   .map-inquiry-form-wrap {
     padding: 32px 24px;
   }
+  .map-closing-box {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 32px;
+  }
+  .map-closing-img-wrap {
+    height: 280px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -498,6 +668,25 @@ textarea.map-input-field {
   }
   .map-location-map-wrap {
     height: 280px;
+  }
+  .map-contact-closing-section {
+    padding: 60px 0 100px;
+  }
+  .map-closing-box {
+    padding: 28px 20px;
+  }
+  .map-closing-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .map-closing-btn-primary {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .map-closing-link-secondary {
+    justify-content: center;
   }
 }
 </style>
@@ -625,53 +814,53 @@ textarea.map-input-field {
 </header>
 
 <main>
-<section id="contact-hero" class="map-contact-hero-section">
-  <div class="map-container">
-    <div class="map-contact-hero-grid">
-      <!-- Left Column: Content & Contact Preview -->
-      <div class="map-contact-hero-content">
-        <span class="map-contact-label">CONTACT</span>
-        <h1 class="map-contact-heading">Let's Build Something<br>Meaningful.</h1>
-        <p class="map-contact-intro">
-          Have a project in mind, or simply want to explore an idea? Tell us a little about your project and our team will get in touch with you.
-        </p>
+    <!-- 1. HERO SECTION -->
+    <section id="contact-hero" class="map-contact-hero-section">
+      <div class="map-contact-container">
+        <div class="map-contact-hero-grid">
+          <!-- Left Column: Content & Contact Preview -->
+          <div class="map-contact-hero-content">
+            <span class="map-contact-label">CONTACT</span>
+            <h1 class="map-contact-heading">Let's Build Something<br>Meaningful.</h1>
+            <p class="map-contact-intro">
+              Have a project in mind, or simply want to explore an idea? Tell us a little about your project and our team will get in touch with you.
+            </p>
 
-        <!-- Primary CTA: WhatsApp Consultation -->
-        <div class="map-contact-cta-wrap">
-          <a href="https://wa.me/917760205735?text=Hello%20Terraline%20Studio%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20my%20project." target="_blank" rel="noopener noreferrer" class="map-contact-btn-primary">
-            <span>BOOK A CONSULTATION</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-        </div>
+            <!-- Primary CTA: WhatsApp Consultation -->
+            <div class="map-contact-cta-wrap">
+              <a href="https://wa.me/917760205735?text=Hello%20Terraline%20Studio%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20my%20project." target="_blank" rel="noopener noreferrer" class="map-contact-btn-primary">
+                <span>BOOK A CONSULTATION</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
 
-        <!-- Contact Details Preview -->
-        <div class="map-contact-details-preview">
-          <div class="map-contact-detail-item">
-            <span class="map-contact-detail-label">PHONE</span>
-            <a href="tel:+917760205735" class="map-contact-detail-val">+91 77602 05735</a>
+            <!-- Contact Details Preview -->
+            <div class="map-contact-details-preview">
+              <div class="map-contact-detail-item">
+                <span class="map-contact-detail-label">PHONE</span>
+                <a href="tel:+917760205735" class="map-contact-detail-val">+91 77602 05735</a>
+              </div>
+              <div class="map-contact-detail-item">
+                <span class="map-contact-detail-label">EMAIL</span>
+                <a href="mailto:terraline.hq@gmail.com" class="map-contact-detail-val">terraline.hq@gmail.com</a>
+              </div>
+              <div class="map-contact-detail-item">
+                <span class="map-contact-detail-label">OFFICE</span>
+                <span class="map-contact-detail-val">Bangalore, India</span>
+              </div>
+            </div>
           </div>
-          <div class="map-contact-detail-item">
-            <span class="map-contact-detail-label">EMAIL</span>
-            <a href="mailto:terraline.hq@gmail.com" class="map-contact-detail-val">terraline.hq@gmail.com</a>
-          </div>
-          <div class="map-contact-detail-item">
-            <span class="map-contact-detail-label">OFFICE</span>
-            <span class="map-contact-detail-val">Bangalore, India</span>
+
+          <!-- Right Column: Architectural Hero Image -->
+          <div class="map-contact-hero-img-col">
+            <div class="map-contact-hero-img-wrap">
+              <img src="/images/why_terraline_collaboration.png" alt="Terraline Studio Project Consultation" class="map-contact-hero-img" />
+              <div class="map-contact-img-overlay"></div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Right Column: Architectural Hero Image -->
-      <div class="map-contact-hero-img-col">
-        <div class="map-contact-hero-img-wrap">
-          <img src="/images/why_terraline_collaboration.png" alt="Terraline Studio Project Consultation" class="map-contact-hero-img" />
-          <div class="map-contact-img-overlay"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
     <!-- 2. INTERACTIVE CONTACT & INQUIRY FORM SECTION -->
     <section id="contact-form-section" class="map-inquiry-section">
       <div class="map-contact-container">
@@ -791,7 +980,6 @@ textarea.map-input-field {
         </div>
       </div>
     </section>
-
     <!-- 3. STUDIO LOCATION & MAP SECTION -->
     <section id="contact-location-section" class="map-location-section">
       <div class="map-contact-container">
@@ -815,6 +1003,14 @@ textarea.map-input-field {
               <span class="map-location-key">DIRECT REACH</span>
               <span class="map-location-val"><a href="tel:+917760205735" style="color: #FFFFFF; text-decoration: none;">+91 77602 05735</a> &bull; <a href="mailto:terraline.hq@gmail.com" style="color: #FFFFFF; text-decoration: none;">terraline.hq@gmail.com</a></span>
             </div>
+
+            <div class="map-location-info-row">
+              <span class="map-location-key">CONNECT &amp; SOCIAL</span>
+              <span class="map-location-val" style="display: flex; gap: 20px; align-items: center; margin-top: 4px;">
+                <a href="https://www.instagram.com/terraline_studio/" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none; font-size: 14.5px; transition: color 0.2s ease;">Instagram ↗</a>
+                <a href="https://www.linkedin.com/company/terraline-studio/" target="_blank" rel="noopener noreferrer" style="color: #FFFFFF; text-decoration: none; font-size: 14.5px; transition: color 0.2s ease;">LinkedIn ↗</a>
+              </span>
+            </div>
           </div>
 
           <!-- Right: Embedded Dark Minimal Map -->
@@ -830,7 +1026,38 @@ textarea.map-input-field {
         </div>
       </div>
     </section>
-
+    <!-- 4. FINAL CLOSING CTA SECTION -->
+    <section id="contact-closing-cta-section" class="map-contact-closing-section">
+      <div class="map-contact-container">
+        <div class="map-closing-box">
+          <div class="map-closing-content">
+            <span class="map-closing-label">LET'S CREATE TOGETHER</span>
+            <h2 class="map-closing-heading">
+              Your Vision.<br>
+              Our Expertise.<br>
+              <span class="accent">One Thoughtfully Designed Space.</span>
+            </h2>
+            <p class="map-closing-desc">
+              Whether you're planning a new home, transforming an existing space, developing a workplace, or exploring a larger project, we'd love to hear what you're envisioning.
+            </p>
+            <div class="map-closing-actions">
+              <a href="https://wa.me/917760205735?text=Hello%20Terraline%20Studio%2C%20I%20would%20like%20to%20book%20a%20consultation%20for%20my%20project." target="_blank" rel="noopener noreferrer" class="map-closing-btn-primary">
+                <span>BOOK A CONSULTATION</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="/projects.html" class="map-closing-link-secondary">
+                <span>EXPLORE OUR WORK</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+          <div class="map-closing-img-wrap">
+            <img src="/images/hero_architecture_bg.png" alt="Terraline Architectural Collaboration" class="map-closing-img" />
+            <div class="map-closing-img-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 </main>
 
 <footer class="terraline-global-footer" style="background-color:#101014; width:100%; padding: 80px 6% 40px; box-sizing: border-box; color: #ffffff; position: relative; z-index: 10;">
